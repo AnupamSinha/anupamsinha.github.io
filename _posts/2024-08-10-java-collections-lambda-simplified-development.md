@@ -4,7 +4,13 @@ date: 2024-08-10
 categories: [Java, Fundamentals]
 tags: [java, collections, lambda, streams, functional-programming]
 description: "A practical guide to using Java Collections and Lambda expressions together for cleaner, shorter, and more readable code."
+image:
+  path: /assets/img/posts/collection_u2np.svg
+  alt: Java Collections Illustration
 ---
+
+![Programming](/assets/img/posts/programming_2svr.svg){: width="500" }
+_Simplify your code with Collections + Lambda_
 
 ## What's This About?
 
@@ -338,6 +344,9 @@ List<String> toppers = scores.entrySet().stream()
 ---
 
 ## Chaining Operations
+
+![Coding](/assets/img/posts/coding_6mjf.svg){: width="450" }
+_Chain multiple operations for powerful data processing_
 
 The real power comes from **chaining** — combine filter, map, sort in one flow:
 

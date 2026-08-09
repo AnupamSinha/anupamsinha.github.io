@@ -4,8 +4,14 @@ date: 2024-08-09
 categories: [Java, Migration]
 tags: [java, java21, lts, virtual-threads, pattern-matching, spring-boot]
 description: "A developer's reference for migrating from Java 18 to Java 21 LTS — official JEP links, code examples, framework compatibility, and migration checklist."
+image:
+  path: /assets/img/posts/version_control_9bpv.svg
+  alt: Java Migration Illustration
 pin: true
 ---
+
+![Developer Activity](/assets/img/posts/developer_activity_bv83.svg){: width="500" }
+_Illustration: Migrating your Java application to the latest LTS_
 
 ## Overview
 
@@ -132,6 +138,9 @@ Java 20 refined preview features from 19. No new finalized features, but importa
 ---
 
 ## Java 21 (September 2023) — The LTS Destination
+
+![Cloud Hosting](/assets/img/posts/cloud_hosting_aodd.svg){: width="450" }
+_Everything comes together in Java 21_
 
 > Official release page: [JDK 21 — OpenJDK](https://openjdk.org/projects/jdk/21/)
 {: .prompt-info }
