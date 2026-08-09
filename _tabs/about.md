@@ -21,8 +21,6 @@ I architect solutions using **Java, Spring Boot, Kafka, and Kubernetes** — sys
 ### Experience Highlights
 
 - Delivered projects across **6 countries**
-- Led teams of **16+ engineers** on modernization programs
-- Received **13 awards** for delivery and innovation
 - Oracle & Spring certified
 
 ### Connect
