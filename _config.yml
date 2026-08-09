@@ -1,0 +1,33 @@
+title: Anupam Sinha
+description: Writing about architecture decisions, legacy modernization, and AI-assisted engineering in banking
+author: Anupam Sinha
+email: hianupamsinha@gmail.com
+url: "https://anupamsinha.github.io"
+baseurl: ""
+
+theme: minima
+
+# Social links
+social_links:
+  - platform: github
+    user_url: "https://github.com/AnupamSinha"
+  - platform: linkedin
+    user_url: "https://linkedin.com/in/anupam-sinha-42b29044"
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Pagination
+paginate: 5
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Anupam Sinha"
