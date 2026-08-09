@@ -1,17 +1,21 @@
 ---
-layout: post
+layout: single
 title: "Java 18 to Java 21 Migration: What Changed and What You Need to Know"
 date: 2024-08-09
-categories: [java, migration]
-tags: [java, java21, migration, virtual-threads, pattern-matching]
+categories: [java]
+tags: [java, java21, migration, virtual-threads, pattern-matching, lts]
 description: "A version-by-version breakdown of the features that matter, with code examples to get you migrating today."
+header:
+  overlay_color: "#0d1b2a"
+  overlay_filter: "0.7"
+  overlay_image: https://images.unsplash.com/photo-1515879218367-8466d910auj8?w=1600
+  teaser: https://images.unsplash.com/photo-1515879218367-8466d910auj8?w=400
+excerpt: "Java 21 is the most significant LTS release since Java 8. Here's everything that changed from 18 to 21 — version by version, with real code examples."
+toc: true
+toc_sticky: true
+toc_label: "Table of Contents"
+toc_icon: "java"
 ---
-
-A version-by-version breakdown of the features that matter, with code examples to get you migrating today.
-
----
-
-## Why Migrate to Java 21?
 
 Java 21 is a Long-Term Support (LTS) release — the first since Java 17. If you're still on Java 18, 19, or 20 (all short-term releases), migrating to 21 gives you years of support, security patches, and the culmination of features that were in preview across those intermediate versions.
 
@@ -21,7 +25,7 @@ Let's walk through what each version introduced and what's now production-ready 
 
 ## Java 18 (March 2022) — The Stepping Stone
 
-Key additions:
+![Java 18](https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800){: .align-center}
 
 ### Simple Web Server (JEP 408)
 
@@ -46,6 +50,7 @@ server.start();
 
 No more charset surprises across platforms. `Charset.defaultCharset()` now returns UTF-8 on all operating systems.
 
+{: .notice--warning}
 **Migration note**: If your code relied on platform-specific default charset (e.g., Windows-1252 on older Windows), you may need to explicitly specify the charset where needed.
 
 ### Code Snippets in JavaDoc (JEP 413)
@@ -65,8 +70,6 @@ Replace old `<pre>{@code ...}</pre>` with cleaner syntax:
 ---
 
 ## Java 19 (September 2022) — Previews Take Shape
-
-Most features here were in preview but paved the road for 21:
 
 ### Virtual Threads (Preview — JEP 425)
 
@@ -90,7 +93,6 @@ Deconstruct records directly in pattern matching:
 ```java
 record Point(int x, int y) {}
 
-// Preview in 19
 if (obj instanceof Point(int x, int y)) {
     System.out.println("x = " + x + ", y = " + y);
 }
@@ -107,11 +109,14 @@ Java 20 was primarily about refining preview features. No major new finals, but 
 - Pattern Matching for Switch (Fourth Preview)
 - Scoped Values (Incubator)
 
+{: .notice--info}
 **Migration note**: If you adopted preview features in 19, check for API changes in 20. The refinements were subtle but breaking in some cases.
 
 ---
 
 ## Java 21 (September 2023) — The LTS Destination
+
+![Java 21 LTS](https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800){: .align-center}
 
 Everything comes together. Here's what's now production-ready:
 
@@ -131,6 +136,7 @@ try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
 }
 ```
 
+{: .notice--success}
 **Why it matters**: Traditional threads are expensive (~1MB stack each). Virtual threads are cheap (few KB). You can now use simple blocking I/O code without worrying about thread pool exhaustion.
 
 **Migration action**: Replace `Executors.newFixedThreadPool()` in I/O-heavy services with `Executors.newVirtualThreadPerTaskExecutor()`. No reactive frameworks needed for scalability.
@@ -245,12 +251,12 @@ double area(Shape shape) {
 Virtual threads can get pinned to carrier threads inside `synchronized` blocks. Prefer `ReentrantLock` for critical sections in virtual-thread-heavy code:
 
 ```java
-// Avoid with virtual threads
+// ❌ Avoid with virtual threads
 synchronized (lock) {
     blockingIOCall();
 }
 
-// Prefer
+// ✅ Prefer
 private final ReentrantLock lock = new ReentrantLock();
 
 lock.lock();
@@ -285,4 +291,4 @@ The migration from 18 to 21 is relatively smooth — no major breaking changes, 
 
 ---
 
-*Got questions about migrating your specific codebase? Drop a comment — happy to help.*
+*Found this useful? Share it with your team. Got questions? Drop a comment below.*

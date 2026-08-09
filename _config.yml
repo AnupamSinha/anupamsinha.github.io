@@ -1,33 +1,96 @@
+# Site Settings
 title: Anupam Sinha
-description: Writing about architecture decisions, legacy modernization, and AI-assisted engineering in banking
-author: Anupam Sinha
-email: hianupamsinha@gmail.com
+subtitle: "Architecture · Java · Cloud · AI"
+name: Anupam Sinha
+description: "Writing about architecture decisions, legacy modernization, and AI-assisted engineering."
 url: "https://anupamsinha.github.io"
 baseurl: ""
+repository: "AnupamSinha/anupamsinha.github.io"
 
-theme: minima
+# Theme
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin: "dark"
 
-# Social links
-social_links:
-  - platform: github
-    user_url: "https://github.com/AnupamSinha"
-  - platform: linkedin
-    user_url: "https://linkedin.com/in/anupam-sinha-42b29044"
+# Site Author
+author:
+  name: "Anupam Sinha"
+  avatar: "https://avatars.githubusercontent.com/AnupamSinha"
+  bio: "Technical Architect · 17 years building enterprise systems across banking, aviation & insurance · Based in Singapore"
+  location: "Singapore"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/AnupamSinha"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/anupam-sinha-42b29044"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:hianupamsinha@gmail.com"
+
+# Reading Files
+include:
+  - _pages
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
+
+# Plugins
 plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
   - jekyll-feed
-  - jekyll-seo-tag
+  - jekyll-include-cache
+  - jekyll-remote-theme
 
 # Pagination
 paginate: 5
+paginate_path: /page:num/
 
 # Defaults
 defaults:
+  # _posts
   - scope:
       path: ""
-      type: "posts"
+      type: posts
     values:
-      layout: "post"
-      author: "Anupam Sinha"
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+      show_date: true
+      toc: true
+      toc_sticky: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+# Analytics
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: ""
+
+# Comments
+comments:
+  provider: "disqus"
+  disqus:
+    shortname: ""
+
+# Footer
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/AnupamSinha"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/anupam-sinha-42b29044"
