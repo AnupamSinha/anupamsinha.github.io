@@ -1,12 +1,12 @@
 ---
-title: "Java Collections + Lambda: Write Less, Do More"
+title: "Java Collections + Lambda Expressions — Practical Guide with Code Examples"
 date: 2026-08-09
 categories: [Java, Fundamentals]
-tags: [java, collections, lambda, streams, functional-programming]
-description: "A practical guide to using Java Collections and Lambda expressions together for cleaner, shorter, and more readable code."
+tags: [java, java-collections, lambda-expressions, streams-api, functional-programming, java-streams, filter-map-reduce, java-tutorial, collectors, method-references]
+description: "Learn Java Collections with Lambda expressions and Streams API. Practical before/after code examples for filtering, sorting, grouping, mapping, and reducing. Complete cheat sheet for Java developers."
 image:
   path: /assets/img/posts/collection_u2np.svg
-  alt: Java Collections Illustration
+  alt: Java Collections and Lambda Expressions Guide
 ---
 
 ![Programming](/assets/img/posts/programming_2svr.svg){: width="500" }
