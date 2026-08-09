@@ -1,20 +1,10 @@
 ---
-layout: single
 title: "Java 18 to Java 21 Migration Guide"
 date: 2024-08-09
-last_modified_at: 2024-08-09
-categories: [java]
-tags: [java, java21, migration, virtual-threads, pattern-matching, lts, spring-boot]
-description: "A developer's reference guide for migrating from Java 18 to Java 21 LTS — version-by-version features, official JEP links, code examples, and migration checklist."
-header:
-  overlay_color: "#0d1b2a"
-  overlay_filter: "0.7"
-  overlay_image: https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1600
-  teaser: https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400
-excerpt: "A developer's reference for migrating from Java 18 to Java 21 LTS — official JEP links, code examples, framework compatibility, and a step-by-step migration checklist."
-toc: true
-toc_sticky: true
-toc_label: "On This Page"
+categories: [Java, Migration]
+tags: [java, java21, lts, virtual-threads, pattern-matching, spring-boot]
+description: "A developer's reference for migrating from Java 18 to Java 21 LTS — official JEP links, code examples, framework compatibility, and migration checklist."
+pin: true
 ---
 
 ## Overview
@@ -44,10 +34,8 @@ Java 21 is the first Long-Term Support release since Java 17. Versions 18, 19, a
 
 ## Java 18 (March 2022) — Key Features
 
-![Code on screen](https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800){: .align-center}
-
-Official release page: [JDK 18 — OpenJDK](https://openjdk.org/projects/jdk/18/)
-{: .notice}
+> Official release page: [JDK 18 — OpenJDK](https://openjdk.org/projects/jdk/18/)
+{: .prompt-info }
 
 ### Simple Web Server — [JEP 408](https://openjdk.org/jeps/408)
 
@@ -68,14 +56,12 @@ var server = SimpleFileServer.createFileServer(
 server.start();
 ```
 
-📖 **Oracle Docs**: [Simple Web Server — Java SE 18](https://docs.oracle.com/en/java/javase/18/core/java-simple-web-server.html)
-
 ### UTF-8 by Default — [JEP 400](https://openjdk.org/jeps/400)
 
 `Charset.defaultCharset()` now returns UTF-8 on all operating systems. No more platform-specific charset surprises.
 
-{: .notice--warning}
-⚠️ **Migration note**: If your code relied on platform-specific default charset (e.g., Windows-1252), you may need to explicitly specify charsets where needed.
+> If your code relied on platform-specific default charset (e.g., Windows-1252), you may need to explicitly specify charsets where needed.
+{: .prompt-warning }
 
 ### Code Snippets in JavaDoc — [JEP 413](https://openjdk.org/jeps/413)
 
@@ -95,8 +81,8 @@ Replace verbose `<pre>{@code ...}</pre>` with cleaner syntax:
 
 ## Java 19 (September 2022) — Preview Features
 
-Official release page: [JDK 19 — OpenJDK](https://openjdk.org/projects/jdk/19/)
-{: .notice}
+> Official release page: [JDK 19 — OpenJDK](https://openjdk.org/projects/jdk/19/)
+{: .prompt-info }
 
 ### Virtual Threads (Preview) — [JEP 425](https://openjdk.org/jeps/425)
 
@@ -110,7 +96,7 @@ Thread.startVirtualThread(() -> {
 
 ### Structured Concurrency (Incubator) — [JEP 428](https://openjdk.org/jeps/428)
 
-Manages multiple concurrent tasks as a single unit of work — improves error handling and cancellation in multi-threaded code.
+Manages multiple concurrent tasks as a single unit of work — improves error handling and cancellation.
 
 ### Record Patterns (Preview) — [JEP 405](https://openjdk.org/jeps/405)
 
@@ -128,8 +114,8 @@ if (obj instanceof Point(int x, int y)) {
 
 ## Java 20 (March 2023) — Refinement Cycle
 
-Official release page: [JDK 20 — OpenJDK](https://openjdk.org/projects/jdk/20/)
-{: .notice}
+> Official release page: [JDK 20 — OpenJDK](https://openjdk.org/projects/jdk/20/)
+{: .prompt-info }
 
 Java 20 refined preview features from 19. No new finalized features, but important iterations:
 
@@ -140,17 +126,15 @@ Java 20 refined preview features from 19. No new finalized features, but importa
 | Pattern Matching for Switch | [JEP 433](https://openjdk.org/jeps/433) | Fourth Preview |
 | Scoped Values | [JEP 429](https://openjdk.org/jeps/429) | Incubator |
 
-{: .notice--info}
-ℹ️ **Migration note**: If you adopted preview features in 19, check for API changes. Refinements between previews can be subtle but breaking.
+> If you adopted preview features in 19, check for API changes. Refinements between previews can be subtle but breaking.
+{: .prompt-warning }
 
 ---
 
 ## Java 21 (September 2023) — The LTS Destination
 
-![Developer working](https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800){: .align-center}
-
-Official release page: [JDK 21 — OpenJDK](https://openjdk.org/projects/jdk/21/)
-{: .notice}
+> Official release page: [JDK 21 — OpenJDK](https://openjdk.org/projects/jdk/21/)
+{: .prompt-info }
 
 ### Finalized Features Summary
 
@@ -180,12 +164,12 @@ try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
 }
 ```
 
-{: .notice--success}
-✅ **Why it matters**: Traditional threads cost ~1MB stack each. Virtual threads cost only a few KB. Use simple blocking I/O without worrying about thread pool exhaustion.
+> Traditional threads cost ~1MB stack each. Virtual threads cost only a few KB. Use simple blocking I/O without worrying about thread pool exhaustion.
+{: .prompt-tip }
 
 **Migration action**: Replace `Executors.newFixedThreadPool()` in I/O-heavy services with `Executors.newVirtualThreadPerTaskExecutor()`.
 
-📖 **Further reading**:
+**Further reading**:
 - [Virtual Threads — Oracle Docs](https://docs.oracle.com/en/java/javase/21/core/virtual-threads.html)
 - [Exploring Java's Virtual Threads — Oracle Blog](https://blogs.oracle.com/javamagazine/post/java-virtual-threads)
 
@@ -239,7 +223,7 @@ switch (shape) {
 }
 ```
 
-📖 **Oracle Docs**: [Pattern Matching for switch — Java SE 21](https://docs.oracle.com/en/java/javase/21/language/pattern-matching-switch.html)
+**Oracle Docs**: [Pattern Matching for switch — Java SE 21](https://docs.oracle.com/en/java/javase/21/language/pattern-matching-switch.html)
 
 ---
 
@@ -248,10 +232,10 @@ switch (shape) {
 New interfaces: `SequencedCollection`, `SequencedSet`, `SequencedMap`.
 
 ```java
-// Before — inconsistent across collection types
-list.get(0);                    // first element of List
-set.iterator().next();          // first element of SortedSet
-deque.getFirst();               // first element of Deque
+// Before — inconsistent
+list.get(0);
+set.iterator().next();
+deque.getFirst();
 
 // After — unified API
 collection.getFirst();
@@ -261,7 +245,7 @@ collection.reversed();
 
 ---
 
-### Sealed Classes + Pattern Matching — Full Power
+### Sealed Classes + Pattern Matching
 
 Combine sealed classes (finalized in 17) with switch pattern matching (finalized in 21):
 
@@ -290,8 +274,8 @@ double area(Shape shape) {
 | Spring Boot | 3.2+ | [Spring Boot 3.2 Release Notes](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.2-Release-Notes) |
 | Spring Framework | 6.1+ | [Spring Framework 6.1](https://spring.io/blog/2023/11/16/spring-framework-6-1-goes-ga) |
 | Hibernate | 6.4+ | [Hibernate ORM 6.4](https://hibernate.org/orm/releases/6.4/) |
-| Quarkus | 3.6+ | [Quarkus Java 21 Support](https://quarkus.io/) |
-| Micronaut | 4.2+ | [Micronaut 4.2](https://micronaut.io/) |
+| Quarkus | 3.6+ | [Quarkus](https://quarkus.io/) |
+| Micronaut | 4.2+ | [Micronaut](https://micronaut.io/) |
 | Lombok | 1.18.30+ | [Lombok Changelog](https://projectlombok.org/changelog) |
 | JUnit 5 | 5.10+ | [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/) |
 
@@ -306,9 +290,9 @@ Spring Boot 3.2+ has built-in support for virtual threads. Enable with a single 
 spring.threads.virtual.enabled=true
 ```
 
-This configures the embedded Tomcat/Jetty server to use virtual threads for request handling — massive scalability improvement for I/O-bound microservices with zero code change.
+This configures the embedded Tomcat/Jetty to use virtual threads for request handling — massive scalability with zero code change.
 
-📖 **Reference**: [Spring Boot Virtual Threads Support](https://docs.spring.io/spring-boot/reference/features/spring-application.html#features.spring-application.virtual-threads)
+**Reference**: [Spring Boot Virtual Threads](https://docs.spring.io/spring-boot/reference/features/spring-application.html#features.spring-application.virtual-threads)
 
 ---
 
@@ -337,12 +321,12 @@ This configures the embedded Tomcat/Jetty server to use virtual threads for requ
 Virtual threads can get **pinned** to carrier threads inside `synchronized` blocks. Prefer `ReentrantLock`:
 
 ```java
-// ❌ Avoid with virtual threads
+// Avoid with virtual threads
 synchronized (lock) {
     blockingIOCall();
 }
 
-// ✅ Prefer
+// Prefer
 private final ReentrantLock lock = new ReentrantLock();
 
 lock.lock();
@@ -353,18 +337,18 @@ try {
 }
 ```
 
-📖 **Deep dive**: [JEP 491 — Synchronize Virtual Threads without Pinning](https://openjdk.org/jeps/491) (targeted for future JDK releases)
+**Deep dive**: [JEP 491 — Synchronize Virtual Threads without Pinning](https://openjdk.org/jeps/491) (targeted for future releases)
 
 ### 2. Preview API Breaking Changes
 
-Features evolve between preview rounds. Don't rely on preview behavior from Java 19/20 — always reference the final JEP specification.
+Features evolve between preview rounds. Don't rely on preview behavior from 19/20 — always reference the final JEP.
 
 ### 3. Third-Party Library Compatibility
 
-Libraries that manipulate bytecode need updates for Java 21:
-- **Lombok**: Requires 1.18.30+
-- **Byte Buddy**: Requires 1.14.9+
-- **ASM**: Requires 9.6+
+Libraries that manipulate bytecode need updates:
+- **Lombok**: 1.18.30+
+- **Byte Buddy**: 1.14.9+
+- **ASM**: 9.6+
 
 Update these **before** upgrading the JDK.
 
@@ -372,7 +356,7 @@ Update these **before** upgrading the JDK.
 
 ## Build Tool Configuration
 
-### Maven (`pom.xml`)
+### Maven
 
 ```xml
 <properties>
@@ -382,7 +366,7 @@ Update these **before** upgrading the JDK.
 </properties>
 ```
 
-### Gradle (`build.gradle`)
+### Gradle
 
 ```groovy
 java {
@@ -396,10 +380,10 @@ java {
 
 ```dockerfile
 FROM eclipse-temurin:21-jdk-alpine AS build
-# ... build stage
+# build stage
 
 FROM eclipse-temurin:21-jre-alpine
-# ... runtime stage
+# runtime stage
 ```
 
 ---
@@ -416,7 +400,3 @@ FROM eclipse-temurin:21-jre-alpine
 | Spring Boot 3.2 Release Notes | [GitHub Wiki](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.2-Release-Notes) |
 | Virtual Threads — Oracle Blog | [blogs.oracle.com](https://blogs.oracle.com/javamagazine/post/java-virtual-threads) |
 | JDK Download (Temurin) | [adoptium.net](https://adoptium.net/) |
-
----
-
-*Found this guide useful? Share it with your team. Have questions or corrections? Drop a comment below.*

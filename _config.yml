@@ -1,96 +1,110 @@
-# Site Settings
+# The Site Configuration
+theme: jekyll-theme-chirpy
+
+lang: en
+timezone: Asia/Singapore
+
+# SEO settings
 title: Anupam Sinha
-subtitle: "Architecture · Java · Spring · Cloud · AI"
-name: Anupam Sinha
-description: "Writing about architecture decisions, legacy modernization, and AI-assisted engineering."
+tagline: Architecture · Java · Spring · Cloud · AI
+description: >-
+  Practical guides and reference material for Java developers — architecture patterns,
+  Spring Boot, collections, lambdas, cloud, and modern Java features.
+
 url: "https://anupamsinha.github.io"
 baseurl: ""
-repository: "AnupamSinha/anupamsinha.github.io"
 
-# Theme
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
-minimal_mistakes_skin: "dark"
+github:
+  username: AnupamSinha
 
-# Site Author
-author:
-  name: "Anupam Sinha"
-  avatar: "https://avatars.githubusercontent.com/AnupamSinha"
-  bio: "Technical Architect · 17 years building enterprise systems across banking, aviation & insurance · Based in Singapore"
-  location: "Singapore"
+social:
+  name: Anupam Sinha
+  email: hianupamsinha@gmail.com
   links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/AnupamSinha"
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://linkedin.com/in/anupam-sinha-42b29044"
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope"
-      url: "mailto:hianupamsinha@gmail.com"
+    - https://github.com/AnupamSinha
+    - https://linkedin.com/in/anupam-sinha-42b29044
 
-# Reading Files
-include:
-  - _pages
+# Prefer color scheme
+theme_mode: # empty = follow system, toggle available on sidebar
 
-# Build settings
-markdown: kramdown
-highlighter: rouge
+# Avatar on sidebar
+avatar: https://avatars.githubusercontent.com/AnupamSinha
 
-# Plugins
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jekyll-include-cache
-  - jekyll-remote-theme
+# TOC in posts
+toc: true
+
+# Comments
+comments:
+  provider: # leave empty for now
 
 # Pagination
-paginate: 5
-paginate_path: /page:num/
+paginate: 10
 
-# Defaults
+# ------------ Do not modify below ------------------
+
+kramdown:
+  footnote_backlink: "&#8617;&#xfe0e;"
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
 defaults:
-  # _posts
   - scope:
       path: ""
       type: posts
     values:
-      layout: single
-      author_profile: true
-      read_time: true
+      layout: post
       comments: true
-      share: true
-      related: true
-      show_date: true
       toc: true
-      toc_sticky: true
-  # _pages
+      permalink: /posts/:title/
   - scope:
-      path: "_pages"
-      type: pages
+      path: _drafts
     values:
-      layout: single
-      author_profile: true
+      comments: false
+  - scope:
+      path: ""
+      type: tabs
+    values:
+      layout: page
+      permalink: /:title/
 
-# Analytics
-analytics:
-  provider: "google-gtag"
-  google:
-    tracking_id: ""
+sass:
+  style: compressed
 
-# Comments
-comments:
-  provider: "disqus"
-  disqus:
-    shortname: ""
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
 
-# Footer
-footer:
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/AnupamSinha"
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://linkedin.com/in/anupam-sinha-42b29044"
+exclude:
+  - "*.gem"
+  - "*.gemspec"
+  - docs
+  - tools
+  - README.md
+  - LICENSE
+  - "*.config.js"
+  - "package*.json"
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
