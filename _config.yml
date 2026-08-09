@@ -27,7 +27,7 @@ social:
 
 # Web verification (add your codes when available)
 webmaster_verifications:
-  google: # Add Google Search Console verification code
+  google: "Ewf3FLZmjBNwpE56M5zEINYQ65wcDHbPNlnTOHp5E8Q"
   bing: # Add Bing Webmaster verification code
 
 # Prefer color scheme
