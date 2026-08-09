@@ -1,6 +1,6 @@
 ---
 title: "Java 18 to Java 21 Migration Guide"
-date: 2024-08-09
+date: 2026-08-09
 categories: [Java, Migration]
 tags: [java, java21, lts, virtual-threads, pattern-matching, spring-boot]
 description: "A developer's reference for migrating from Java 18 to Java 21 LTS — official JEP links, code examples, framework compatibility, and migration checklist."
@@ -8,10 +8,11 @@ image:
   path: /assets/img/posts/version_control_9bpv.svg
   alt: Java Migration Illustration
 pin: true
+img_path: /assets/img/posts/
 ---
 
-![Developer Activity](/assets/img/posts/developer_activity_bv83.svg){: width="500" }
-_Illustration: Migrating your Java application to the latest LTS_
+![Developer Activity](developer_activity_bv83.svg)
+_Migrating your Java application to the latest LTS_
 
 ## Overview
 

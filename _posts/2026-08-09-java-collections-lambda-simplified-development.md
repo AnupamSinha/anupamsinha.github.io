@@ -1,6 +1,6 @@
 ---
 title: "Java Collections + Lambda: Write Less, Do More"
-date: 2024-08-10
+date: 2026-08-09
 categories: [Java, Fundamentals]
 tags: [java, collections, lambda, streams, functional-programming]
 description: "A practical guide to using Java Collections and Lambda expressions together for cleaner, shorter, and more readable code."
