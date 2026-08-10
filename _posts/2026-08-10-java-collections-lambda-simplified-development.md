@@ -526,3 +526,10 @@ Start using these in your daily code. Once it clicks, you'll wonder how you ever
 | Lambda Expressions — Oracle Tutorial | [Oracle Tutorial](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html) |
 | Method References — Oracle Tutorial | [Oracle Tutorial](https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html) |
 | Baeldung — Java Streams | [baeldung.com/java-streams](https://www.baeldung.com/java-streams) |
+
+---
+
+## Related Posts
+
+- [Java 18 to Java 21 Migration Guide — Features, Code Examples, Checklist](/posts/java-18-to-java-21-migration/) — Upgrade to the latest LTS with virtual threads, pattern matching, and sequenced collections.
+- [Setting Up a Developer Blog with Jekyll Chirpy — SEO, Analytics, Comments, and Pageviews](/posts/jekyll-chirpy-blog-setup-seo-analytics-comments/) — How this blog was built, step by step.

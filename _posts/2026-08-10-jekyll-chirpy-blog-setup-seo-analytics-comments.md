@@ -483,3 +483,10 @@ Once your blog is live with all these features, focus on:
 - **Monitoring GoatCounter** — see which topics resonate with readers
 
 The technical setup is the easy part. The hard part is writing. Start now.
+
+---
+
+## Related Posts
+
+- [Java 18 to Java 21 Migration Guide — Features, Code Examples, Checklist](/posts/java-18-to-java-21-migration/) — Upgrade to the latest LTS with virtual threads, pattern matching, and sequenced collections.
+- [Java Collections + Lambda Expressions — Practical Guide with Code Examples](/posts/java-collections-lambda-simplified-development/) — Master streams, filtering, sorting, and grouping with real before/after examples.

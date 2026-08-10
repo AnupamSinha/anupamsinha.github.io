@@ -407,3 +407,10 @@ FROM eclipse-temurin:21-jre-alpine
 | Spring Boot 3.2 Release Notes | [GitHub Wiki](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.2-Release-Notes) |
 | Virtual Threads — Oracle Blog | [blogs.oracle.com](https://blogs.oracle.com/javamagazine/post/java-virtual-threads) |
 | JDK Download (Temurin) | [adoptium.net](https://adoptium.net/) |
+
+---
+
+## Related Posts
+
+- [Java Collections + Lambda Expressions — Practical Guide with Code Examples](/posts/java-collections-lambda-simplified-development/) — Master streams, filtering, sorting, and grouping with real before/after examples.
+- [Setting Up a Developer Blog with Jekyll Chirpy — SEO, Analytics, Comments, and Pageviews](/posts/jekyll-chirpy-blog-setup-seo-analytics-comments/) — How this blog was built, step by step.
