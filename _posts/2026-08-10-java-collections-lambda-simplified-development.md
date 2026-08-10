@@ -1,6 +1,6 @@
 ---
 title: "Java Collections + Lambda Expressions — Practical Guide with Code Examples"
-date: 2026-08-09
+date: 2026-08-10
 categories: [Java, Fundamentals]
 tags: [java, java-collections, lambda-expressions, streams-api, functional-programming, java-streams, filter-map-reduce, java-tutorial, collectors, method-references]
 description: "Learn Java Collections with Lambda expressions and Streams API. Practical before/after code examples for filtering, sorting, grouping, mapping, and reducing. Complete cheat sheet for Java developers."
