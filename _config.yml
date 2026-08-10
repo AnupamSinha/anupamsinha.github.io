@@ -43,6 +43,11 @@ toc: true
 comments:
   provider: # leave empty for now
 
+# Analytics
+analytics:
+  google:
+    id: G-0GP5ZV7FCX
+
 # Pagination
 paginate: 10
 
