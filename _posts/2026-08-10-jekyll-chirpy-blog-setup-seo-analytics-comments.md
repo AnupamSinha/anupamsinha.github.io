@@ -264,6 +264,32 @@ sitemap: false
 ---
 ```
 
+### Bing Webmaster Tools
+
+Bing also powers Yahoo and DuckDuckGo results, so submitting here covers 3 search engines at once.
+
+1. Go to [Bing Webmaster Tools](https://www.bing.com/webmasters)
+2. Sign in with your Microsoft account
+3. Add your site: `https://yourusername.github.io`
+4. Choose the **XML file** verification method — download `BingSiteAuth.xml`
+5. Place it in your repo root
+6. Also add the verification code to `_config.yml`:
+
+```yaml
+webmaster_verifications:
+  google: "your-google-verification-code"
+  bing: "your-bing-verification-code"
+```
+
+After deploying, click **Verify** in Bing Webmaster Tools, then submit your sitemap:
+
+```
+https://yourusername.github.io/sitemap.xml
+```
+
+> Bing indexes slower than Google but is worth setting up early — it's zero effort once configured.
+{: .prompt-tip }
+
 ---
 
 ## Step 6: Google Analytics
