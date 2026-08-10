@@ -41,7 +41,17 @@ toc: true
 
 # Comments
 comments:
-  provider: # leave empty for now
+  provider: giscus
+  giscus:
+    repo: AnupamSinha/anupamsinha.github.io
+    repo_id: R_kgDOTzWXWQ
+    category: General
+    category_id: DIC_kwDOTzWXWc4DDEXd
+    mapping: pathname
+    strict: 0
+    input_position: top
+    lang: en
+    reactions_enabled: 1
 
 # Analytics
 analytics:
