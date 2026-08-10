@@ -11,9 +11,6 @@ pin: true
 img_path: /assets/img/posts/
 ---
 
-![Developer Activity](developer_activity_bv83.svg)
-_Migrating your Java application to the latest LTS_
-
 ## Overview
 
 | | Details |
