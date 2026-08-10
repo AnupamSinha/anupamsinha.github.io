@@ -47,6 +47,12 @@ comments:
 analytics:
   google:
     id: G-0GP5ZV7FCX
+  goatcounter:
+    id: anupamsinha
+
+# Page views (displayed on posts)
+pageviews:
+  provider: goatcounter
 
 # Pagination
 paginate: 10
