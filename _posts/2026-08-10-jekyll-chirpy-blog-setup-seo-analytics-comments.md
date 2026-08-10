@@ -26,6 +26,7 @@ This post documents the exact steps: from first deploy to having a fully functio
 | Hosting | [GitHub Pages](https://pages.github.com/) | Free |
 | Analytics | [Google Analytics](https://analytics.google.com/) | Free |
 | Search Indexing | [Bing Webmaster Tools](https://www.bing.com/webmasters) | Free |
+| Instant Indexing | [IndexNow](https://www.indexnow.org/) | Free |
 | Pageview Counter | [GoatCounter](https://www.goatcounter.com/) | Free (personal) |
 | Comments | [Giscus](https://giscus.app/) | Free |
 | CI/CD | [GitHub Actions](https://github.com/features/actions) | Free |
@@ -291,6 +292,75 @@ https://yourusername.github.io/sitemap.xml
 > Bing indexes slower than Google but is worth setting up early — it's zero effort once configured.
 {: .prompt-tip }
 
+### IndexNow — Instant Indexing on Deploy
+
+[IndexNow](https://www.indexnow.org/) is a protocol that instantly notifies search engines (Google, Bing, Yandex) when your content changes. Instead of waiting days for crawlers to discover new posts, they get notified within seconds of deployment.
+
+**Step 1: Generate a key**
+
+Create a random 32-character hex string (your unique key):
+
+```bash
+python3 -c "import uuid; print(uuid.uuid4().hex)"
+```
+
+**Step 2: Host the key file**
+
+Create a file named `<your-key>.txt` at the root of your repo. The file content should be the key itself:
+
+```
+a836b82a06fc4136b58b9ab921e7c697
+```
+
+**Step 3: Add an IndexNow job to your GitHub Actions workflow**
+
+Add this job after the `deploy` job in `.github/workflows/pages-deploy.yml`:
+
+```yaml
+  notify-indexnow:
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Submit changed URLs to IndexNow
+        run: |
+          SITE_URL="https://yourusername.github.io"
+          KEY="your-key-here"
+
+          CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD -- '_posts/*.md' 2>/dev/null || echo "")
+
+          URLS=""
+          for file in $CHANGED_FILES; do
+            slug=$(basename "$file" .md | sed 's/^[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}-//')
+            URLS="$URLS\"${SITE_URL}/posts/${slug}/\","
+          done
+
+          URLS="\"${SITE_URL}/\",$URLS"
+          URLS=$(echo "$URLS" | sed 's/,$//')
+
+          curl -s -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json" \
+            -d "{
+              \"host\": \"yourusername.github.io\",
+              \"key\": \"${KEY}\",
+              \"keyLocation\": \"${SITE_URL}/${KEY}.txt\",
+              \"urlList\": [${URLS}]
+            }"
+```
+
+**How it works:**
+- After every deploy, the job detects which posts changed
+- It sends those URLs to `api.indexnow.org`
+- IndexNow distributes to all participating search engines (Google, Bing, Yandex)
+- Your new content gets crawled within minutes, not days
+
+> IndexNow notifies all participating search engines with a single API call. No separate setup needed for each engine.
+{: .prompt-tip }
+
 ---
 
 ## Step 6: Google Analytics
@@ -495,6 +565,8 @@ paginate: 10
 | Google Analytics | [analytics.google.com](https://analytics.google.com) |
 | GoatCounter | [goatcounter.com](https://www.goatcounter.com) |
 | Giscus | [giscus.app](https://giscus.app) |
+| IndexNow | [indexnow.org](https://www.indexnow.org/) |
+| Bing Webmaster Tools | [bing.com/webmasters](https://www.bing.com/webmasters) |
 | unDraw (free SVGs) | [undraw.co](https://undraw.co/) |
 | Jekyll Sitemap Plugin | [github.com/jekyll/jekyll-sitemap](https://github.com/jekyll/jekyll-sitemap) |
 
