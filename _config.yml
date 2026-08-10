@@ -8,9 +8,8 @@ timezone: Asia/Singapore
 title: Anupam Sinha
 tagline: Architecture · Java · Spring · Cloud · AI
 description: >-
-  Practical Java tutorials, Spring Boot guides, microservices architecture patterns, 
-  Java 21 migration, collections, lambda streams, Kubernetes, and cloud-native development. 
-  Written by a Technical Architect with 17 years of enterprise experience.
+  Java tutorials, Spring Boot guides, microservices patterns, and cloud-native development. 
+  By a Technical Architect with 17 years of enterprise experience.
 
 url: "https://anupamsinha.github.io"
 baseurl: ""
