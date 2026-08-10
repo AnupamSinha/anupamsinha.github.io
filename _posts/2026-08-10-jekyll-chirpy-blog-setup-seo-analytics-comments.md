@@ -25,6 +25,7 @@ This post documents the exact steps: from first deploy to having a fully functio
 | Theme | [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) | Free |
 | Hosting | [GitHub Pages](https://pages.github.com/) | Free |
 | Analytics | [Google Analytics](https://analytics.google.com/) | Free |
+| Search Indexing | [Bing Webmaster Tools](https://www.bing.com/webmasters) | Free |
 | Pageview Counter | [GoatCounter](https://www.goatcounter.com/) | Free (personal) |
 | Comments | [Giscus](https://giscus.app/) | Free |
 | CI/CD | [GitHub Actions](https://github.com/features/actions) | Free |
