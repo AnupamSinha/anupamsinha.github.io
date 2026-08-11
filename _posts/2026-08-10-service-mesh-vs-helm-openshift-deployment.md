@@ -2,7 +2,7 @@
 title: "Service Mesh vs Helm in OpenShift — What's the Difference and When to Use Which"
 date: 2026-08-10
 categories: [DevOps, Cloud]
-tags: [openshift, service-mesh, helm, kubernetes, istio, microservices, deployment, ocp, cloud-native, devops]
+tags: [openshift, service-mesh, helm, kubernetes, istio, microservices, deployment, ocp, cloud-native, devops, architecture]
 description: "Understand the difference between Service Mesh and Helm chart deployments in OpenShift. Simple analogies, real examples, and clear guidance on when to use each in your OCP environment."
 image:
   path: /assets/img/posts/cloud_hosting_aodd.svg
