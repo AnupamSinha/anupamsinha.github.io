@@ -56,6 +56,19 @@ my-app/
 
 ### What Helm Does
 
+```mermaid
+graph LR
+    Dev[Developer] -->|writes| VC[values.yaml<br/>dev/staging/prod]
+    VC --> HC[Helm Chart]
+    HC -->|helm install| OCP[OpenShift Cluster]
+    OCP --> D[Deployment]
+    OCP --> S[Service]
+    OCP --> R[Route]
+    OCP --> CM[ConfigMap]
+```
+
+Helm takes your templates + values and produces the exact Kubernetes resources needed. Different values files produce different configurations — same chart, multiple environments.
+
 | Capability | Description |
 |-----------|-------------|
 | Package | Bundle all Kubernetes resources into one unit |
@@ -114,6 +127,21 @@ route:
 > With Helm, you change `values.yaml` for each environment (dev, staging, prod) and the same chart works everywhere.
 {: .prompt-tip }
 
+### Helm Release Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> Installed: helm install
+    Installed --> Upgraded: helm upgrade
+    Upgraded --> Upgraded: helm upgrade (again)
+    Upgraded --> RolledBack: helm rollback
+    RolledBack --> Upgraded: helm upgrade
+    Installed --> Uninstalled: helm uninstall
+    Upgraded --> Uninstalled: helm uninstall
+```
+
+Every Helm operation is tracked as a **release**. You can roll back to any previous revision if something goes wrong — Helm keeps the history of every upgrade.
+
 ---
 
 ## What is Service Mesh?
@@ -123,6 +151,38 @@ A Service Mesh is an **infrastructure layer** that manages communication between
 It works by injecting a **sidecar proxy** (Envoy) next to each pod. This proxy intercepts all network traffic to and from your application — without changing your application code.
 
 ### What Service Mesh Does
+
+```mermaid
+graph TB
+    subgraph Control Plane
+        Istiod[Istiod<br/>Configuration & Certs]
+        Kiali[Kiali<br/>Dashboard]
+        Jaeger[Jaeger<br/>Tracing]
+        Grafana[Grafana<br/>Metrics]
+    end
+    subgraph Data Plane
+        subgraph Pod 1
+            App1[App A] <--> Envoy1[Envoy Proxy]
+        end
+        subgraph Pod 2
+            App2[App B] <--> Envoy2[Envoy Proxy]
+        end
+        subgraph Pod 3
+            App3[App C] <--> Envoy3[Envoy Proxy]
+        end
+    end
+    Istiod -->|pushes config| Envoy1
+    Istiod -->|pushes config| Envoy2
+    Istiod -->|pushes config| Envoy3
+    Envoy1 <-->|mTLS| Envoy2
+    Envoy2 <-->|mTLS| Envoy3
+```
+
+The Service Mesh has two parts:
+- **Control Plane** (Istiod) — the brain. Distributes certificates, routing rules, and policies to all proxies.
+- **Data Plane** (Envoy sidecars) — the muscle. Intercepts all traffic and enforces the rules.
+
+Your application code stays unchanged. The proxies handle security, routing, and observability at the network level.
 
 | Capability | Description |
 |-----------|-------------|
@@ -258,6 +318,94 @@ spec:
 
 > With Service Mesh, canary deployments require zero code changes. You control traffic purely through configuration.
 {: .prompt-tip }
+
+Here's what that traffic split looks like visually:
+
+```mermaid
+graph LR
+    User[Users] --> GW[Ingress Gateway]
+    GW -->|90% traffic| V1[my-app v1<br/>Stable]
+    GW -->|10% traffic| V2[my-app v2<br/>Canary]
+    V1 -->|monitoring| M[Metrics & Alerts]
+    V2 -->|monitoring| M
+    M -->|looks good?| Promote[Promote v2 to 100%]
+```
+
+If the canary version has errors or high latency, you update the weights back to 100/0 — instant rollback without redeploying anything.
+
+### Circuit Breaking — Protecting Against Failures
+
+When a service starts failing, the mesh stops sending it traffic to prevent cascading failures across your system:
+
+```mermaid
+sequenceDiagram
+    participant A as Service A
+    participant Proxy as Envoy Proxy
+    participant B as Service B (failing)
+    
+    A->>Proxy: Request 1
+    Proxy->>B: Forward
+    B-->>Proxy: 500 Error
+    Proxy-->>A: 500 Error
+    
+    A->>Proxy: Request 2
+    Proxy->>B: Forward
+    B-->>Proxy: 500 Error
+    Proxy-->>A: 500 Error
+    
+    Note over Proxy: Circuit OPEN (5 failures)
+    
+    A->>Proxy: Request 3
+    Proxy-->>A: 503 (Circuit Open)
+    Note over Proxy: Stops flooding failing service
+    
+    Note over Proxy: After 30s cooldown...
+    A->>Proxy: Request 4
+    Proxy->>B: Try again (half-open)
+    B-->>Proxy: 200 OK
+    Note over Proxy: Circuit CLOSED - resume traffic
+```
+
+The circuit breaker pattern prevents a single failing service from bringing down your entire system. The mesh handles this automatically — no retry logic in your code.
+
+---
+
+## Without vs With Service Mesh
+
+### Without Service Mesh — Each app handles its own concerns:
+
+```mermaid
+graph TB
+    subgraph "Each service must implement"
+        A[Service A] -->|plain HTTP| B[Service B]
+        A -->|plain HTTP| C[Service C]
+        B -->|plain HTTP| C
+    end
+    A -.- R1[Retry logic in code]
+    A -.- T1[TLS certificates in code]
+    A -.- M1[Metrics instrumentation]
+    B -.- R2[Retry logic in code]
+    B -.- T2[TLS certificates in code]
+    B -.- M2[Metrics instrumentation]
+```
+
+Every service team duplicates the same networking concerns: retries, TLS, timeouts, tracing. Inconsistent implementations. Bugs everywhere.
+
+### With Service Mesh — Infrastructure handles it:
+
+```mermaid
+graph TB
+    subgraph "Apps just do business logic"
+        A[Service A<br/>+ Envoy] <-->|automatic mTLS| B[Service B<br/>+ Envoy]
+        A <-->|automatic mTLS| C[Service C<br/>+ Envoy]
+        B <-->|automatic mTLS| C
+    end
+    Mesh[Service Mesh Control Plane] -->|retries, timeouts,<br/>mTLS, tracing| A
+    Mesh -->|retries, timeouts,<br/>mTLS, tracing| B
+    Mesh -->|retries, timeouts,<br/>mTLS, tracing| C
+```
+
+The mesh handles retries, encryption, circuit breaking, and observability uniformly across all services. Application code stays clean and focused on business logic.
 
 ---
 
