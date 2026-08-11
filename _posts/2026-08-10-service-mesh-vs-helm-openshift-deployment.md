@@ -7,6 +7,7 @@ description: "Understand the difference between Service Mesh and Helm chart depl
 image:
   path: /assets/img/posts/cloud_hosting_aodd.svg
   alt: Service Mesh vs Helm in OpenShift
+mermaid: true
 ---
 
 ## The Confusion
@@ -135,28 +136,15 @@ It works by injecting a **sidecar proxy** (Envoy) next to each pod. This proxy i
 
 ### How the Sidecar Proxy Works
 
-```
-┌─────────────────────────────────────┐
-│              Pod                      │
-│  ┌──────────┐    ┌──────────────┐   │
-│  │  Your    │◄──►│  Envoy       │   │
-│  │  App     │    │  Sidecar     │   │
-│  │  (8080)  │    │  Proxy       │   │
-│  └──────────┘    └──────┬───────┘   │
-│                          │           │
-└──────────────────────────┼───────────┘
-                           │
-                    Encrypted mTLS
-                           │
-┌──────────────────────────┼───────────┐
-│              Pod          │           │
-│  ┌──────────────┐    ┌───┴──────┐   │
-│  │  Envoy       │◄──►│  Your    │   │
-│  │  Sidecar     │    │  Other   │   │
-│  │  Proxy       │    │  Service │   │
-│  └──────────────┘    └──────────┘   │
-│                                      │
-└──────────────────────────────────────┘
+```mermaid
+graph LR
+    subgraph Pod A
+        A[Your App<br/>:8080] <--> SA[Envoy Sidecar<br/>Proxy]
+    end
+    subgraph Pod B
+        SB[Envoy Sidecar<br/>Proxy] <--> B[Other Service<br/>:8080]
+    end
+    SA <-->|Encrypted mTLS| SB
 ```
 
 Your app just calls `http://other-service:8080`. The sidecar handles encryption, retries, load balancing, and observability — all transparently.
@@ -313,10 +301,17 @@ spec:
 
 ### Use Both Together (Common in Production):
 
-```
-Helm deploys Service A, Service B, Service C
-    ↓
-Service Mesh manages how A, B, C talk to each other
+```mermaid
+graph TD
+    H[Helm Chart] -->|deploys| A[Service A]
+    H -->|deploys| B[Service B]
+    H -->|deploys| C[Service C]
+    SM[Service Mesh] -->|secures & routes| A
+    SM -->|secures & routes| B
+    SM -->|secures & routes| C
+    A <-->|mTLS| B
+    B <-->|mTLS| C
+    A <-->|mTLS| C
 ```
 
 This is the typical enterprise pattern:
@@ -327,26 +322,24 @@ This is the typical enterprise pattern:
 
 ## Real-World Example: E-Commerce on OpenShift
 
-```
-┌──────────────────────────────────────────────────────────────┐
-│                    OpenShift Cluster                          │
-│                                                              │
-│   Deployed via Helm:           Managed by Service Mesh:      │
-│   ┌─────────────┐            ┌────────────────────────┐     │
-│   │ frontend    │            │ mTLS between all       │     │
-│   │ (v2.1.0)   │            │ services               │     │
-│   ├─────────────┤            ├────────────────────────┤     │
-│   │ cart-service│            │ Canary: 10% traffic    │     │
-│   │ (v1.5.2)   │            │ to cart-service v1.5.3 │     │
-│   ├─────────────┤            ├────────────────────────┤     │
-│   │ payment-svc │            │ Circuit breaker on     │     │
-│   │ (v3.0.1)   │            │ payment-svc (5 fails)  │     │
-│   ├─────────────┤            ├────────────────────────┤     │
-│   │ inventory   │            │ Retry policy: 3x with  │     │
-│   │ (v1.2.0)   │            │ exponential backoff    │     │
-│   └─────────────┘            └────────────────────────┘     │
-│                                                              │
-└──────────────────────────────────────────────────────────────┘
+```mermaid
+graph TB
+    subgraph "Deployed via Helm"
+        FE[frontend v2.1.0]
+        CS[cart-service v1.5.2]
+        PS[payment-svc v3.0.1]
+        INV[inventory v1.2.0]
+    end
+    subgraph "Managed by Service Mesh"
+        mTLS[mTLS between all services]
+        Canary[Canary: 10% to cart v1.5.3]
+        CB[Circuit breaker on payment-svc]
+        Retry[Retry: 3x with backoff on inventory]
+    end
+    FE -->|mTLS| CS
+    FE -->|mTLS| PS
+    CS -->|mTLS| INV
+    PS -->|mTLS| INV
 ```
 
 ---
@@ -373,21 +366,18 @@ On OpenShift, it's significantly easier than upstream Istio. The OpenShift Servi
 
 ## Decision Flowchart
 
-```
-Do you need to deploy an app to OpenShift?
-  └── YES → Use Helm (or similar: Kustomize, ArgoCD)
-
-Do your services need to talk to each other securely?
-  └── YES → Add Service Mesh
-
-Do you need canary deployments or traffic splitting?
-  └── YES → Service Mesh's VirtualService
-
-Do you need distributed tracing across services?
-  └── YES → Service Mesh + Jaeger
-
-Is it a single service with no inter-service calls?
-  └── YES → Helm only, no mesh needed
+```mermaid
+flowchart TD
+    A[Need to deploy an app to OpenShift?] -->|YES| B[Use Helm]
+    A -->|NO| Z[Nothing to do]
+    B --> C{Services talk to each other?}
+    C -->|YES| D[Add Service Mesh]
+    C -->|NO| E[Helm only - done]
+    D --> F{Need canary or traffic splitting?}
+    F -->|YES| G[Use VirtualService]
+    F -->|NO| H{Need distributed tracing?}
+    H -->|YES| I[Enable Jaeger via Mesh]
+    H -->|NO| J[Basic mesh config - done]
 ```
 
 ---
