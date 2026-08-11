@@ -131,13 +131,13 @@ route:
 
 ```mermaid
 stateDiagram-v2
-    [*] --> Installed: helm install
-    Installed --> Upgraded: helm upgrade
-    Upgraded --> Upgraded: helm upgrade (again)
-    Upgraded --> RolledBack: helm rollback
-    RolledBack --> Upgraded: helm upgrade
-    Installed --> Uninstalled: helm uninstall
-    Upgraded --> Uninstalled: helm uninstall
+    [*] --> Installed : helm install
+    Installed --> Upgraded : helm upgrade
+    Upgraded --> Upgraded : upgrade again
+    Upgraded --> RolledBack : helm rollback
+    RolledBack --> Upgraded : helm upgrade
+    Installed --> Uninstalled : helm uninstall
+    Upgraded --> Uninstalled : helm uninstall
 ```
 
 Every Helm operation is tracked as a **release**. You can roll back to any previous revision if something goes wrong — Helm keeps the history of every upgrade.
@@ -154,33 +154,31 @@ It works by injecting a **sidecar proxy** (Envoy) next to each pod. This proxy i
 
 ```mermaid
 graph TB
-    subgraph Control Plane
-        Istiod[Istiod<br/>Configuration & Certs]
-        Kiali[Kiali<br/>Dashboard]
-        Jaeger[Jaeger<br/>Tracing]
-        Grafana[Grafana<br/>Metrics]
+    subgraph "Control Plane"
+        Istiod[Istiod]
+        Kiali[Kiali]
+        Jaeger[Jaeger]
+        Grafana[Grafana]
     end
-    subgraph Data Plane
-        subgraph Pod 1
-            App1[App A] <--> Envoy1[Envoy Proxy]
-        end
-        subgraph Pod 2
-            App2[App B] <--> Envoy2[Envoy Proxy]
-        end
-        subgraph Pod 3
-            App3[App C] <--> Envoy3[Envoy Proxy]
-        end
+    subgraph "Data Plane - Pod 1"
+        App1[App A] <--> Envoy1[Envoy]
     end
-    Istiod -->|pushes config| Envoy1
-    Istiod -->|pushes config| Envoy2
-    Istiod -->|pushes config| Envoy3
+    subgraph "Data Plane - Pod 2"
+        App2[App B] <--> Envoy2[Envoy]
+    end
+    subgraph "Data Plane - Pod 3"
+        App3[App C] <--> Envoy3[Envoy]
+    end
+    Istiod -->|config + certs| Envoy1
+    Istiod -->|config + certs| Envoy2
+    Istiod -->|config + certs| Envoy3
     Envoy1 <-->|mTLS| Envoy2
     Envoy2 <-->|mTLS| Envoy3
 ```
 
 The Service Mesh has two parts:
-- **Control Plane** (Istiod) — the brain. Distributes certificates, routing rules, and policies to all proxies.
-- **Data Plane** (Envoy sidecars) — the muscle. Intercepts all traffic and enforces the rules.
+- **Control Plane** — Istiod (config + certs), Kiali (dashboard), Jaeger (tracing), Grafana (metrics). The brain that distributes rules to all proxies.
+- **Data Plane** — Envoy sidecar proxies in every pod. The muscle that intercepts traffic and enforces the rules.
 
 Your application code stays unchanged. The proxies handle security, routing, and observability at the network level.
 
