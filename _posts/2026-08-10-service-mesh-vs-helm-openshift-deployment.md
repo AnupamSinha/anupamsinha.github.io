@@ -599,38 +599,95 @@ They solve different problems at different layers. Use Helm to get your apps dep
 
 ## Glossary — Jargon Explained
 
-| Term | Plain English Meaning |
-|------|----------------------|
-| **OCP (OpenShift Container Platform)** | Red Hat's enterprise Kubernetes platform. Think of it as a managed cloud environment where you run your apps in containers. |
-| **Kubernetes (K8s)** | An open-source system that automates deploying, scaling, and managing containerized applications. OpenShift is built on top of it. |
-| **Pod** | The smallest unit in Kubernetes. It's a wrapper around one or more containers running together. Think of it as a single running instance of your app. |
-| **Container** | A lightweight, isolated package that holds your application code and all its dependencies. Like a shipping container — runs the same anywhere. |
-| **Namespace / Project** | A virtual partition inside a cluster. Keeps different teams or environments (dev, prod) separated. In OpenShift, it's called a "project." |
-| **Deployment** | A Kubernetes object that defines how many copies of your app should run and how to update them. |
-| **Service** | A stable network address that routes traffic to your pods. Pods come and go, but the service address stays the same. |
-| **Route** | OpenShift-specific. Exposes your service to the outside world with a URL (like `my-app.example.com`). |
-| **ConfigMap** | A key-value store for non-sensitive configuration (database URLs, feature flags). Keeps config outside your code. |
-| **Secret** | Like a ConfigMap but for sensitive data (passwords, API keys). Stored encrypted. |
-| **Helm Chart** | A package containing all the templates needed to deploy an application. Like a recipe that can be reused. |
-| **Helm Release** | A specific deployed instance of a chart. You can have multiple releases of the same chart (dev, staging, prod). |
-| **values.yaml** | The configuration file where you customize a Helm chart without editing templates. Different values per environment. |
-| **Sidecar Proxy** | A helper container that runs alongside your app in the same pod. It intercepts all network traffic transparently. |
-| **Envoy** | The specific proxy software used by Istio/Service Mesh. It handles encryption, retries, and traffic routing. |
-| **mTLS (Mutual TLS)** | Both sides of a connection verify each other's identity using certificates. Like both people showing ID before exchanging information. |
-| **Istio** | The open-source project behind Service Mesh. Red Hat packages it as "OpenShift Service Mesh." |
-| **Istiod** | The brain of the mesh — distributes configuration and certificates to all sidecar proxies. |
-| **Control Plane** | The management layer that makes decisions. In a mesh, it's Istiod. It doesn't carry traffic — it tells proxies what to do. |
-| **Data Plane** | The layer that actually moves traffic. In a mesh, it's all the Envoy sidecar proxies working together. |
-| **VirtualService** | A mesh configuration that defines traffic routing rules — like "send 90% to v1, 10% to v2." |
-| **DestinationRule** | A mesh configuration that defines policies for traffic — like circuit breaker settings or connection pool sizes. |
-| **Canary Deployment** | Releasing a new version to a small percentage of users first. If it works, gradually increase. If it fails, roll back instantly. |
-| **Circuit Breaking** | Automatically stopping requests to a failing service to prevent cascading failures. Like a fuse blowing to protect the whole house. |
-| **Distributed Tracing** | Following a single request as it passes through multiple services. Helps you find where things slow down or fail. |
-| **Kiali** | A visual dashboard for Service Mesh. Shows you which services talk to which, and how traffic flows. |
-| **Jaeger** | A tool for distributed tracing. Lets you see the full journey of a request across services. |
-| **Grafana** | A dashboarding tool for metrics. Shows graphs of response times, error rates, and traffic volume. |
-| **Operator** | A Kubernetes-native way to install and manage complex software. The Service Mesh Operator handles installation and upgrades for you. |
-| **OperatorHub** | OpenShift's marketplace for Operators. One-click install for Service Mesh, databases, monitoring tools, etc. |
+**OCP (OpenShift Container Platform)**
+: Red Hat's enterprise Kubernetes platform. Think of it as a managed cloud environment where you run your apps in containers.
+
+**Kubernetes (K8s)**
+: An open-source system that automates deploying, scaling, and managing containerized applications. OpenShift is built on top of it.
+
+**Pod**
+: The smallest unit in Kubernetes. It's a wrapper around one or more containers running together. Think of it as a single running instance of your app.
+
+**Container**
+: A lightweight, isolated package that holds your application code and all its dependencies. Like a shipping container — runs the same anywhere.
+
+**Namespace / Project**
+: A virtual partition inside a cluster. Keeps different teams or environments (dev, prod) separated. In OpenShift, it's called a "project."
+
+**Deployment**
+: A Kubernetes object that defines how many copies of your app should run and how to update them.
+
+**Service**
+: A stable network address that routes traffic to your pods. Pods come and go, but the service address stays the same.
+
+**Route**
+: OpenShift-specific. Exposes your service to the outside world with a URL (like `my-app.example.com`).
+
+**ConfigMap**
+: A key-value store for non-sensitive configuration (database URLs, feature flags). Keeps config outside your code.
+
+**Secret**
+: Like a ConfigMap but for sensitive data (passwords, API keys). Stored encrypted.
+
+**Helm Chart**
+: A package containing all the templates needed to deploy an application. Like a recipe that can be reused.
+
+**Helm Release**
+: A specific deployed instance of a chart. You can have multiple releases of the same chart (dev, staging, prod).
+
+**values.yaml**
+: The configuration file where you customize a Helm chart without editing templates. Different values per environment.
+
+**Sidecar Proxy**
+: A helper container that runs alongside your app in the same pod. It intercepts all network traffic transparently.
+
+**Envoy**
+: The specific proxy software used by Istio/Service Mesh. It handles encryption, retries, and traffic routing.
+
+**mTLS (Mutual TLS)**
+: Both sides of a connection verify each other's identity using certificates. Like both people showing ID before exchanging information.
+
+**Istio**
+: The open-source project behind Service Mesh. Red Hat packages it as "OpenShift Service Mesh."
+
+**Istiod**
+: The brain of the mesh — distributes configuration and certificates to all sidecar proxies.
+
+**Control Plane**
+: The management layer that makes decisions. In a mesh, it's Istiod. It doesn't carry traffic — it tells proxies what to do.
+
+**Data Plane**
+: The layer that actually moves traffic. In a mesh, it's all the Envoy sidecar proxies working together.
+
+**VirtualService**
+: A mesh configuration that defines traffic routing rules — like "send 90% to v1, 10% to v2."
+
+**DestinationRule**
+: A mesh configuration that defines policies for traffic — like circuit breaker settings or connection pool sizes.
+
+**Canary Deployment**
+: Releasing a new version to a small percentage of users first. If it works, gradually increase. If it fails, roll back instantly.
+
+**Circuit Breaking**
+: Automatically stopping requests to a failing service to prevent cascading failures. Like a fuse blowing to protect the whole house.
+
+**Distributed Tracing**
+: Following a single request as it passes through multiple services. Helps you find where things slow down or fail.
+
+**Kiali**
+: A visual dashboard for Service Mesh. Shows you which services talk to which, and how traffic flows.
+
+**Jaeger**
+: A tool for distributed tracing. Lets you see the full journey of a request across services.
+
+**Grafana**
+: A dashboarding tool for metrics. Shows graphs of response times, error rates, and traffic volume.
+
+**Operator**
+: A Kubernetes-native way to install and manage complex software. The Service Mesh Operator handles installation and upgrades for you.
+
+**OperatorHub**
+: OpenShift's marketplace for Operators. One-click install for Service Mesh, databases, monitoring tools, etc.
 
 > If you encounter other terms not listed here, drop a comment below and I'll add them.
 {: .prompt-info }
