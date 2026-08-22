@@ -1,83 +1,128 @@
 # anupamsinha.github.io
 
-Personal tech blog — practical Java guides, architecture patterns, and developer references.
+Personal tech blog — practical Java/Spring Boot guides, architecture patterns, AI engineering, and developer references.
 
 **Live at**: [https://anupamsinha.github.io](https://anupamsinha.github.io)
 
 ---
 
-## Structure
+## Posts (40)
 
-```
-anupamsinha.github.io/
-├── _config.yml                  # Site configuration (title, theme, social links, defaults)
-├── _posts/                      # Blog posts (markdown files)
-│   ├── 2024-08-09-java-18-to-java-21-migration.md
-│   └── 2024-08-10-java-collections-lambda-simplified-development.md
-├── _tabs/                       # Sidebar navigation pages
-│   ├── about.md                 # About page
-│   ├── archives.md              # Posts by date
-│   ├── categories.md            # Posts by category
-│   └── tags.md                  # Posts by tag
-├── assets/
-│   └── img/
-│       └── posts/               # Vector illustrations used in blog posts (SVG)
-├── .github/
-│   └── workflows/
-│       └── pages-deploy.yml     # GitHub Actions workflow for build and deploy
-├── index.html                   # Homepage layout
-├── Gemfile                      # Ruby dependencies (Jekyll + Chirpy theme)
-└── .gitignore                   # Ignored files (_site, vendor, cache, etc.)
-```
+### Java & Spring Boot Fundamentals
+| Post | Code |
+|------|------|
+| Java 18 to Java 21 Migration Guide | — |
+| Beat the Basics — Spring Boot from Zero to Confident | — |
+| Spring Boot with Virtual Threads (Project Loom) | — |
+| Spring Boot with GraalVM Native Images | — |
+| Spring Boot Performance Tuning Guide | — |
+
+### Spring AI
+| Post | Code |
+|------|------|
+| Building a RAG Application with Spring AI + PGVector | [spring-ai-in-action](https://github.com/AnupamSinha/spring-ai-in-action) |
+| Spring AI Function Calling — Making LLMs Do Things | [spring-ai-function](https://github.com/AnupamSinha/spring-ai-function) |
+| Spring AI Tool Calling + Conversation Memory | [spring-ai-function](https://github.com/AnupamSinha/spring-ai-function) (memory branch) |
+| Spring AI + MCP — Exposing Tools as a Server | [spring-ai-mcp](https://github.com/AnupamSinha/spring-ai-mcp) |
+| Spring AI Agentic Patterns + Streaming | [spring-ai-agents](https://github.com/AnupamSinha/spring-ai-agents) |
+
+### Architecture & Design
+| Post | Code |
+|------|------|
+| Spring Modulith — Modular Monoliths | — |
+| Design Patterns in Spring Boot (Strategy, Observer, Template Method) | — |
+| Hexagonal Architecture (Ports & Adapters) | [spring-boot-hexagonal](https://github.com/AnupamSinha/spring-boot-hexagonal) |
+| CQRS + Event Sourcing | [spring-boot-cqrs-eventsourcing](https://github.com/AnupamSinha/spring-boot-cqrs-eventsourcing) |
+| Outbox Pattern with Kafka | [spring-boot-outbox-pattern](https://github.com/AnupamSinha/spring-boot-outbox-pattern) |
+| Spring Boot Multi-Tenancy | [spring-boot-multi-tenancy](https://github.com/AnupamSinha/spring-boot-multi-tenancy) |
+| API Versioning Strategies | — |
+
+### Data & Integration
+| Post | Code |
+|------|------|
+| Spring Data JPA — Beyond the Basics | [spring-data-jpa-advanced](https://github.com/AnupamSinha/spring-data-jpa-advanced) |
+| Spring Boot + MongoDB | [spring-boot-mongodb](https://github.com/AnupamSinha/spring-boot-mongodb) |
+| Spring Boot + GraphQL | [spring-boot-graphql](https://github.com/AnupamSinha/spring-boot-graphql) |
+| Spring Boot + gRPC | [spring-boot-grpc](https://github.com/AnupamSinha/spring-boot-grpc) |
+| Event-Driven Microservices with Kafka | [spring-boot-kafka-microservices](https://github.com/AnupamSinha/spring-boot-kafka-microservices) |
+| Caching Strategies (Redis + Caffeine) | [spring-boot-caching](https://github.com/AnupamSinha/spring-boot-caching) |
+| Spring Batch — Processing Millions of Records | [spring-batch-demo](https://github.com/AnupamSinha/spring-batch-demo) |
+| Spring Boot + WebSocket Real-Time | [spring-boot-websocket](https://github.com/AnupamSinha/spring-boot-websocket) |
+| Spring Boot + Flyway Database Migrations | — |
+
+### Security
+| Post | Code |
+|------|------|
+| Spring Security 6 + OAuth2/OIDC with Keycloak | [spring-security-oauth2-demo](https://github.com/AnupamSinha/spring-security-oauth2-demo) |
+
+### Testing
+| Post | Code |
+|------|------|
+| Spring Boot + Testcontainers — Integration Testing | [spring-boot-testcontainers](https://github.com/AnupamSinha/spring-boot-testcontainers) |
+
+### DevOps & Cloud
+| Post | Code |
+|------|------|
+| Spring Cloud Gateway + Distributed Tracing | — |
+| Spring Boot Observability (Prometheus, Loki, Tempo, Grafana) | [spring-boot-observability](https://github.com/AnupamSinha/spring-boot-observability) |
+| Spring Boot + Docker/Kubernetes Deployment | [spring-boot-k8s-deploy](https://github.com/AnupamSinha/spring-boot-k8s-deploy) |
+| GitHub Actions CI/CD for Spring Boot | — |
+| Spring Boot on AWS (Lambda, ECS, RDS) | — |
+| Migrating from Spring Cloud Netflix to Spring Cloud 2024 | — |
+| Feature Flags with Togglz | [spring-boot-feature-flags](https://github.com/AnupamSinha/spring-boot-feature-flags) |
+| Service Mesh vs Helm in OpenShift | — |
+
+### Developer Experience
+| Post | Code |
+|------|------|
+| Spring Boot Developer Productivity | — |
+| Building a CLI with Spring Shell | [spring-shell-cli](https://github.com/AnupamSinha/spring-shell-cli) |
+| Setting Up a Blog with Jekyll Chirpy | — |
 
 ---
 
-## Theme
+## Tech Stack
 
-Uses [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) — a minimal, responsive Jekyll theme for technical writing.
+| Component | Technology |
+|-----------|-----------|
+| Static site generator | Jekyll |
+| Theme | [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) |
+| Hosting | GitHub Pages |
+| CI/CD | GitHub Actions |
+| Diagrams | Mermaid (rendered client-side) |
 
-Features:
+---
+
+## Features
+
 - Dark/light mode toggle
-- Sidebar navigation
-- Table of contents on posts
+- Mermaid diagram support in posts
 - Syntax-highlighted code blocks with line numbers
 - Categories, tags, and archives
-- SEO optimized
+- SEO optimized (sitemap, meta descriptions, Open Graph)
+- Table of contents on each post
 
 ---
 
 ## Writing a New Post
 
-Create a markdown file in `_posts/` with this naming format:
-
-```
+```bash
+# Create a file in _posts/ with this naming:
 YYYY-MM-DD-title-of-post.md
 ```
 
-Front matter template:
+Front matter:
 
 ```yaml
 ---
 title: "Your Post Title"
-date: 2024-08-10
-categories: [Java, Fundamentals]
-tags: [java, spring-boot, microservices]
-description: "One-line description for SEO."
-image:
-  path: /assets/img/posts/your-image.svg
-  alt: Image description
+date: 2026-08-22
+categories: [Java, Spring]
+tags: [spring-boot, java-21]
+description: "One-line SEO description."
+mermaid: true  # if using diagrams
 ---
 ```
-
----
-
-## Build and Deploy
-
-The site builds and deploys automatically via GitHub Actions on every push to `main`.
-
-- Workflow: `.github/workflows/pages-deploy.yml`
-- Build: Jekyll with `jekyll-theme-chirpy` gem
-- Deploy: GitHub Pages (source set to GitHub Actions)
 
 ---
 
@@ -92,16 +137,12 @@ Site available at `http://localhost:4000`.
 
 ---
 
-## Images
+## Build and Deploy
 
-Vector illustrations from [unDraw](https://undraw.co/) (free, no attribution required) stored in `assets/img/posts/`.
+Automatic via GitHub Actions on push to `main`. Workflow: `.github/workflows/pages-deploy.yml`.
 
 ---
 
-## Topics Covered
+## License
 
-- Java (versions, migration, collections, lambda, streams)
-- Spring Boot
-- Architecture patterns
-- Cloud & DevOps
-- AI in software engineering
+Content and code examples are MIT licensed.
