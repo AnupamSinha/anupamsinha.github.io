@@ -4,9 +4,6 @@ date: 2026-08-22
 categories: [Java, Spring]
 tags: [spring-boot, testcontainers, testing, integration-testing, docker, postgresql, kafka, redis, java-21]
 description: "A hands-on guide to integration testing Spring Boot applications with Testcontainers. Covers PostgreSQL, Kafka, Redis — real containers replacing mocks. Includes @ServiceConnection, dynamic properties, test slicing, and CI/CD setup with complete working examples."
-image:
-  path: /assets/img/posts/coding_6mjf.svg
-  alt: Spring Boot Testcontainers
 mermaid: true
 ---
 

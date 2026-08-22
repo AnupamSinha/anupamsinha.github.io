@@ -4,9 +4,6 @@ date: 2026-08-10
 categories: [DevOps, Blogging]
 tags: [jekyll, chirpy, github-pages, seo, google-analytics, goatcounter, giscus, blogging, developer-tools, static-site]
 description: "Complete guide to setting up a developer blog using Jekyll Chirpy theme on GitHub Pages. Covers SEO optimization, Google Analytics, GoatCounter pageviews, Giscus comments, sitemap configuration, and deployment — with code snippets and config examples."
-image:
-  path: /assets/img/posts/coding_6mjf.svg
-  alt: Setting Up a Developer Blog with Jekyll Chirpy
 ---
 
 ## Why This Guide?
@@ -118,9 +115,6 @@ date: 2026-08-10
 categories: [Category1, Category2]
 tags: [tag1, tag2, tag3]
 description: "One-line description for SEO and social sharing."
-image:
-  path: /assets/img/posts/your-image.svg
-  alt: Descriptive alt text
 ---
 
 Your content here in Markdown...

@@ -4,9 +4,6 @@ date: 2026-08-12
 categories: [Java, Spring]
 tags: [spring-boot, performance, jvm-tuning, hikaricp, caching, async, g1gc, zgc, connection-pool, optimization, production]
 description: "A hands-on guide to tuning Spring Boot applications for production performance. Covers JVM flags, garbage collection, connection pooling, caching strategies, async processing, startup optimization, and monitoring — with before/after benchmarks and correct configuration examples."
-image:
-  path: /assets/img/posts/developer_activity_bv83.svg
-  alt: Spring Boot Performance Tuning
 mermaid: true
 ---
 

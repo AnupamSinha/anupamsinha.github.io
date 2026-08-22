@@ -4,9 +4,6 @@ date: 2026-08-12
 categories: [Java, Spring]
 tags: [spring-cloud-gateway, micrometer-tracing, brave, zipkin, jaeger, distributed-tracing, observability, microservices, reactive, spring-boot]
 description: "A step-by-step guide to integrating Spring Cloud Gateway with Micrometer Tracing using the Brave bridge. Covers dependencies, configuration, route definitions, trace propagation, and verification with Zipkin or Jaeger."
-image:
-  path: /assets/img/posts/cloud_hosting_aodd.svg
-  alt: Spring Cloud Gateway Distributed Tracing
 mermaid: true
 ---
 

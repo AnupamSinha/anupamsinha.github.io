@@ -4,9 +4,6 @@ date: 2026-08-22
 categories: [Java, Spring]
 tags: [spring-ai, agents, tool-calling, streaming, openai, java-21, spring-boot, ai, reactive, sse]
 description: "Build an agentic AI application with Spring AI 2.0 where the model autonomously plans and executes multi-step tool chains. Covers the agentic loop, system prompt as orchestrator, streaming responses via SSE, and safety guardrails — with a complete travel planning agent example."
-image:
-  path: /assets/img/posts/coding_6mjf.svg
-  alt: Spring AI Agentic Patterns
 mermaid: true
 ---
 

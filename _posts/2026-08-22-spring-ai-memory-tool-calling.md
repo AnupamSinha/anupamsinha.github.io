@@ -4,9 +4,6 @@ date: 2026-08-22
 categories: [Java, Spring]
 tags: [spring-ai, function-calling, tool-calling, memory, conversation, chatclient, openai, java-21, spring-boot]
 description: "Learn how to combine Spring AI tool calling with conversation memory so the model remembers previous tool results across turns. Build a stateful payment assistant that maintains context throughout a multi-turn conversation."
-image:
-  path: /assets/img/posts/coding_6mjf.svg
-  alt: Spring AI Tool Calling with Memory
 mermaid: true
 ---
 

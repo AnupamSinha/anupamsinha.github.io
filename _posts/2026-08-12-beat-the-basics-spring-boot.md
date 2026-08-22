@@ -4,9 +4,6 @@ date: 2026-08-12
 categories: [Java, Spring]
 tags: [spring-boot, java, rest-api, dependency-injection, jpa, spring-security, microservices, backend, tutorial]
 description: "A multi-chapter guide to mastering Spring Boot fundamentals. Covers project setup, dependency injection, REST APIs, data access with JPA, exception handling, configuration, security basics, and testing — all with working code examples."
-image:
-  path: /assets/img/posts/coding_6mjf.svg
-  alt: Beat the Basics Spring Boot
 ---
 
 ## Why This Guide?

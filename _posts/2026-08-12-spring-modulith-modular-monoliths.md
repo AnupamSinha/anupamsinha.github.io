@@ -4,9 +4,6 @@ date: 2026-08-12
 categories: [Java, Spring]
 tags: [spring-boot, spring-modulith, modular-monolith, architecture, domain-driven-design, events, microservices, java-21, modularity]
 description: "A hands-on guide to Spring Modulith for building well-structured modular monoliths. Covers module boundaries, enforced encapsulation, event-driven communication, testing module isolation, and when this architecture beats microservices."
-image:
-  path: /assets/img/posts/version_control_9bpv.svg
-  alt: Spring Modulith Modular Monoliths
 mermaid: true
 ---
 

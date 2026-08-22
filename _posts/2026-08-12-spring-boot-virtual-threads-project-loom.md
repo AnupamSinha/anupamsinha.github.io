@@ -4,9 +4,6 @@ date: 2026-08-12
 categories: [Java, Spring]
 tags: [spring-boot, virtual-threads, project-loom, java-21, concurrency, performance, reactive, backend]
 description: "Learn how to enable and use virtual threads in Spring Boot. Understand what Project Loom changes, when virtual threads help, and how to migrate from platform threads with practical examples."
-image:
-  path: /assets/img/posts/developer_activity_bv83.svg
-  alt: Spring Boot Virtual Threads
 ---
 
 ## What Problem Does Project Loom Solve?

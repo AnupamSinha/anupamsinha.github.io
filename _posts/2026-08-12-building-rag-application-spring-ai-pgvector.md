@@ -4,9 +4,6 @@ date: 2026-08-12
 categories: [Java, Spring]
 tags: [spring-ai, rag, openai, pgvector, vector-store, embeddings, java-21, spring-boot, ai, retrieval-augmented-generation]
 description: "A hands-on guide to building a Retrieval Augmented Generation application using Spring AI, OpenAI, and PGVector. Covers document ingestion, vector similarity search, the QuestionAnswerAdvisor, and a production-style REST API — with complete working code."
-image:
-  path: /assets/img/posts/coding_6mjf.svg
-  alt: Building a RAG Application with Spring AI
 mermaid: true
 ---
 

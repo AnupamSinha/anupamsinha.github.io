@@ -7,3 +7,5 @@ vendor/
 Gemfile.lock
 .DS_Store
 node_modules/
+# Personal study notes
+claude-certification-study-notes.md

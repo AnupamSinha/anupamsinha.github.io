@@ -4,9 +4,6 @@ date: 2026-08-12
 categories: [Java, Spring]
 tags: [spring-boot, graalvm, native-image, aot, performance, cloud-native, containers, serverless, java-21]
 description: "A practical guide to compiling Spring Boot applications into GraalVM native images. Covers setup, AOT compilation, handling reflection, testing native builds, and real-world trade-offs for cloud-native and serverless deployments."
-image:
-  path: /assets/img/posts/programming_2svr.svg
-  alt: Spring Boot GraalVM Native Images
 ---
 
 ## Why Native Images?

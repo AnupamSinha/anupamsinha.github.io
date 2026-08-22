@@ -4,9 +4,6 @@ date: 2026-08-22
 categories: [Java, Spring]
 tags: [spring-ai, function-calling, tool-calling, openai, java-21, spring-boot, ai, agents, chatclient]
 description: "A hands-on guide to Spring AI tool calling (function calling). Learn how to let LLMs invoke your Java methods — check order status, query databases, call APIs — with type-safe arguments, automatic JSON schema generation, and full control over execution."
-image:
-  path: /assets/img/posts/coding_6mjf.svg
-  alt: Spring AI Function Calling
 mermaid: true
 ---
 
