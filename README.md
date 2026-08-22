@@ -12,10 +12,10 @@ Personal tech blog — practical Java/Spring Boot guides, architecture patterns,
 | Post | Code |
 |------|------|
 | Java 18 to Java 21 Migration Guide | — |
-| Beat the Basics — Spring Boot from Zero to Confident | — |
-| Spring Boot with Virtual Threads (Project Loom) | — |
-| Spring Boot with GraalVM Native Images | — |
-| Spring Boot Performance Tuning Guide | — |
+| Beat the Basics — Spring Boot from Zero to Confident | [spring-boot-basics](https://github.com/AnupamSinha/spring-boot-basics) |
+| Spring Boot with Virtual Threads (Project Loom) | [spring-boot-virtual-threads](https://github.com/AnupamSinha/spring-boot-virtual-threads) |
+| Spring Boot with GraalVM Native Images | [spring-boot-graalvm-native](https://github.com/AnupamSinha/spring-boot-graalvm-native) |
+| Spring Boot Performance Tuning Guide | [spring-boot-performance-tuning](https://github.com/AnupamSinha/spring-boot-performance-tuning) |
 
 ### Spring AI
 | Post | Code |
