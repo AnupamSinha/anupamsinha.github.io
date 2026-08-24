@@ -1,0 +1,16 @@
+sequenceDiagram
+    participant Client
+    participant Server
+    participant Broker
+
+    Client->>Server: HTTP Upgrade → WebSocket
+    Server-->>Client: 101 Switching Protocols
+    Client->>Server: STOMP CONNECT
+    Server-->>Client: STOMP CONNECTED
+
+    Client->>Server: SUBSCRIBE /topic/messages
+    Note over Server,Broker: Client registered for topic
+
+    Client->>Server: SEND /app/chat (message)
+    Server->>Broker: Route to /topic/messages
+    Broker-->>Client: MESSAGE /topic/messages (broadcast)

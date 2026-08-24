@@ -1,0 +1,13 @@
+flowchart TD
+    A[New Java Microservice] --> B{Team's Spring experience?}
+    B -->|Deep| C{Startup/memory critical?}
+    B -->|Minimal or none| D{Scale to zero needed?}
+    
+    C -->|Yes - serverless/edge| E[Quarkus Native]
+    C -->|No - long-running| F[Spring Boot JVM]
+    
+    D -->|Yes| E
+    D -->|No| G{Large ecosystem needs?}
+    
+    G -->|Complex integrations| F
+    G -->|Standard patterns| H[Quarkus JVM]

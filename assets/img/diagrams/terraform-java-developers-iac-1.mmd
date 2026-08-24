@@ -1,0 +1,9 @@
+flowchart LR
+    A[Your .tf Files<br>Desired State] --> B[terraform plan]
+    C[State File<br>Current State] --> B
+    D[AWS API<br>Actual State] --> B
+    B --> E{Differences?}
+    E -->|Yes| F[terraform apply<br>Reconcile]
+    E -->|No| G[No changes needed]
+    F --> C
+    F --> D

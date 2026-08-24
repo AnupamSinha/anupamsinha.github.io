@@ -1,0 +1,14 @@
+gantt
+    title Sequential vs Parallel API Calls
+    dateFormat X
+    axisFormat %L ms
+
+    section Sequential (750ms total)
+    getUserProfile     :0, 200
+    getRecentOrders    :200, 500
+    getBalance         :500, 750
+
+    section Parallel (300ms total)
+    getUserProfile     :0, 200
+    getRecentOrders    :0, 300
+    getBalance         :0, 250

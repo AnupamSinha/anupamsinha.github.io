@@ -22,6 +22,9 @@ graph LR
     style E fill:#2ed573,color:#fff
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-performance-tuning-guide-1.png)
+
+
 ---
 
 ## 1. JVM Tuning — The Foundation
@@ -74,6 +77,9 @@ graph TD
     style D fill:#2ed573,color:#fff
     style E fill:#feca57,color:#333
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-performance-tuning-guide-2.png)
+
 
 ### G1GC vs ZGC in Practice
 
@@ -253,6 +259,9 @@ sequenceDiagram
     end
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-performance-tuning-guide-3.png)
+
+
 ### Cache Configuration for Redis
 
 ```yaml
@@ -401,6 +410,9 @@ gantt
     getRecentOrders    :0, 300
     getBalance         :0, 250
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-performance-tuning-guide-4.png)
+
 
 **References:**
 - [Spring — Creating Asynchronous Methods](https://spring.io/guides/gs/async-method/)
@@ -668,6 +680,9 @@ graph TD
     style F fill:#ff9ff3,color:#333
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-performance-tuning-guide-5.png)
+
+
 **References:**
 - [Spring Boot Actuator Documentation](https://docs.spring.io/spring-boot/reference/actuator/)
 - [Micrometer — Application Monitoring](https://micrometer.io/docs)
@@ -729,6 +744,9 @@ quadrantChart
     "GraalVM Native": [0.9, 0.5]
     "Rewrite to Reactive": [0.95, 0.6]
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-performance-tuning-guide-6.png)
+
 
 ---
 

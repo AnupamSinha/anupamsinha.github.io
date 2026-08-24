@@ -1,0 +1,6 @@
+stateDiagram-v2
+    [*] --> CLOSED
+    CLOSED --> OPEN : failure rate > threshold
+    OPEN --> HALF_OPEN : wait duration elapsed
+    HALF_OPEN --> CLOSED : permitted calls succeed
+    HALF_OPEN --> OPEN : permitted calls fail

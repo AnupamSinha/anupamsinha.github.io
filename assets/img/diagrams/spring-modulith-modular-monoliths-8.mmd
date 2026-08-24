@@ -1,0 +1,22 @@
+sequenceDiagram
+    participant C as Controller
+    participant OS as OrderService
+    participant DB as Database
+    participant EPR as Event Publication Registry
+    participant IS as InventoryService
+    participant NS as NotificationService
+
+    C->>OS: placeOrder(command)
+    activate OS
+    OS->>DB: Save Order
+    OS->>EPR: Save Event (same transaction)
+    Note over DB,EPR: Both in ONE transaction - atomic
+    OS-->>C: Order created
+    deactivate OS
+
+    EPR->>IS: Dispatch OrderPlaced
+    IS->>EPR: Acknowledge (mark complete)
+    EPR->>NS: Dispatch OrderPlaced
+    NS->>EPR: Acknowledge (mark complete)
+
+    Note over EPR: If app crashes before dispatch,<br/>events are retried on restart

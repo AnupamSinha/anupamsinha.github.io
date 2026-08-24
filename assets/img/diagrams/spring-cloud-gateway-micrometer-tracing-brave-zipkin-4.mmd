@@ -1,0 +1,13 @@
+gantt
+    title Trace View in Zipkin (traceId: abc123)
+    dateFormat X
+    axisFormat %L ms
+
+    section api-gateway
+    gateway-request           :0, 280
+
+    section order-service
+    handle-order              :15, 250
+
+    section payment-service
+    verify-payment            :30, 120

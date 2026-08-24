@@ -1,0 +1,7 @@
+graph TD
+    subgraph "Tangled Layered Architecture"
+        A[Controller] -->|JPA Entity exposed| B[Service]
+        B -->|Hibernate annotations| C[Repository]
+        B -->|Direct HTTP call| D[External API]
+        A -->|Business logic leaked| A
+    end

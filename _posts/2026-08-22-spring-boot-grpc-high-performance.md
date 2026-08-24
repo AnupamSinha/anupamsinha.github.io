@@ -34,6 +34,9 @@ sequenceDiagram
     Note over Client,Server: Single TCP connection, multiplexed streams
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-grpc-high-performance-1.png)
+
+
 Key properties:
 
 | Feature | Description |
@@ -52,6 +55,9 @@ graph LR
     B --> E[Go / Python / etc.]
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-grpc-high-performance-2.png)
+
+
 ---
 
 ## What We Are Building
@@ -67,6 +73,9 @@ flowchart LR
     Browser["Browser / curl"] -->|REST HTTP| Client[grpc-client :8080]
     Client -->|gRPC HTTP/2| Server[grpc-server :9090]
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-grpc-high-performance-3.png)
+
 
 ---
 
@@ -345,6 +354,9 @@ sequenceDiagram
     Server-->>Client: PaymentResponse (PAY-003)
     Server-->>Client: Stream completed
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-grpc-high-performance-4.png)
+
 
 On the server side, you call `onNext()` for each item:
 

@@ -53,6 +53,9 @@ flowchart LR
     style G fill:#2ed573,color:#fff
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-testcontainers-integration-testing-1.png)
+
+
 No mocks. No embedded databases. No "works on my machine."
 
 ---

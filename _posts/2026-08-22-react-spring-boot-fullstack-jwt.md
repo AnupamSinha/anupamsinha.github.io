@@ -29,6 +29,9 @@ graph LR
     A --> E[LocalStorage<br/>JWT Token]
 ```
 
+![diagram](/assets/img/diagrams/react-spring-boot-fullstack-jwt-1.png)
+
+
 The React app calls the Spring Boot API over HTTP. Authentication happens via JWT tokens stored in `localStorage`. In production, you'd serve the React build as static files from Spring Boot itself.
 
 ---
@@ -204,6 +207,9 @@ sequenceDiagram
     JWT-->>API: Valid, user = "admin"
     API-->>React: [products...]
 ```
+
+![diagram](/assets/img/diagrams/react-spring-boot-fullstack-jwt-2.png)
+
 
 The login component:
 

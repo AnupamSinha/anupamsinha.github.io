@@ -90,6 +90,9 @@ graph LR
     end
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-mongodb-documents-1.png)
+
+
 **Embed when:**
 - Data is read together (product + its specs)
 - The relationship is 1:1 or 1:few
@@ -208,6 +211,9 @@ graph LR
     C --> D["$project (reshape)"]
     D --> E[Results]
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-mongodb-documents-2.png)
+
 
 ### Category Summary — Group, Sum, Count, Average
 

@@ -1,0 +1,16 @@
+graph TB
+    subgraph "Base ClassLoader (never restarts)"
+        A[Spring Framework]
+        B[Third-party libraries]
+        C[JDK classes]
+    end
+
+    subgraph "Restart ClassLoader (restarts on change)"
+        D[Your application classes]
+        E[Your configuration]
+    end
+
+    F[File Change Detected] --> G[Discard Restart ClassLoader]
+    G --> H[Create new Restart ClassLoader]
+    H --> I[Load only YOUR classes]
+    I --> J[App ready in ~1-2s]

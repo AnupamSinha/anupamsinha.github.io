@@ -50,6 +50,9 @@ sequenceDiagram
     ChatClient->>Memory: Save turn
 ```
 
+![diagram](/assets/img/diagrams/spring-ai-memory-tool-calling-1.png)
+
+
 The model resolves "it" because it can see the full conversation history, including the tool result from turn 1.
 
 ---
@@ -73,6 +76,9 @@ flowchart LR
     style C fill:#48dbfb,color:#333
 ```
 
+![diagram](/assets/img/diagrams/spring-ai-memory-tool-calling-2.png)
+
+
 Memory stores: **user message + final assistant answer only**. Tool call/response messages are NOT persisted.
 
 - Pros: Clean history, works with all memory backends, lower token usage on replay
@@ -92,6 +98,9 @@ flowchart LR
     style B fill:#48dbfb,color:#333
     style C fill:#feca57,color:#333
 ```
+
+![diagram](/assets/img/diagrams/spring-ai-memory-tool-calling-3.png)
+
 
 Memory stores: **everything — user message, tool call requests, tool responses, final answer**.
 

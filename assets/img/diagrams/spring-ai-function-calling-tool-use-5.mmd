@@ -1,0 +1,14 @@
+flowchart LR
+    Q[Question] --> LLM[Model]
+    LLM --> T1[Check DB]
+    LLM --> T2[Call API]
+    LLM --> T3[Run Calculation]
+    T1 --> LLM
+    T2 --> LLM
+    T3 --> LLM
+    LLM --> A[Answer from live data]
+
+    style LLM fill:#feca57,color:#333
+    style T1 fill:#48dbfb,color:#333
+    style T2 fill:#48dbfb,color:#333
+    style T3 fill:#48dbfb,color:#333

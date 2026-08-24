@@ -1,0 +1,8 @@
+flowchart TD
+    A[Request] --> B{L1 Caffeine?}
+    B -->|HIT| C[Return immediately<br/>< 1μs]
+    B -->|MISS| D{L2 Redis?}
+    D -->|HIT| E[Populate L1<br/>Return ~1-2ms]
+    D -->|MISS| F[Query Database<br/>~200ms]
+    F --> G[Store in L1 + L2]
+    G --> H[Return response]

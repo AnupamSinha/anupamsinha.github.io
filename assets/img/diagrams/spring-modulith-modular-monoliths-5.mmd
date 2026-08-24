@@ -1,0 +1,17 @@
+graph TD
+    subgraph "Order Module (com.myapp.order)"
+        direction TB
+        PUB["Public API<br/>OrderService, Order, OrderPlaced"]
+        INT["Internal<br/>OrderRepository, OrderValidator, OrderMapper"]
+    end
+
+    subgraph "Inventory Module (com.myapp.inventory)"
+        INV[InventoryService]
+    end
+
+    INV -->|"Can access"| PUB
+    INV -.->|"BLOCKED"| INT
+
+    style PUB fill:#2ed573,color:#fff
+    style INT fill:#ff4757,color:#fff
+    style INV fill:#48dbfb,color:#333

@@ -43,6 +43,9 @@ flowchart TD
     style H fill:#2ed573,color:#fff
 ```
 
+![diagram](/assets/img/diagrams/spring-ai-agentic-patterns-streaming-1.png)
+
+
 An agent is a model that:
 1. **Reasons** about what information it needs
 2. **Acts** by calling tools to gather that information
@@ -83,6 +86,9 @@ sequenceDiagram
     T5-->>Agent: "TOTAL: $2,550.00"
     Agent-->>User: Complete structured travel plan
 ```
+
+![diagram](/assets/img/diagrams/spring-ai-agentic-patterns-streaming-2.png)
+
 
 One prompt. Five tool calls. Zero orchestration code.
 
@@ -352,6 +358,9 @@ sequenceDiagram
     Model-->>Client: token: " Trip"
     Model-->>Client: ...
 ```
+
+![diagram](/assets/img/diagrams/spring-ai-agentic-patterns-streaming-3.png)
+
 
 Important: tokens only stream for the **final response**. During the tool loop, the client waits. This is by design — you can't stream partial tool results because the model needs complete results to decide its next step.
 

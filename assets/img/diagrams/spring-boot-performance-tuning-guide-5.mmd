@@ -1,0 +1,16 @@
+graph TD
+    subgraph "Application Health Dashboard"
+        A["HTTP Request Latency<br/>p50, p95, p99"]
+        B["JVM Heap Usage<br/>Used vs Committed"]
+        C["GC Pause Duration<br/>Frequency and length"]
+        D["HikariCP Active Connections<br/>Active vs Pending"]
+        E["Thread Pool Utilization<br/>Active vs Queue depth"]
+        F["Cache Hit Rate<br/>Hits / (Hits + Misses)"]
+    end
+
+    style A fill:#48dbfb,color:#333
+    style B fill:#48dbfb,color:#333
+    style C fill:#48dbfb,color:#333
+    style D fill:#ff9ff3,color:#333
+    style E fill:#ff9ff3,color:#333
+    style F fill:#ff9ff3,color:#333

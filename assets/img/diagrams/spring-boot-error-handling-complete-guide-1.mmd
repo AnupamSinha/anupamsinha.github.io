@@ -1,0 +1,23 @@
+classDiagram
+    RuntimeException <|-- BaseAppException
+    BaseAppException <|-- ResourceNotFoundException
+    BaseAppException <|-- BusinessValidationException
+    BaseAppException <|-- ConflictException
+    BaseAppException <|-- UnauthorizedException
+    BaseAppException <|-- ForbiddenException
+
+    class BaseAppException {
+        -String errorCode
+        -HttpStatus status
+        +getErrorCode() String
+        +getStatus() HttpStatus
+    }
+    class ResourceNotFoundException {
+        +ResourceNotFoundException(resource, id)
+    }
+    class BusinessValidationException {
+        +BusinessValidationException(rule, detail)
+    }
+    class ConflictException {
+        +ConflictException(resource, conflictReason)
+    }

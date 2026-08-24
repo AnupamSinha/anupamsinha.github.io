@@ -1,0 +1,11 @@
+flowchart TD
+    A[PDF Document] --> B[PagePdfDocumentReader]
+    B --> C["Raw Pages (1 Document per page)"]
+    C --> D[TokenTextSplitter]
+    D --> E["Chunks (800 tokens, 350 overlap)"]
+    E --> F[EmbeddingModel]
+    F --> G["Vectors (1536 dimensions each)"]
+    G --> H[(PGVector Database)]
+
+    style F fill:#feca57,color:#333
+    style H fill:#48dbfb,color:#333

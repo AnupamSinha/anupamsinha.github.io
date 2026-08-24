@@ -1,0 +1,8 @@
+graph LR
+    A[Untuned App] -->|"JVM Flags"| B[+20-40% throughput]
+    B -->|"Connection Pool"| C[+30% DB throughput]
+    C -->|"Caching"| D[+50-90% read latency reduction]
+    D -->|"Async Processing"| E[+2-5x concurrent capacity]
+
+    style A fill:#ff6b6b,color:#fff
+    style E fill:#2ed573,color:#fff

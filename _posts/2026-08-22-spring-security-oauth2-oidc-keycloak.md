@@ -46,6 +46,9 @@ sequenceDiagram
     Note over API: No session. Stateless. Token carries identity + roles.
 ```
 
+![diagram](/assets/img/diagrams/spring-security-oauth2-oidc-keycloak-1.png)
+
+
 ---
 
 ## Prerequisites

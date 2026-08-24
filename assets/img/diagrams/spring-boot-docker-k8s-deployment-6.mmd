@@ -1,0 +1,15 @@
+sequenceDiagram
+    participant K8s as Kubernetes
+    participant Pod as Pod
+    participant App as Spring Boot
+
+    K8s->>Pod: SIGTERM
+    Note over Pod: preStop hook: sleep 5
+    Note over K8s: Removes pod from Service endpoints
+    Pod->>App: SIGTERM forwarded
+    App->>App: Stop accepting new requests
+    App->>App: Complete in-flight requests (up to 25s)
+    App->>App: Close connections, flush buffers
+    App-->>K8s: Exit 0
+
+    Note over K8s: If not exited in 30s → SIGKILL

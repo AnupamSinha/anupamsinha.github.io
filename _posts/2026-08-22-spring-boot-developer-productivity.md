@@ -23,6 +23,9 @@ graph LR
     style B fill:#f96,stroke:#333
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-developer-productivity-1.png)
+
+
 With proper tooling, it becomes:
 
 ```mermaid
@@ -33,6 +36,9 @@ graph LR
     D --> A
     style B fill:#c8e6c9,stroke:#333
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-developer-productivity-2.png)
+
 
 The difference is minutes per hour — hours per day — days per month.
 
@@ -81,6 +87,9 @@ graph TB
     H --> I[Load only YOUR classes]
     I --> J[App ready in ~1-2s]
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-developer-productivity-3.png)
+
 
 This is why DevTools restarts feel fast — it only reloads your code, not the entire framework.
 
@@ -315,6 +324,9 @@ graph TB
     style B fill:#c8e6c9
     style D fill:#f96
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-developer-productivity-4.png)
+
 
 ## Fast Startup Tips
 

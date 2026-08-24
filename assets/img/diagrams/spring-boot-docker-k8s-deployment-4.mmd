@@ -1,0 +1,9 @@
+flowchart TD
+    A["1. Command-line args"] --> B["2. Environment variables"]
+    B --> C["3. Config files in /app/config/"]
+    C --> D["4. application-{profile}.yml in JAR"]
+    D --> E["5. application.yml in JAR"]
+
+    style A fill:#e17055,color:#fff
+    style B fill:#fdcb6e,color:#333
+    style C fill:#00b894,color:#fff

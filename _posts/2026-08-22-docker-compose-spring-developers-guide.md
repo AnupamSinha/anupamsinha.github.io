@@ -34,6 +34,9 @@ flowchart LR
     end
 ```
 
+![diagram](/assets/img/diagrams/docker-compose-spring-developers-guide-1.png)
+
+
 ---
 
 ## Anatomy of docker-compose.yml
@@ -203,6 +206,9 @@ flowchart TD
     E -->|kafka:9092| C
 ```
 
+![diagram](/assets/img/diagrams/docker-compose-spring-developers-guide-2.png)
+
+
 **Key insight:** When your Spring Boot app runs on the **host** (normal development), use `localhost`. When it runs **in a container**, use the service name.
 
 ```yaml
@@ -354,6 +360,9 @@ sequenceDiagram
     Dev->>SB: Ctrl+C
     SB->>DC: docker compose stop
 ```
+
+![diagram](/assets/img/diagrams/docker-compose-spring-developers-guide-3.png)
+
 
 **Limitations:**
 - Only works with `spring-boot:run` (not when running the JAR directly)

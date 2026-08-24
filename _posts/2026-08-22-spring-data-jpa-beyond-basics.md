@@ -36,6 +36,9 @@ flowchart LR
     G --> H
 ```
 
+![diagram](/assets/img/diagrams/spring-data-jpa-beyond-basics-1.png)
+
+
 This post tackles all three problems with **Specifications**, **Projections**, and **Auditing** — using a real PostgreSQL-backed Spring Boot 3.5 application.
 
 ---
@@ -189,6 +192,9 @@ flowchart TD
     E --> F[repository.findAll spec]
     F --> G[SQL: WHERE category = 'electronics' AND price BETWEEN 100 AND 500]
 ```
+
+![diagram](/assets/img/diagrams/spring-data-jpa-beyond-basics-2.png)
+
 
 ### Advantages Over JPQL Concatenation
 
@@ -360,6 +366,9 @@ sequenceDiagram
     AuditingListener->>AuditingListener: Set createdBy = currentUser
     EntityManager->>EntityManager: INSERT INTO products ...
 ```
+
+![diagram](/assets/img/diagrams/spring-data-jpa-beyond-basics-3.png)
+
 
 ---
 

@@ -1,0 +1,15 @@
+flowchart TD
+    A[HTTP Request] --> B[Spring MVC]
+    B --> C[AOP Interceptor]
+    C --> D{"RateLimit annotation?"}
+    D -->|No| E[Execute Method]
+    D -->|Yes| F[Extract Client IP]
+    F --> G[RateLimiterService]
+    G --> H["Redis ZREMRANGEBYSCORE\nRemove expired"]
+    H --> I["Redis ZCARD\nCount current"]
+    I --> J{Count < Limit?}
+    J -->|Yes| K["Redis ZADD\nRecord request"]
+    K --> E
+    J -->|No| L[Throw RateLimitExceededException]
+    L --> M[GlobalExceptionHandler]
+    M --> N[HTTP 429 + Headers]

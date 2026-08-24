@@ -1,0 +1,10 @@
+sequenceDiagram
+    participant Client
+    participant REST API
+    Client->>REST API: GET /products
+    REST API-->>Client: 20 fields per product (over-fetching)
+    Client->>REST API: GET /products/1/reviews
+    REST API-->>Client: Reviews array
+    Client->>REST API: GET /products/1/inventory
+    REST API-->>Client: Inventory data
+    Note over Client: 3 round trips, client-side joining

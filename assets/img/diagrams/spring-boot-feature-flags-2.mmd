@@ -1,0 +1,9 @@
+graph LR
+    subgraph "With Feature Flags"
+        E[Code Complete] --> F[Deploy with Flag OFF]
+        F --> G[Enable for 5% Users]
+        G --> H[Monitor Metrics]
+        H -->|Looks Good| I[Enable for 50%]
+        I --> J[Enable for 100%]
+        H -->|Problem| K[Disable Flag Instantly]
+    end

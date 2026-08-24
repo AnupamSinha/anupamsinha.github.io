@@ -1,0 +1,16 @@
+graph TD
+    A[Kafka Topic: notifications] --> B[Partition 0]
+    A --> C[Partition 1]
+    A --> D[Partition 2]
+    A --> E[Partition 3]
+
+    B --> F[Consumer Instance 1]
+    C --> F
+    D --> G[Consumer Instance 2]
+    E --> G
+
+    F --> H{Route by Channel}
+    G --> H
+    H --> I[Email Pool]
+    H --> J[SMS Pool]
+    H --> K[Push Pool]

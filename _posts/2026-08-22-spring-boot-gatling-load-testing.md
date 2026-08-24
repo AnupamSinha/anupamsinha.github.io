@@ -241,6 +241,9 @@ graph TD
     M --> A
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-gatling-load-testing-1.png)
+
+
 Common Spring Boot bottlenecks under load:
 
 1. **Tomcat thread pool** — default is 200 threads. If all 200 are blocked waiting on I/O, new requests queue.

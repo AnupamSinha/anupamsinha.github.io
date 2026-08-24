@@ -162,6 +162,9 @@ classDiagram
     }
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-error-handling-complete-guide-1.png)
+
+
 ### Base Exception
 
 ```java

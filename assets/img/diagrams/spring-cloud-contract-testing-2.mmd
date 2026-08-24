@@ -1,0 +1,19 @@
+sequenceDiagram
+    participant Consumer Team
+    participant Producer Repo
+    participant CI/CD
+    participant Artifact Repo
+
+    Consumer Team->>Producer Repo: PR with new contract (shouldReturnPayment.groovy)
+    Producer Repo->>CI/CD: Build triggered
+    CI/CD->>CI/CD: Generate tests from contracts
+    CI/CD->>CI/CD: Run tests against producer code
+    alt Tests pass
+        CI/CD->>Artifact Repo: Publish stub JAR
+        CI/CD-->>Consumer Team: PR merged, stubs available
+        Consumer Team->>Artifact Repo: Pull stubs
+        Consumer Team->>Consumer Team: Run tests with StubRunner
+    else Tests fail
+        CI/CD-->>Producer Repo: Build fails
+        CI/CD-->>Consumer Team: Producer doesn't support this contract yet
+    end

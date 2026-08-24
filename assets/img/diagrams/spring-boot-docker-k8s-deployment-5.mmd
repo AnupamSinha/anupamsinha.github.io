@@ -1,0 +1,10 @@
+stateDiagram-v2
+    [*] --> Starting: Pod scheduled
+    Starting --> Live: Startup probe passes
+    Live --> Ready: Readiness probe passes
+    Ready --> Live: DB connection lost (readiness fails)
+    Live --> Ready: DB reconnects (readiness passes)
+    Live --> [*]: Liveness fails → restart
+
+    note right of Live: App is alive but may not serve traffic
+    note right of Ready: App is alive AND can serve traffic

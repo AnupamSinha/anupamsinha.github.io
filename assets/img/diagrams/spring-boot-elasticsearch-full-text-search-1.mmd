@@ -1,0 +1,7 @@
+flowchart LR
+    A[Document Indexed] --> B[Analyzer: Tokenize + Normalize]
+    B --> C[Inverted Index Updated]
+    D[Search Query] --> E[Analyzer: Tokenize + Normalize]
+    E --> F[Lookup in Inverted Index]
+    F --> G[Score Results: BM25]
+    G --> H[Return Ranked Results]

@@ -1,0 +1,13 @@
+flowchart TD
+    A[User Question] --> B[ChatClient sends message + tool schemas to LLM]
+    B --> C{Does the model want to call a tool?}
+    C -->|No| D[Return text response]
+    C -->|Yes| E[Model returns tool name + JSON arguments]
+    E --> F[Spring AI validates and executes the tool]
+    F --> G[Tool result appended to conversation]
+    G --> B
+    D --> H[Final Answer to User]
+
+    style C fill:#feca57,color:#333
+    style F fill:#48dbfb,color:#333
+    style H fill:#2ed573,color:#fff

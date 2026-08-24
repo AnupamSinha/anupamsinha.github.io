@@ -39,6 +39,9 @@ sequenceDiagram
     Gateway-->>Client: 200 OK
 ```
 
+![diagram](/assets/img/diagrams/spring-cloud-gateway-micrometer-tracing-brave-zipkin-1.png)
+
+
 The **gateway** is the natural place to start a trace because it's the entry point for all traffic. If tracing isn't set up here, you miss the first hop and lose visibility into gateway-level latency (routing time, filter execution, downstream connection establishment).
 
 ---
@@ -146,6 +149,9 @@ graph TD
     style D fill:#2ed573,color:#fff
     style E fill:#5f27cd,color:#fff
 ```
+
+![diagram](/assets/img/diagrams/spring-cloud-gateway-micrometer-tracing-brave-zipkin-2.png)
+
 
 | Dependency | Role |
 |-----------|------|
@@ -282,6 +288,9 @@ flowchart LR
     style E fill:#feca57,color:#333
     style F fill:#2ed573,color:#fff
 ```
+
+![diagram](/assets/img/diagrams/spring-cloud-gateway-micrometer-tracing-brave-zipkin-3.png)
+
 
 The gateway automatically:
 1. **Creates a span** for the incoming request
@@ -514,6 +523,9 @@ gantt
     section payment-service
     verify-payment            :30, 120
 ```
+
+![diagram](/assets/img/diagrams/spring-cloud-gateway-micrometer-tracing-brave-zipkin-4.png)
+
 
 Each span shows its duration, service name, and relationship to parent spans.
 

@@ -1,0 +1,11 @@
+flowchart LR
+    subgraph "Without Docker Compose"
+        A[Install DB] --> B[Install Cache]
+        B --> C[Install Broker]
+        C --> D[Configure Each]
+        D --> E[Hope it Works]
+    end
+
+    subgraph "With Docker Compose"
+        F[docker compose up] --> G[Everything Running]
+    end

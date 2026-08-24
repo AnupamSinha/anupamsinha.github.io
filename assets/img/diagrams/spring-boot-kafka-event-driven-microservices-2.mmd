@@ -1,0 +1,11 @@
+flowchart TD
+    A[Message arrives] --> B{Process OK?}
+    B -->|Yes| C[Commit offset]
+    B -->|No| D{Retries exhausted?}
+    D -->|No| E[Retry with backoff]
+    E --> B
+    D -->|Yes| F[Send to DLT]
+    F --> G[Alert + Investigation]
+
+    style F fill:#ff6b6b,color:#fff
+    style C fill:#2ed573,color:#fff

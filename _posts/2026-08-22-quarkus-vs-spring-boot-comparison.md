@@ -41,6 +41,9 @@ flowchart LR
     end
 ```
 
+![diagram](/assets/img/diagrams/quarkus-vs-spring-boot-comparison-1.png)
+
+
 Spring Boot does most of its heavy lifting at **runtime** — scanning, proxy generation, condition evaluation. Quarkus moves as much as possible to **build time** using its extension framework. The result: dramatically faster startup and lower memory at the cost of longer builds.
 
 | Aspect | Spring Boot | Quarkus |
@@ -325,6 +328,9 @@ flowchart TD
     G -->|Standard patterns| H[Quarkus JVM]
 ```
 
+![diagram](/assets/img/diagrams/quarkus-vs-spring-boot-comparison-2.png)
+
+
 ### Decision Matrix
 
 | Scenario | Recommendation | Why |
@@ -365,6 +371,9 @@ flowchart LR
     E --> G
     B --> H
 ```
+
+![diagram](/assets/img/diagrams/quarkus-vs-spring-boot-comparison-3.png)
+
 
 **Guidelines for coexistence:**
 - Use language-agnostic communication (REST, gRPC, Kafka) — not framework-specific.

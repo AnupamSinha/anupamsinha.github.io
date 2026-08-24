@@ -1,0 +1,7 @@
+flowchart TD
+    A[Request: category=electronics, minPrice=100, maxPrice=500] --> B[Start: where null]
+    B --> C[.and hasCategory electronics]
+    C --> D[.and priceBetween 100, 500]
+    D --> E[Final Specification]
+    E --> F[repository.findAll spec]
+    F --> G[SQL: WHERE category = 'electronics' AND price BETWEEN 100 AND 500]

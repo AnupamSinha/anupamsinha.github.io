@@ -1,0 +1,18 @@
+flowchart TD
+    subgraph "Topic: orders (3 partitions)"
+        P0[Partition 0]
+        P1[Partition 1]
+        P2[Partition 2]
+    end
+
+    subgraph "Group: payment-service (2 instances)"
+        C1[Instance 1] --- P0
+        C1 --- P1
+        C2[Instance 2] --- P2
+    end
+
+    subgraph "Group: notification-service (1 instance)"
+        C3[Instance 1] --- P0
+        C3 --- P1
+        C3 --- P2
+    end

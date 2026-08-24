@@ -1,0 +1,9 @@
+graph LR
+    A[HTTP Request] --> B[LoggingInterceptor]
+    B --> C[RateLimitInterceptor]
+    C --> D[AuthInterceptor]
+    D --> E[Controller]
+    E --> D
+    D --> C
+    C --> B
+    B --> F[HTTP Response]

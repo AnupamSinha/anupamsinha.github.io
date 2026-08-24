@@ -1,0 +1,9 @@
+flowchart TD
+    A[1. Replace Ribbon with LoadBalancer] --> B[2. Replace Hystrix with Resilience4j]
+    B --> C[3. Replace Zuul with Gateway]
+    C --> D[4. Update Feign clients]
+    D --> E[5. Update Spring Cloud version]
+    E --> F[6. Remove Netflix exclusions]
+
+    style A fill:#2ed573,color:#fff
+    style F fill:#48dbfb,color:#333

@@ -1,0 +1,20 @@
+flowchart LR
+    subgraph "Test JVM"
+        A[Spring Boot Test] --> B[Repository]
+        A --> C[KafkaTemplate]
+        A --> D[RedisTemplate]
+    end
+
+    subgraph "Docker Containers (managed by Testcontainers)"
+        E[(PostgreSQL)]
+        F[Kafka Broker]
+        G[Redis]
+    end
+
+    B --> E
+    C --> F
+    D --> G
+
+    style E fill:#48dbfb,color:#333
+    style F fill:#feca57,color:#333
+    style G fill:#2ed573,color:#fff

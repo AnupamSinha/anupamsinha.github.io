@@ -1,0 +1,23 @@
+classDiagram
+    class PaymentMethod {
+        <<sealed interface>>
+    }
+    class CreditCard {
+        <<record>>
+        +String number
+        +String expiry
+        +String cvv
+    }
+    class BankTransfer {
+        <<record>>
+        +String iban
+        +String bic
+    }
+    class DigitalWallet {
+        <<record>>
+        +String provider
+        +String token
+    }
+    PaymentMethod <|.. CreditCard
+    PaymentMethod <|.. BankTransfer
+    PaymentMethod <|.. DigitalWallet

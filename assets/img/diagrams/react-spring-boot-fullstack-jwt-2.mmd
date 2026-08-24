@@ -1,0 +1,17 @@
+sequenceDiagram
+    participant User
+    participant React
+    participant API as Spring Boot API
+    participant JWT as JWT Utility
+
+    User->>React: Enter credentials
+    React->>API: POST /api/auth/login {username, password}
+    API->>JWT: Authenticate & generate token
+    JWT-->>API: eyJhbGciOiJIUzI1NiJ9...
+    API-->>React: {token, username, type: "Bearer"}
+    React->>React: Store token in localStorage
+    React->>React: Redirect to /products
+    React->>API: GET /api/products (Authorization: Bearer ...)
+    API->>JWT: Validate token
+    JWT-->>API: Valid, user = "admin"
+    API-->>React: [products...]

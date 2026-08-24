@@ -1,0 +1,7 @@
+graph LR
+    A[User Input] --> B[Spring Shell]
+    B --> C[Command Parser]
+    C --> D[Parameter Resolver]
+    D --> E["@ShellMethod"]
+    E --> F[Your Business Logic]
+    F --> G[Output]

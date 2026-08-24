@@ -1,0 +1,18 @@
+graph TD
+    A[Run Load Test] --> B{Response time<br/>within threshold?}
+    B -->|Yes| C[Increase load]
+    C --> A
+    B -->|No| D[Check metrics]
+    D --> E{CPU > 80%?}
+    E -->|Yes| F[Profile code,<br/>optimize algorithms]
+    D --> G{Thread pool<br/>saturated?}
+    G -->|Yes| H[Increase threads or<br/>switch to reactive]
+    D --> I{DB connections<br/>exhausted?}
+    I -->|Yes| J[Tune pool size,<br/>optimize queries]
+    D --> K{GC pauses?}
+    K -->|Yes| L[Tune heap size,<br/>check for leaks]
+    F --> M[Fix & Retest]
+    H --> M
+    J --> M
+    L --> M
+    M --> A

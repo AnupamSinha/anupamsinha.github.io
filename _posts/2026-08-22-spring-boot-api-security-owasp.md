@@ -411,6 +411,9 @@ graph LR
     F -->|Scraped by| G[Bots / Attackers]
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-api-security-owasp-1.png)
+
+
 ### Externalize All Secrets
 
 ```yaml

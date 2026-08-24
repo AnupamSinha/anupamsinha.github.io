@@ -1,0 +1,7 @@
+graph LR
+    A[Edit Code] --> B[Full Restart: 8-15s]
+    B --> C[Re-connect to DB]
+    C --> D[Re-load test data]
+    D --> E[Test manually]
+    E --> A
+    style B fill:#f96,stroke:#333

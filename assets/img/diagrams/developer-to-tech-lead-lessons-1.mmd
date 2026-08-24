@@ -1,0 +1,12 @@
+graph TD
+    A[Decision Arrives] --> B{Reversible?}
+    B -->|Yes| C{Impact Scope?}
+    B -->|No| D[You decide + explain why]
+    C -->|Single service| E[Team member decides, informs you]
+    C -->|Cross-team| F[Team member proposes, you review]
+    C -->|Architecture-wide| G[You facilitate group decision]
+
+    style D fill:#fee2e2
+    style E fill:#dcfce7
+    style F fill:#fef3c7
+    style G fill:#dbeafe

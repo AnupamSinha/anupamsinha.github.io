@@ -106,6 +106,9 @@ graph TD
     style G fill:#dbeafe
 ```
 
+![diagram](/assets/img/diagrams/developer-to-tech-lead-lessons-1.png)
+
+
 ### What to Keep
 
 - Architecture decisions that affect multiple teams
@@ -268,6 +271,9 @@ graph LR
     E --> I[High-Performing Team]
     H --> I
 ```
+
+![diagram](/assets/img/diagrams/developer-to-tech-lead-lessons-2.png)
+
 
 The DORA metrics (lead time, deployment frequency, change failure rate, MTTR) are a solid baseline. Add team-specific metrics that reflect your context.
 

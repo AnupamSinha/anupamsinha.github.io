@@ -56,6 +56,9 @@ graph TD
     H --> F
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-flyway-database-migrations-1.png)
+
+
 The `flyway_schema_history` table looks like this:
 
 | installed_rank | version | description | type | script | checksum | installed_on | execution_time | success |
@@ -257,6 +260,9 @@ gitGraph
     merge feature-a
     merge feature-b id: "CONFLICT"
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-flyway-database-migrations-2.png)
+
 
 **Solution**: Use timestamps or ticket numbers in versions:
 

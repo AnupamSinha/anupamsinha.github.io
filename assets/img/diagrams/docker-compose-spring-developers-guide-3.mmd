@@ -1,0 +1,17 @@
+sequenceDiagram
+    participant Dev as Developer
+    participant SB as Spring Boot
+    participant DC as Docker Compose
+    participant PG as PostgreSQL
+
+    Dev->>SB: mvn spring-boot:run
+    SB->>DC: docker compose up -d
+    DC->>PG: Start container
+    PG-->>DC: Container running
+    SB->>PG: Wait for health check
+    PG-->>SB: Ready
+    SB->>SB: Auto-configure datasource URL
+    SB-->>Dev: Application started
+
+    Dev->>SB: Ctrl+C
+    SB->>DC: docker compose stop

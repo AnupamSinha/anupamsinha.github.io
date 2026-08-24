@@ -1,0 +1,12 @@
+graph LR
+    A[Client Service] -->|POST /api/notifications| B[Notification API]
+    B -->|Publish| C[Kafka Topic]
+    C --> D[Consumer Group]
+    D --> E{Channel Router}
+    E -->|EMAIL| F[Email Channel]
+    E -->|SMS| G[SMS Channel]
+    E -->|PUSH| H[Push Channel]
+    F --> I[SMTP / Mailhog]
+    G --> J[Twilio API]
+    H --> K[FCM / APNs]
+    D -->|Retry exhausted| L[Dead Letter Topic]

@@ -1,0 +1,19 @@
+flowchart LR
+    subgraph Spring Boot
+        direction TB
+        S1[Application Starts] --> S2[Classpath Scanning]
+        S2 --> S3[Bean Discovery]
+        S3 --> S4[Proxy Generation]
+        S4 --> S5[Dependency Injection]
+        S5 --> S6[Ready to Serve]
+    end
+
+    subgraph Quarkus
+        direction TB
+        Q1[Build Time] --> Q2[Classpath Scanning]
+        Q2 --> Q3[Bean Discovery]
+        Q3 --> Q4[Bytecode Generation]
+        Q4 --> Q5[Runtime Start]
+        Q5 --> Q6[Minimal DI Wiring]
+        Q6 --> Q7[Ready to Serve]
+    end

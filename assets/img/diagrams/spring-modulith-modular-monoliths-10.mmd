@@ -1,0 +1,11 @@
+graph LR
+    subgraph "@SpringBootTest (slow)"
+        ALL[Loads ALL modules<br/>Order + Payment + Inventory + Notification + ...]
+    end
+
+    subgraph "@ApplicationModuleTest (fast)"
+        ONE[Loads ONLY Order module]
+    end
+
+    style ALL fill:#ff6b6b,color:#fff
+    style ONE fill:#2ed573,color:#fff

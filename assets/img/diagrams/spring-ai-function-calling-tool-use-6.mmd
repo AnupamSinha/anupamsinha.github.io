@@ -1,0 +1,14 @@
+flowchart TD
+    Q[User Question] --> LLM[Model]
+    LLM --> Decision{What's needed?}
+    Decision -->|Document lookup| RAG[Vector Store Search]
+    Decision -->|Live data| Tool[Tool Execution]
+    Decision -->|Both| Both[RAG + Tools]
+    RAG --> LLM
+    Tool --> LLM
+    Both --> LLM
+    LLM --> A[Complete Answer]
+
+    style Decision fill:#feca57,color:#333
+    style RAG fill:#48dbfb,color:#333
+    style Tool fill:#2ed573,color:#fff

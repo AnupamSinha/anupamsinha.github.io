@@ -1,0 +1,10 @@
+flowchart TD
+    A[Collection Operation] --> B{Simple transform/filter?}
+    B -->|Yes| C{Single pipeline?}
+    C -->|Yes| D[Use Stream]
+    C -->|No, multiple passes| E[Use Loop]
+    B -->|No| F{Side effects needed?}
+    F -->|Yes, accumulate/modify| E
+    F -->|No| G{Readability?}
+    G -->|Stream is clearer| D
+    G -->|Loop is clearer| E

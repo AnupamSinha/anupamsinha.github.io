@@ -1,0 +1,3 @@
+flowchart LR
+    Browser["Browser / curl"] -->|REST HTTP| Client[grpc-client :8080]
+    Client -->|gRPC HTTP/2| Server[grpc-server :9090]

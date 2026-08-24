@@ -1,0 +1,5 @@
+flowchart TD
+    A[Token Bucket<br>Capacity: 10] --> B{Tokens > 0?}
+    B -->|Yes| C[Remove 1 token<br>ALLOW request]
+    B -->|No| D[REJECT 429]
+    E[Refill: 1 token/sec] --> A

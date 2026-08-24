@@ -51,6 +51,9 @@ flowchart LR
     style G fill:#2ed573,color:#fff
 ```
 
+![diagram](/assets/img/diagrams/spring-cloud-netflix-to-spring-cloud-2024-migration-1.png)
+
+
 | Old (Netflix) | New (Spring Cloud 2024) | Migration Difficulty |
 |---------------|------------------------|:---:|
 | Ribbon | Spring Cloud LoadBalancer | Easy |
@@ -246,6 +249,9 @@ stateDiagram-v2
     HALF_OPEN --> OPEN : permitted calls fail
 ```
 
+![diagram](/assets/img/diagrams/spring-cloud-netflix-to-spring-cloud-2024-migration-2.png)
+
+
 ---
 
 ## Migration 3: Zuul → Spring Cloud Gateway
@@ -416,6 +422,9 @@ flowchart TD
     style A fill:#2ed573,color:#fff
     style F fill:#48dbfb,color:#333
 ```
+
+![diagram](/assets/img/diagrams/spring-cloud-netflix-to-spring-cloud-2024-migration-3.png)
+
 
 ### Step-by-Step
 

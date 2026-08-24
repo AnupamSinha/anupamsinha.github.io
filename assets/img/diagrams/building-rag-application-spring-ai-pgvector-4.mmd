@@ -1,0 +1,19 @@
+flowchart TD
+    subgraph "Phase 1: Ingestion (one-time)"
+        A[PDF Files] --> B[Read Pages]
+        B --> C[Split into Chunks]
+        C --> D[Generate Embeddings via OpenAI]
+        D --> E[(Store in PGVector)]
+    end
+
+    subgraph "Phase 2: Query (every request)"
+        F[User Question] --> G[Embed Question]
+        G --> H[Similarity Search in PGVector]
+        H --> I[Top-K Relevant Chunks]
+        I --> J[Augment Prompt with Context]
+        J --> K[Send to OpenAI]
+        K --> L[Grounded Answer]
+    end
+
+    style E fill:#48dbfb,color:#333
+    style K fill:#2ed573,color:#fff

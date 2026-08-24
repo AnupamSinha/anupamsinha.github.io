@@ -38,6 +38,9 @@ flowchart LR
     G --> H[Return Ranked Results]
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-elasticsearch-full-text-search-1.png)
+
+
 When you index "Spring Boot Elasticsearch Tutorial":
 - Tokenizer splits into: `[spring, boot, elasticsearch, tutorial]`
 - Each token maps to the document ID

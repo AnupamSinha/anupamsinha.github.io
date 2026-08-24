@@ -1,0 +1,6 @@
+graph LR
+    A[OrderCreated] --> B[ItemAdded]
+    B --> C[ItemAdded]
+    C --> D[PaymentReceived]
+    D --> E[OrderShipped]
+    E --> F["Current State (derived)"]

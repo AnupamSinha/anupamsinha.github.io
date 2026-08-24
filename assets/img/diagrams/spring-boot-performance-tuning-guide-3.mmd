@@ -1,0 +1,21 @@
+sequenceDiagram
+    participant App as Application
+    participant L1 as Caffeine (Local)
+    participant L2 as Redis (Distributed)
+    participant DB as Database
+
+    App->>L1: Get product:42
+    alt L1 Cache Hit
+        L1-->>App: Return (< 1ms)
+    else L1 Cache Miss
+        App->>L2: Get product:42
+        alt L2 Cache Hit
+            L2-->>App: Return (~2-5ms)
+            App->>L1: Store locally
+        else L2 Cache Miss
+            App->>DB: SELECT * FROM products WHERE id=42
+            DB-->>App: Return (~10-50ms)
+            App->>L2: Store in Redis
+            App->>L1: Store locally
+        end
+    end

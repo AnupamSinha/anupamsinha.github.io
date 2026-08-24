@@ -1,0 +1,19 @@
+sequenceDiagram
+    participant User
+    participant ChatClient
+    participant QAAdvisor as QuestionAnswerAdvisor
+    participant VS as PGVector
+    participant LLM as OpenAI
+
+    User->>ChatClient: "What is the refund policy?"
+    ChatClient->>QAAdvisor: Intercept request
+
+    QAAdvisor->>VS: Similarity search (top 5, threshold 0.7)
+    VS-->>QAAdvisor: [chunk1, chunk2, chunk3]
+
+    Note over QAAdvisor: Augments prompt:<br/>"Context: {chunks}<br/>Question: What is the refund policy?"
+
+    QAAdvisor->>LLM: Augmented prompt
+    LLM-->>QAAdvisor: "Our refund policy allows..."
+    QAAdvisor-->>ChatClient: Response
+    ChatClient-->>User: Answer + sources

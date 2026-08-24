@@ -1,0 +1,17 @@
+sequenceDiagram
+    participant Client
+    participant CommandAPI
+    participant EventStore
+    participant Projection
+    participant ReadModel
+    participant QueryAPI
+
+    Client->>CommandAPI: POST /orders
+    CommandAPI->>EventStore: append(event)
+    CommandAPI-->>Client: 202 Accepted
+    EventStore->>Projection: event published
+    Projection->>ReadModel: INSERT/UPDATE
+    Note over Client,QueryAPI: Brief delay (milliseconds to seconds)
+    Client->>QueryAPI: GET /orders/123
+    QueryAPI->>ReadModel: SELECT
+    QueryAPI-->>Client: 200 OK (order data)

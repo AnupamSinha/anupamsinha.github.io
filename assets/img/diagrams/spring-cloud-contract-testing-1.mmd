@@ -1,0 +1,5 @@
+graph LR
+    A[Consumer<br/>Order Service] -->|"Defines expectations<br/>(what I call, what I expect)"| B[Contract<br/>Groovy DSL]
+    B -->|"Auto-generates tests"| C[Producer<br/>Payment Service]
+    C -->|"Generates stubs"| D[Stub JAR]
+    D -->|"Used in tests"| A

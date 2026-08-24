@@ -1,0 +1,16 @@
+flowchart TD
+    A[User Goal] --> B{Model: What do I need?}
+    B -->|Need weather| C[Call getWeatherForecast]
+    C --> B
+    B -->|Need flights| D[Call searchFlights]
+    D --> B
+    B -->|Need hotels| E[Call searchHotels]
+    E --> B
+    B -->|Need activities| F[Call getActivities]
+    F --> B
+    B -->|Need budget| G[Call calculateBudget]
+    G --> B
+    B -->|All data collected| H[Compose Final Answer]
+
+    style B fill:#feca57,color:#333
+    style H fill:#2ed573,color:#fff

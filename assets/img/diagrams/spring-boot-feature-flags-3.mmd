@@ -1,0 +1,6 @@
+graph TD
+    A[User Request] --> B{Feature Flag Check}
+    B -->|Flag ON| C[New Behavior]
+    B -->|Flag OFF| D[Old Behavior]
+    C --> E[Response]
+    D --> E

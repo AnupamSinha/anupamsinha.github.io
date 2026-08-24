@@ -1,0 +1,13 @@
+sequenceDiagram
+    participant I1 as Instance 1
+    participant DB as Lock Store (DB)
+    participant I2 as Instance 2
+
+    Note over I1,I2: Cron triggers at 2:00 AM
+    I1->>DB: Try to acquire lock "reportGeneration"
+    DB-->>I1: Lock acquired ✓
+    I2->>DB: Try to acquire lock "reportGeneration"
+    DB-->>I2: Lock already held ✗
+    I1->>I1: Execute report generation
+    Note over I2: Skips execution
+    I1->>DB: Release lock (or lock_until expires)

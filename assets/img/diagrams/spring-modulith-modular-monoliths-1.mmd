@@ -1,0 +1,15 @@
+graph TD
+    A[Order Module] --> B[Payment Module]
+    A --> C[Notification Module]
+    A --> D[Inventory Module]
+    B --> A
+    B --> C
+    C --> D
+    D --> A
+    D --> B
+    C --> A
+
+    style A fill:#ff6b6b,color:#fff
+    style B fill:#ff6b6b,color:#fff
+    style C fill:#ff6b6b,color:#fff
+    style D fill:#ff6b6b,color:#fff

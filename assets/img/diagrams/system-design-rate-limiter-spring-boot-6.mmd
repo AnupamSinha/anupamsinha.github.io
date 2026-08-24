@@ -1,0 +1,14 @@
+flowchart TD
+    subgraph "Instance 1"
+        A1[Request] --> B1[RateLimitAspect]
+    end
+    subgraph "Instance 2"
+        A2[Request] --> B2[RateLimitAspect]
+    end
+    subgraph "Instance 3"
+        A3[Request] --> B3[RateLimitAspect]
+    end
+    
+    B1 --> R[Redis Cluster<br>Single Source of Truth]
+    B2 --> R
+    B3 --> R

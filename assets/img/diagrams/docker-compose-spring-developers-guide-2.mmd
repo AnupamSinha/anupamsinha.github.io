@@ -1,0 +1,14 @@
+flowchart TD
+    subgraph docker-network[Docker Network: myapp_default]
+        A[postgres:5432]
+        B[redis:6379]
+        C[kafka:9092]
+    end
+    
+    D[Spring Boot App<br>on host machine] -->|localhost:5432| A
+    D -->|localhost:6379| B
+    D -->|localhost:9092| C
+    
+    E[Spring Boot App<br>in container] -->|postgres:5432| A
+    E -->|redis:6379| B
+    E -->|kafka:9092| C

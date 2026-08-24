@@ -1,0 +1,8 @@
+graph LR
+    A[Route 53] --> B[ALB]
+    B --> C[Target Group]
+    C --> D[EC2 - AZ1]
+    C --> E[EC2 - AZ2]
+    D --> F[RDS Primary]
+    E --> F
+    F --> G[RDS Read Replica]

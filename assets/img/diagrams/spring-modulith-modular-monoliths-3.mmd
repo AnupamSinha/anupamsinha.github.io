@@ -1,0 +1,25 @@
+graph TD
+    subgraph Single Deployment Unit
+        subgraph Order Module
+            A[OrderService]
+            A2[OrderController]
+        end
+        subgraph Payment Module
+            B[PaymentService]
+        end
+        subgraph Inventory Module
+            C[InventoryService]
+        end
+        subgraph Notification Module
+            D[NotificationService]
+        end
+    end
+
+    A -->|event| B
+    A -->|event| C
+    A -->|event| D
+
+    style A fill:#2ed573,color:#fff
+    style B fill:#2ed573,color:#fff
+    style C fill:#2ed573,color:#fff
+    style D fill:#2ed573,color:#fff

@@ -1,0 +1,9 @@
+graph TD
+    A[OrderService] -->|"publishes"| EVT((OrderPlaced Event))
+    EVT -->|"listens"| B[InventoryService]
+    EVT -->|"listens"| C[NotificationService]
+    EVT -->|"listens"| D[AnalyticsService]
+    EVT -->|"listens"| E[LoyaltyService]
+
+    style A fill:#2ed573,color:#fff
+    style EVT fill:#feca57,color:#333

@@ -1,0 +1,5 @@
+graph LR
+    A[React Frontend<br/>Port 5173] -->|REST API calls<br/>with JWT| B[Spring Boot Backend<br/>Port 8080]
+    B --> C[H2 Database]
+    B --> D[JWT Token Validation]
+    A --> E[LocalStorage<br/>JWT Token]

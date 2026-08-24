@@ -48,6 +48,9 @@ flowchart LR
     style T2 fill:#48dbfb,color:#333
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-kafka-event-driven-microservices-1.png)
+
+
 Key patterns demonstrated:
 - **Event publishing** (producer)
 - **Event consumption** (consumer groups)
@@ -307,6 +310,9 @@ flowchart TD
     style C fill:#2ed573,color:#fff
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-kafka-event-driven-microservices-2.png)
+
+
 ---
 
 ## Step 6: Notification Service (Multi-Topic Consumer)
@@ -395,6 +401,9 @@ flowchart TD
         C3 --- P2
     end
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-kafka-event-driven-microservices-3.png)
+
 
 - Each consumer group gets **all messages** independently
 - Within a group, partitions are **distributed** across instances

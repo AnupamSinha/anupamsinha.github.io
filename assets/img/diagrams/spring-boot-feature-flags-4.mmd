@@ -1,0 +1,8 @@
+graph LR
+    A[Create Flag] --> B[Develop Behind Flag]
+    B --> C[Test in Staging]
+    C --> D[Gradual Rollout — 5%]
+    D --> E[Expand — 25%]
+    E --> F[Full Rollout — 100%]
+    F --> G[Remove Flag from Code]
+    G --> H[Delete Flag Definition]

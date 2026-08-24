@@ -1,0 +1,9 @@
+graph LR
+    A[Push to Branch] --> B[Build + Test]
+    B --> C[Docker Image]
+    C --> D[Push to GHCR]
+    D --> E{Branch?}
+    E -->|main| F[Deploy to Staging]
+    E -->|release/*| G[Deploy to Production]
+    F --> H[Smoke Tests]
+    H --> I[Ready for Promotion]

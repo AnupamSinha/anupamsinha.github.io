@@ -1,0 +1,10 @@
+flowchart LR
+    A[ChatClient] -->|tool definitions only| B[LLM]
+    A -->|tool context| C[Tool Method]
+    B -->|tool call request| A
+    A -->|executes with context| C
+    C -->|result| A
+    A -->|result| B
+
+    style C fill:#48dbfb,color:#333
+    style B fill:#2ed573,color:#fff

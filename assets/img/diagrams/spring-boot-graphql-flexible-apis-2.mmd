@@ -1,0 +1,9 @@
+graph LR
+    A[Client] -->|"{ products { name, price } }"| B[GraphQL Server]
+    B --> C[Product Resolver]
+    B --> D[Review Resolver]
+    B --> E[Inventory Resolver]
+    C --> F[Database]
+    D --> F
+    E --> F
+    B -->|"{ products: [{name, price}] }"| A

@@ -1,0 +1,9 @@
+flowchart LR
+    A[Request] --> B[ToolCallingAdvisor]
+    B --> C[MemoryAdvisor]
+    C --> D[Model]
+    D -->|tool calls| B
+    B -->|final answer| A
+
+    style B fill:#48dbfb,color:#333
+    style C fill:#feca57,color:#333

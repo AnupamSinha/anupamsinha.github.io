@@ -1,0 +1,22 @@
+flowchart LR
+    subgraph "MCP Server (your tools)"
+        T1[getPaymentStatus]
+        T2[getExchangeRate]
+        T3[convertAmount]
+    end
+
+    subgraph "MCP Clients"
+        C1[Spring AI App]
+        C2[Claude Desktop]
+        C3[Python Agent]
+    end
+
+    C1 -->|MCP protocol| T1
+    C1 -->|MCP protocol| T2
+    C2 -->|MCP protocol| T1
+    C2 -->|MCP protocol| T3
+    C3 -->|MCP protocol| T2
+
+    style T1 fill:#48dbfb,color:#333
+    style T2 fill:#48dbfb,color:#333
+    style T3 fill:#48dbfb,color:#333

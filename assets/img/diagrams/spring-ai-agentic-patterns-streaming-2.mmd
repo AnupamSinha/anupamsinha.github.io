@@ -1,0 +1,21 @@
+sequenceDiagram
+    participant User
+    participant Agent as Spring AI Agent
+    participant T1 as Weather
+    participant T2 as Flights
+    participant T3 as Hotels
+    participant T4 as Activities
+    participant T5 as Budget
+
+    User->>Agent: "Plan 5 days in Paris"
+    Agent->>T1: getWeatherForecast("Paris")
+    T1-->>Agent: "22°C, partly cloudy"
+    Agent->>T2: searchFlights("New York", "Paris", "2026-08-25")
+    T2-->>Agent: [3 flight options]
+    Agent->>T3: searchHotels("Paris", "2026-08-25", 5)
+    T3-->>Agent: [4 hotel options]
+    Agent->>T4: getActivities("Paris", "culture")
+    T4-->>Agent: [5 activities]
+    Agent->>T5: calculateBudget(450, 195, 5, 80, 50)
+    T5-->>Agent: "TOTAL: $2,550.00"
+    Agent-->>User: Complete structured travel plan

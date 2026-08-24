@@ -44,6 +44,9 @@ sequenceDiagram
     ChatClient-->>User: Final answer
 ```
 
+![diagram](/assets/img/diagrams/spring-ai-function-calling-tool-use-1.png)
+
+
 The critical point: **the model never gets direct access to your APIs**. It can only *request* a tool call. Your application decides whether to execute it. This is a security boundary.
 
 ---
@@ -65,6 +68,9 @@ flowchart TD
     style F fill:#48dbfb,color:#333
     style H fill:#2ed573,color:#fff
 ```
+
+![diagram](/assets/img/diagrams/spring-ai-function-calling-tool-use-2.png)
+
 
 The loop continues until the model produces a response **without** requesting any more tool calls. Spring AI handles this loop automatically through the `ToolCallingAdvisor`.
 
@@ -440,6 +446,9 @@ flowchart LR
     style B fill:#2ed573,color:#fff
 ```
 
+![diagram](/assets/img/diagrams/spring-ai-function-calling-tool-use-3.png)
+
+
 The model never sees `userId`. It's injected server-side when the tool executes.
 
 ---
@@ -523,6 +532,9 @@ flowchart LR
     style VS fill:#48dbfb,color:#333
 ```
 
+![diagram](/assets/img/diagrams/spring-ai-function-calling-tool-use-4.png)
+
+
 Limited to **static knowledge** in your documents.
 
 ### With Tool Calling
@@ -544,6 +556,9 @@ flowchart LR
     style T3 fill:#48dbfb,color:#333
 ```
 
+![diagram](/assets/img/diagrams/spring-ai-function-calling-tool-use-5.png)
+
+
 Access to **live systems** — databases, APIs, services.
 
 ### Combined: RAG + Tool Calling
@@ -564,6 +579,9 @@ flowchart TD
     style RAG fill:#48dbfb,color:#333
     style Tool fill:#2ed573,color:#fff
 ```
+
+![diagram](/assets/img/diagrams/spring-ai-function-calling-tool-use-6.png)
+
 
 The model chooses the right approach per question. You can pass both `QuestionAnswerAdvisor` and tools in the same request:
 

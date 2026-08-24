@@ -1,0 +1,11 @@
+graph TD
+    A{Heap Size?} -->|"< 4GB"| B[G1GC - default, good general choice]
+    A -->|"4-32GB"| C{Latency requirement?}
+    A -->|"> 32GB"| D[ZGC - sub-ms pauses, large heaps]
+    C -->|"Avg < 10ms pauses OK"| B
+    C -->|"Need sub-ms pauses"| D
+    C -->|"Max throughput, pauses OK"| E[Parallel GC]
+
+    style B fill:#48dbfb,color:#333
+    style D fill:#2ed573,color:#fff
+    style E fill:#feca57,color:#333

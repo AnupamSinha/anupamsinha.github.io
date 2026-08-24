@@ -1,0 +1,19 @@
+flowchart LR
+    subgraph Services
+        A[API Gateway<br>Spring Boot] --> B[User Service<br>Spring Boot]
+        A --> C[Notification Service<br>Quarkus Native]
+        A --> D[Pricing Engine<br>Quarkus JVM]
+        A --> E[Reporting Service<br>Spring Boot]
+    end
+    
+    subgraph Shared
+        F[Kafka]
+        G[PostgreSQL]
+        H[Redis]
+    end
+    
+    B --> F
+    C --> F
+    D --> G
+    E --> G
+    B --> H

@@ -1,0 +1,12 @@
+flowchart LR
+    A[User Question] --> B[Spring AI ChatClient]
+    B --> C[QuestionAnswerAdvisor]
+    C --> D[PGVector: Similarity Search]
+    D --> E[Top-K Relevant Chunks]
+    E --> F[Augmented Prompt]
+    F --> G[OpenAI GPT-4o-mini]
+    G --> H[Grounded Answer]
+
+    style C fill:#feca57,color:#333
+    style D fill:#48dbfb,color:#333
+    style G fill:#2ed573,color:#fff

@@ -1,0 +1,17 @@
+flowchart TD
+    A[Start New Project] --> B{Team size?}
+    B -->|"2-15 devs"| C[Modular Monolith with Spring Modulith]
+    B -->|"50+ devs, multiple teams"| D[Consider Microservices]
+
+    C --> E[Define Module Boundaries]
+    E --> F[Enforce with verify tests]
+    F --> G[Communicate via Events]
+    G --> H[Test Modules in Isolation]
+    H --> I{Need to scale independently?}
+    I -->|"Not yet"| J[Keep as Monolith - enjoy simplicity]
+    I -->|"Yes, have evidence"| K[Extract to Microservice]
+    K --> L[Replace in-process events with Kafka/RabbitMQ]
+
+    style C fill:#2ed573,color:#fff
+    style J fill:#48dbfb,color:#333
+    style K fill:#ff9ff3,color:#333

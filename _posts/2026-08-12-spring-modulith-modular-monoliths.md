@@ -33,6 +33,9 @@ graph TD
     style D fill:#ff6b6b,color:#fff
 ```
 
+![diagram](/assets/img/diagrams/spring-modulith-modular-monoliths-1.png)
+
+
 Every module depends on every other module. Change one thing, break five things. This is what "spaghetti code" looks like at the architecture level.
 
 ### Premature Microservices
@@ -58,6 +61,9 @@ graph TD
 
     style X fill:#feca57,color:#333
 ```
+
+![diagram](/assets/img/diagrams/spring-modulith-modular-monoliths-2.png)
+
 
 Same mess, now with network calls, 7 databases, and a DevOps team crying in the corner.
 
@@ -91,6 +97,9 @@ graph TD
     style D fill:#2ed573,color:#fff
 ```
 
+![diagram](/assets/img/diagrams/spring-modulith-modular-monoliths-3.png)
+
+
 One deployment. Clear boundaries. Modules talk through events, not tangled direct calls.
 
 > Think of it like an apartment building: everyone lives in one building (monolith), but each apartment has its own walls, lock, and front door (modules). You don't walk through someone's kitchen to get to your bathroom.
@@ -122,6 +131,9 @@ graph LR
     style E fill:#48dbfb,color:#333
     style F fill:#48dbfb,color:#333
 ```
+
+![diagram](/assets/img/diagrams/spring-modulith-modular-monoliths-4.png)
+
 
 ---
 
@@ -180,6 +192,9 @@ graph TD
     style INT fill:#ff4757,color:#fff
     style INV fill:#48dbfb,color:#333
 ```
+
+![diagram](/assets/img/diagrams/spring-modulith-modular-monoliths-5.png)
+
 
 **Simple rule to remember:** Classes at the top level of a module package = public. Classes inside an `internal` sub-package = private to that module.
 
@@ -336,6 +351,9 @@ graph LR
     style A fill:#ff6b6b,color:#fff
 ```
 
+![diagram](/assets/img/diagrams/spring-modulith-modular-monoliths-6.png)
+
+
 The OrderService needs to know about EVERY service that cares about orders. Adding a new one means editing OrderService.
 
 **With events (loose coupling):**
@@ -351,6 +369,9 @@ graph TD
     style A fill:#2ed573,color:#fff
     style EVT fill:#feca57,color:#333
 ```
+
+![diagram](/assets/img/diagrams/spring-modulith-modular-monoliths-7.png)
+
 
 OrderService just says "hey, an order was placed" and doesn't care who's listening. Want to add analytics? Just add a listener. Zero changes to the order module.
 
@@ -451,6 +472,9 @@ sequenceDiagram
     Note over EPR: If app crashes before dispatch,<br/>events are retried on restart
 ```
 
+![diagram](/assets/img/diagrams/spring-modulith-modular-monoliths-8.png)
+
+
 ### Configuration
 
 ```yaml
@@ -514,6 +538,9 @@ graph TD
     style PASS fill:#2ed573,color:#fff
 ```
 
+![diagram](/assets/img/diagrams/spring-modulith-modular-monoliths-9.png)
+
+
 ---
 
 ## Testing Modules in Isolation
@@ -533,6 +560,9 @@ graph LR
     style ALL fill:#ff6b6b,color:#fff
     style ONE fill:#2ed573,color:#fff
 ```
+
+![diagram](/assets/img/diagrams/spring-modulith-modular-monoliths-10.png)
+
 
 ### Bootstrap Only One Module
 
@@ -628,6 +658,9 @@ graph TD
     style INT fill:#ff4757,color:#fff
 ```
 
+![diagram](/assets/img/diagrams/spring-modulith-modular-monoliths-11.png)
+
+
 ```java
 @ApplicationModule(allowedDependencies = "order::events")  // Only use the events API
 ```
@@ -657,6 +690,9 @@ graph LR
     style A2 fill:#2ed573,color:#fff
     style B2 fill:#ff9ff3,color:#333
 ```
+
+![diagram](/assets/img/diagrams/spring-modulith-modular-monoliths-12.png)
+
 
 ### Step 1: Module Already Has Clean Boundaries
 
@@ -708,6 +744,9 @@ flowchart TD
     style J fill:#48dbfb,color:#333
     style K fill:#ff9ff3,color:#333
 ```
+
+![diagram](/assets/img/diagrams/spring-modulith-modular-monoliths-13.png)
+
 
 ---
 

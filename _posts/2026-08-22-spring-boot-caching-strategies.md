@@ -44,6 +44,9 @@ sequenceDiagram
     App-->>App: Return product
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-caching-strategies-1.png)
+
+
 **Pros**: Only requested data is cached. Cache failures don't break reads.
 **Cons**: First request is always slow (cold cache). Possible stale reads.
 
@@ -63,6 +66,9 @@ sequenceDiagram
     Cache-->>App: OK
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-caching-strategies-2.png)
+
+
 **Pros**: Cache is always consistent. No stale reads.
 **Cons**: Write latency increases. Unused data may fill the cache.
 
@@ -81,6 +87,9 @@ sequenceDiagram
     Note over Cache,DB: Async flush (batched)
     Cache->>DB: UPDATE products SET ...
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-caching-strategies-3.png)
+
 
 **Pros**: Fastest writes. Batch writes reduce DB load.
 **Cons**: Risk of data loss if cache crashes before flush.
@@ -227,6 +236,9 @@ flowchart TD
     F --> G[Store in L1 + L2]
     G --> H[Return response]
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-caching-strategies-4.png)
+
 
 ### How It Works
 

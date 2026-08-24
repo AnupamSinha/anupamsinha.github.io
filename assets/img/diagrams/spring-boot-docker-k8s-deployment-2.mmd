@@ -1,0 +1,17 @@
+sequenceDiagram
+    participant Dev as Developer
+    participant CI as CI/CD Pipeline
+    participant Reg as Container Registry
+    participant K8s as Kubernetes
+    participant Pod as Pod
+
+    Dev->>CI: Push code
+    CI->>CI: mvn package / jib:build
+    CI->>Reg: Push image (tag: sha-abc123)
+    CI->>K8s: kubectl apply -f manifests/
+    K8s->>Pod: Schedule pod
+    Pod->>Pod: Start JVM + Spring Boot
+    K8s->>Pod: Startup probe /actuator/health/liveness
+    K8s->>Pod: Readiness probe /actuator/health/readiness
+    Pod-->>K8s: 200 OK
+    K8s->>Pod: Route traffic

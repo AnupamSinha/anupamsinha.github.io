@@ -1,0 +1,10 @@
+graph TB
+    A[application.yml] --> B[application-local.yml]
+    A --> C[application-dev.yml]
+    A --> D[application-prod.yml]
+    B --> E[Local machine settings]
+    C --> F[Shared dev environment]
+    D --> G[Production settings]
+
+    style B fill:#c8e6c9
+    style D fill:#f96

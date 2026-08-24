@@ -1,0 +1,7 @@
+flowchart LR
+    Q[Question] --> VS[Vector Store]
+    VS --> Chunks[Retrieved Docs]
+    Chunks --> LLM[Model]
+    LLM --> A[Answer from documents]
+
+    style VS fill:#48dbfb,color:#333

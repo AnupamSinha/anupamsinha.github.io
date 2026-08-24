@@ -301,6 +301,9 @@ flowchart LR
     F --> D
 ```
 
+![diagram](/assets/img/diagrams/terraform-java-developers-iac-1.png)
+
+
 **Critical rules:**
 - **Never** edit state manually.
 - Store state remotely (S3 + DynamoDB for locking).
@@ -445,6 +448,9 @@ flowchart LR
     E --> F[Infrastructure Created]
     F --> G[terraform destroy<br>when done]
 ```
+
+![diagram](/assets/img/diagrams/terraform-java-developers-iac-2.png)
+
 
 | Command | Java Equivalent | Purpose |
 |---------|----------------|---------|

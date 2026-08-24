@@ -1,0 +1,14 @@
+graph LR
+    subgraph "Single Database Transaction"
+        A[OrderService] --> B[Save Order]
+        A --> C[Save OutboxEvent]
+    end
+    D[OutboxRelay] -->|polls| C
+    D -->|publishes| E[Kafka]
+    D -->|marks published| C
+
+    style A fill:#e1f5fe
+    style B fill:#c8e6c9
+    style C fill:#c8e6c9
+    style D fill:#fff3e0
+    style E fill:#fce4ec

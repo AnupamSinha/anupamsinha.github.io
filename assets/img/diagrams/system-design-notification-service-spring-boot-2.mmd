@@ -1,0 +1,27 @@
+classDiagram
+    class NotificationChannel {
+        <<interface>>
+        +getChannel() Channel
+        +send(NotificationRequest) void
+    }
+
+    class EmailChannel {
+        -JavaMailSender mailSender
+        -TemplateEngine templateEngine
+        +getChannel() Channel
+        +send(NotificationRequest) void
+    }
+
+    class SmsChannel {
+        +getChannel() Channel
+        +send(NotificationRequest) void
+    }
+
+    class PushChannel {
+        +getChannel() Channel
+        +send(NotificationRequest) void
+    }
+
+    NotificationChannel <|.. EmailChannel
+    NotificationChannel <|.. SmsChannel
+    NotificationChannel <|.. PushChannel

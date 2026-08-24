@@ -50,6 +50,9 @@ flowchart TD
     style G fill:#ff6b6b,color:#fff
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-observability-opentelemetry-1.png)
+
+
 One Grafana dashboard where you can:
 - See request rate and error rate (metrics from Prometheus)
 - Click an error → see the log line (from Loki)

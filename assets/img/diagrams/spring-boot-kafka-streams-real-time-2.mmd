@@ -1,0 +1,14 @@
+flowchart LR
+    subgraph KStream
+        direction TB
+        S1["Event 1: USD +100"] --> S2["Event 2: EUR +50"]
+        S2 --> S3["Event 3: USD +200"]
+        S3 --> S4["Event 4: USD -50"]
+    end
+    subgraph KTable
+        direction TB
+        T1["USD = 100"] --> T2["EUR = 50"]
+        T2 --> T3["USD = 200"]
+        T3 --> T4["USD = -50"]
+    end
+    KStream -->|"groupBy + aggregate"| KTable

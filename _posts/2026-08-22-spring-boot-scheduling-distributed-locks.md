@@ -100,6 +100,9 @@ sequenceDiagram
     I1->>DB: Release lock (or lock_until expires)
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-scheduling-distributed-locks-1.png)
+
+
 Only one instance acquires the lock. The others skip the execution entirely.
 
 ---

@@ -28,6 +28,9 @@ graph TD
     end
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-hexagonal-architecture-1.png)
+
+
 ---
 
 ## What is Hexagonal Architecture?
@@ -76,6 +79,9 @@ graph TB
     PG -.->|implements| STRIPE
     PG -.->|implements| MOCK
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-hexagonal-architecture-2.png)
+
 
 The key rule: **dependencies point inward**. The domain never knows about Spring, JPA, or HTTP.
 
@@ -307,6 +313,9 @@ graph LR
     H -->|creates| G
     D -->|implemented by| H
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-hexagonal-architecture-3.png)
+
 
 Arrows **always** point inward. Outer layers depend on inner layers. Inner layers define interfaces (ports) that outer layers implement.
 

@@ -39,6 +39,9 @@ graph LR
     end
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-multi-tenancy-1.png)
+
+
 | Strategy | Isolation | Cost | Complexity | Best For |
 |----------|-----------|------|------------|----------|
 | Shared DB (row-level) | Low | Low | Low | Many small tenants |
@@ -65,6 +68,9 @@ sequenceDiagram
     Router->>DB: query tenant_a.product
     DB-->>Client: tenant_a's products only
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-multi-tenancy-2.png)
+
 
 ## Strategy 1: Schema-per-Tenant
 

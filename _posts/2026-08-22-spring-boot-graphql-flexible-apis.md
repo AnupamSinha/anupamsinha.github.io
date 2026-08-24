@@ -24,6 +24,9 @@ sequenceDiagram
     Note over Client: 3 round trips, client-side joining
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-graphql-flexible-apis-1.png)
+
+
 GraphQL solves this: the client specifies exactly what it needs in a single request, and the server returns precisely that shape.
 
 ## What is GraphQL
@@ -41,6 +44,9 @@ graph LR
     E --> F
     B -->|"{ products: [{name, price}] }"| A
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-graphql-flexible-apis-2.png)
+
 
 Key concepts:
 - **Schema** — defines types, queries, and mutations (the contract)
@@ -238,6 +244,9 @@ graph TD
     style G fill:#f96,stroke:#333
     style H fill:#f96,stroke:#333
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-graphql-flexible-apis-3.png)
+
 
 ### Solution: @BatchMapping
 

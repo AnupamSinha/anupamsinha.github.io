@@ -43,6 +43,9 @@ flowchart LR
     style H fill:#00b894,color:#fff
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-docker-k8s-deployment-1.png)
+
+
 ```mermaid
 sequenceDiagram
     participant Dev as Developer
@@ -62,6 +65,9 @@ sequenceDiagram
     Pod-->>K8s: 200 OK
     K8s->>Pod: Route traffic
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-docker-k8s-deployment-2.png)
+
 
 ---
 
@@ -450,6 +456,9 @@ flowchart LR
     style SVC fill:#55efc4,color:#333
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-docker-k8s-deployment-3.png)
+
+
 The Service provides stable internal DNS (`myapp.production.svc.cluster.local`) and load balances across healthy pods. The Ingress terminates TLS and routes external traffic.
 
 ---
@@ -546,6 +555,9 @@ flowchart TD
     style C fill:#00b894,color:#fff
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-docker-k8s-deployment-4.png)
+
+
 Environment variables from ConfigMaps/Secrets override everything in the JAR. The ConfigMap-mounted file at `/app/config/application.yml` overrides the packaged one.
 
 ---
@@ -602,6 +614,9 @@ stateDiagram-v2
     note right of Live: App is alive but may not serve traffic
     note right of Ready: App is alive AND can serve traffic
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-docker-k8s-deployment-5.png)
+
 
 A database outage should make the app **not ready** (stop receiving new requests) but NOT **not live** (don't restart — the DB will come back).
 
@@ -698,6 +713,9 @@ sequenceDiagram
 
     Note over K8s: If not exited in 30s → SIGKILL
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-docker-k8s-deployment-6.png)
+
 
 ### Spring Boot Configuration
 

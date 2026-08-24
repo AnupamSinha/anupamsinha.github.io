@@ -1,0 +1,26 @@
+classDiagram
+    class SequencedCollection {
+        <<interface>>
+        +getFirst()
+        +getLast()
+        +addFirst(E)
+        +addLast(E)
+        +reversed()
+    }
+    class SequencedSet {
+        <<interface>>
+    }
+    class SequencedMap {
+        <<interface>>
+        +firstEntry()
+        +lastEntry()
+        +pollFirstEntry()
+        +pollLastEntry()
+        +sequencedKeySet()
+    }
+    SequencedCollection <|-- SequencedSet
+    SequencedCollection <|.. List
+    SequencedSet <|.. LinkedHashSet
+    SequencedSet <|.. TreeSet
+    SequencedMap <|.. LinkedHashMap
+    SequencedMap <|.. TreeMap

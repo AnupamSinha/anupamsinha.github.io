@@ -1,0 +1,24 @@
+flowchart TD
+    subgraph "Spring Boot Application"
+        A[Business Logic]
+        B[Micrometer Metrics]
+        C[Structured Logs + TraceID]
+        D[OpenTelemetry Traces]
+    end
+
+    subgraph "Collection"
+        B --> E[Prometheus]
+        C --> F[Loki]
+        D --> G[Tempo]
+    end
+
+    subgraph "Visualization"
+        E --> H[Grafana]
+        F --> H
+        G --> H
+    end
+
+    style H fill:#feca57,color:#333
+    style E fill:#48dbfb,color:#333
+    style F fill:#2ed573,color:#fff
+    style G fill:#ff6b6b,color:#fff

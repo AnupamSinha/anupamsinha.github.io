@@ -1,0 +1,10 @@
+flowchart TD
+    subgraph Topology [Stream Topology - DAG]
+        A[Source: raw-payments topic] --> B[Filter: amount > 0]
+        B --> C[Map: Enrich with timestamp]
+        C --> D[GroupBy: currency]
+        D --> E[Window: Tumbling 1-min]
+        E --> F[Count]
+        F --> G[Sink: payment-counts topic]
+        F --> H[State Store: queryable]
+    end

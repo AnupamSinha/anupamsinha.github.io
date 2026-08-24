@@ -62,6 +62,9 @@ sequenceDiagram
     API-->>Client: 201 Created
 ```
 
+![diagram](/assets/img/diagrams/system-design-url-shortener-spring-boot-1.png)
+
+
 ### Redirect Flow
 
 ```mermaid
@@ -79,6 +82,9 @@ sequenceDiagram
     Service-->>API: "https://example.com/long-url"
     API-->>Browser: 302 Found (Location: original URL)
 ```
+
+![diagram](/assets/img/diagrams/system-design-url-shortener-spring-boot-2.png)
+
 
 ---
 
@@ -333,6 +339,9 @@ graph LR
     G --> H[Read Replica 1]
     G --> I[Read Replica 2]
 ```
+
+![diagram](/assets/img/diagrams/system-design-url-shortener-spring-boot-3.png)
+
 
 ### Caching Strategy with Redis
 

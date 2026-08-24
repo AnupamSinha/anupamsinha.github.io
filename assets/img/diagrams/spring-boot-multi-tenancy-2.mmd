@@ -1,0 +1,14 @@
+sequenceDiagram
+    participant Client
+    participant Filter as TenantFilter
+    participant Context as TenantContext
+    participant Router as RoutingDataSource
+    participant DB as PostgreSQL
+
+    Client->>Filter: GET /api/products (X-Tenant-ID: tenant_a)
+    Filter->>Context: setCurrentTenant("tenant_a")
+    Filter->>Router: forward request
+    Router->>Context: determineCurrentLookupKey()
+    Context-->>Router: "tenant_a"
+    Router->>DB: query tenant_a.product
+    DB-->>Client: tenant_a's products only

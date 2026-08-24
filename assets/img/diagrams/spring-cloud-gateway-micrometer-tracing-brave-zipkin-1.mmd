@@ -1,0 +1,23 @@
+sequenceDiagram
+    participant Client
+    participant Gateway as Spring Cloud Gateway
+    participant OrderSvc as Order Service
+    participant PaymentSvc as Payment Service
+    participant DB as Database
+
+    Client->>Gateway: GET /api/orders/42
+    Note over Gateway: traceId: abc123<br/>spanId: span-1
+
+    Gateway->>OrderSvc: GET /orders/42<br/>Header: traceparent=abc123
+    Note over OrderSvc: traceId: abc123<br/>spanId: span-2
+
+    OrderSvc->>PaymentSvc: GET /payments?orderId=42<br/>Header: traceparent=abc123
+    Note over PaymentSvc: traceId: abc123<br/>spanId: span-3
+
+    PaymentSvc->>DB: SELECT * FROM payments
+    Note over DB: traceId: abc123<br/>spanId: span-4
+
+    DB-->>PaymentSvc: result
+    PaymentSvc-->>OrderSvc: payment details
+    OrderSvc-->>Gateway: order + payment
+    Gateway-->>Client: 200 OK

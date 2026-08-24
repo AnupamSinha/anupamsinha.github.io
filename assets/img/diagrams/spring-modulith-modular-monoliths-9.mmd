@@ -1,0 +1,15 @@
+graph TD
+    subgraph "What verify catches"
+        A["Accessing internal packages"] --> FAIL[BUILD FAILS]
+        B["Circular dependencies"] --> FAIL
+        C["Using implementation instead of API"] --> FAIL
+    end
+
+    subgraph "What's allowed"
+        D["Using public API classes"] --> PASS[BUILD PASSES]
+        E["Listening to published events"] --> PASS
+        F["Depending on shared module"] --> PASS
+    end
+
+    style FAIL fill:#ff4757,color:#fff
+    style PASS fill:#2ed573,color:#fff

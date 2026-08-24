@@ -1,0 +1,10 @@
+graph LR
+    subgraph "Embedded (Denormalized)"
+        A[Product Document] --> B[specification: brand, model, weight]
+        A --> C["tags: [electronics, sale]"]
+    end
+
+    subgraph "Referenced (Normalized)"
+        D[Product Document] --> E[categoryId: ObjectId]
+        F[Category Collection] --> G[id, name, description]
+    end

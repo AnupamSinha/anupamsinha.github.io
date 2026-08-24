@@ -36,6 +36,9 @@ mindmap
       Virtual Threads
 ```
 
+![diagram](/assets/img/diagrams/java-21-features-deep-dive-1.png)
+
+
 ---
 
 ## Records
@@ -203,6 +206,9 @@ classDiagram
     PaymentMethod <|.. BankTransfer
     PaymentMethod <|.. DigitalWallet
 ```
+
+![diagram](/assets/img/diagrams/java-21-features-deep-dive-2.png)
+
 
 ### Exhaustive Switches
 
@@ -461,6 +467,9 @@ classDiagram
     SequencedMap <|.. LinkedHashMap
     SequencedMap <|.. TreeMap
 ```
+
+![diagram](/assets/img/diagrams/java-21-features-deep-dive-3.png)
+
 
 ---
 

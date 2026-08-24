@@ -1,0 +1,11 @@
+sequenceDiagram
+    participant Service as OrderService
+    participant Publisher as ApplicationEventPublisher
+    participant Listener1 as EmailNotifier
+    participant Listener2 as InventoryUpdater
+    participant Listener3 as AnalyticsTracker
+
+    Service->>Publisher: publishEvent(OrderPlacedEvent)
+    Publisher->>Listener1: @EventListener
+    Publisher->>Listener2: @EventListener
+    Publisher->>Listener3: @TransactionalEventListener

@@ -41,6 +41,9 @@ graph TD
     G --> H
 ```
 
+![diagram](/assets/img/diagrams/building-developer-portfolio-that-gets-interviews-1.png)
+
+
 Each pillar serves a different purpose:
 
 | Pillar | Purpose | Signal to Hiring Manager |
@@ -221,6 +224,9 @@ graph LR
     style E fill:#ede9fe
 ```
 
+![diagram](/assets/img/diagrams/building-developer-portfolio-that-gets-interviews-2.png)
+
+
 Aim for the "Explanation" to "Deep Dive" range. Tutorials are commoditized — everyone writes "How to set up Spring Boot." Fewer people write "How Base62 encoding works in URL shorteners and why we chose it over random hashes."
 
 ---
@@ -278,6 +284,9 @@ graph TD
     K --> L[Job Offer]
     H --> L
 ```
+
+![diagram](/assets/img/diagrams/building-developer-portfolio-that-gets-interviews-3.png)
+
 
 This flywheel takes 3-6 months to build momentum. The first month feels like shouting into the void. By month 6, you're getting inbound messages from recruiters who found your blog.
 

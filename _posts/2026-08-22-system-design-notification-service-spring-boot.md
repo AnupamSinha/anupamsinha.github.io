@@ -59,6 +59,9 @@ graph LR
     D -->|Retry exhausted| L[Dead Letter Topic]
 ```
 
+![diagram](/assets/img/diagrams/system-design-notification-service-spring-boot-1.png)
+
+
 The architecture decouples the API from delivery. The producer returns `202 Accepted` immediately, and Kafka handles reliable delivery to the appropriate channel consumer.
 
 ---
@@ -96,6 +99,9 @@ classDiagram
     NotificationChannel <|.. SmsChannel
     NotificationChannel <|.. PushChannel
 ```
+
+![diagram](/assets/img/diagrams/system-design-notification-service-spring-boot-2.png)
+
 
 ### The Interface
 
@@ -256,6 +262,9 @@ graph TD
     E --> H[Consumer Pool - 2 threads]
 ```
 
+![diagram](/assets/img/diagrams/system-design-notification-service-spring-boot-3.png)
+
+
 | Priority | Topic | Consumer Threads | Max Latency |
 |----------|-------|------------------|-------------|
 | HIGH | notifications-high | 8 | < 5 seconds |
@@ -314,6 +323,9 @@ sequenceDiagram
     Note over Consumer: Attempt 3 failed
     Consumer->>DLT: Move to DLT
 ```
+
+![diagram](/assets/img/diagrams/system-design-notification-service-spring-boot-4.png)
+
 
 ---
 
@@ -390,6 +402,9 @@ graph TD
     H --> J[SMS Pool]
     H --> K[Push Pool]
 ```
+
+![diagram](/assets/img/diagrams/system-design-notification-service-spring-boot-5.png)
+
 
 Scaling strategies:
 

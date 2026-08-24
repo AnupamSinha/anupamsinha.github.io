@@ -59,6 +59,9 @@ flowchart LR
     D --> E[Search + Dashboard: Kibana/Grafana]
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-logging-best-practices-1.png)
+
+
 JSON logs are machine-parseable without custom regex. Every field is a queryable attribute.
 
 ### Setup with logstash-logback-encoder

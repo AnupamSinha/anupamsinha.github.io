@@ -1,0 +1,8 @@
+sequenceDiagram
+    participant Service
+    participant Database
+    participant Kafka
+
+    Service->>Database: INSERT order ✓
+    Service->>Kafka: publish OrderCreated ✗
+    Note over Service,Kafka: Kafka is down — order exists but event is lost

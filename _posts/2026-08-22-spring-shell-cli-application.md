@@ -39,6 +39,9 @@ graph LR
     F --> G[Output]
 ```
 
+![diagram](/assets/img/diagrams/spring-shell-cli-application-1.png)
+
+
 ## Setup
 
 Add the Spring Shell starter to your `pom.xml`:

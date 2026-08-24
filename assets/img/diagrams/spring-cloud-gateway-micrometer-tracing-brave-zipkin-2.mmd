@@ -1,0 +1,15 @@
+graph TD
+    A[Your Gateway App] --> B[micrometer-tracing-bridge-brave]
+    B --> C[Brave Tracer]
+    C --> D[zipkin-reporter-brave]
+    D --> E[Zipkin / Jaeger Collector]
+
+    B -.->|"creates spans"| C
+    C -.->|"propagates trace context<br/>via W3C / B3 headers"| F[Downstream Services]
+    D -.->|"exports spans over HTTP"| E
+
+    style A fill:#48dbfb,color:#333
+    style B fill:#feca57,color:#333
+    style C fill:#ff9ff3,color:#333
+    style D fill:#2ed573,color:#fff
+    style E fill:#5f27cd,color:#fff

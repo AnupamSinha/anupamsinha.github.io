@@ -1,0 +1,8 @@
+flowchart LR
+    A[Write HCL] --> B[terraform init]
+    B --> C[terraform plan]
+    C --> D{Review Plan}
+    D -->|Approve| E[terraform apply]
+    D -->|Reject| A
+    E --> F[Infrastructure Created]
+    F --> G[terraform destroy<br>when done]

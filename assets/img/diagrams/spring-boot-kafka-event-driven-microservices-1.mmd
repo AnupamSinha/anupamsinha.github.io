@@ -1,0 +1,24 @@
+flowchart LR
+    subgraph "Order Service"
+        A[REST API] --> B[OrderCreatedEvent]
+    end
+
+    subgraph "Kafka"
+        B --> T1[orders topic]
+        T1 --> C
+        T1 --> D
+    end
+
+    subgraph "Payment Service"
+        C[Consumer] --> E[Process Payment]
+        E --> F[PaymentCompletedEvent]
+    end
+
+    subgraph "Notification Service"
+        D[Consumer] --> G[Send Email]
+    end
+
+    F --> T2[payments topic]
+
+    style T1 fill:#feca57,color:#333
+    style T2 fill:#48dbfb,color:#333

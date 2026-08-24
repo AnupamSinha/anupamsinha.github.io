@@ -1,0 +1,17 @@
+graph LR
+    subgraph "Strategy 1: Shared Database"
+        A[Single DB] --> B[All tenants in same tables]
+        B --> C[tenant_id column filters rows]
+    end
+
+    subgraph "Strategy 2: Schema-per-Tenant"
+        D[Single DB] --> E[tenant_a schema]
+        D --> F[tenant_b schema]
+        D --> G[tenant_c schema]
+    end
+
+    subgraph "Strategy 3: Database-per-Tenant"
+        H[DB Instance A]
+        I[DB Instance B]
+        J[DB Instance C]
+    end

@@ -56,6 +56,9 @@ sequenceDiagram
     Broker-->>Client: MESSAGE /topic/messages (broadcast)
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-websocket-real-time-1.png)
+
+
 ---
 
 ## Setup

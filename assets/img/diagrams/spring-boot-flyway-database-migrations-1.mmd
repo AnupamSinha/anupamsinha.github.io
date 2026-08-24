@@ -1,0 +1,10 @@
+graph TD
+    A[Application Starts] --> B{Check flyway_schema_history}
+    B -->|V1 applied, V2 applied| C[V3 pending]
+    C --> D[Execute V3__Add_phone_number.sql]
+    D --> E[Record V3 in history table]
+    E --> F[Application Ready]
+
+    B -->|No history table| G[Create history table]
+    G --> H[Execute V1, V2, V3 in order]
+    H --> F

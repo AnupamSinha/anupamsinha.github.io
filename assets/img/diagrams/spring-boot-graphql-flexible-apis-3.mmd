@@ -1,0 +1,11 @@
+graph TD
+    A[Query: products] --> B[1 query: SELECT * FROM products]
+    B --> C[Product 1]
+    B --> D[Product 2]
+    B --> E[Product N]
+    C --> F[Query: SELECT * FROM reviews WHERE product_id = 1]
+    D --> G[Query: SELECT * FROM reviews WHERE product_id = 2]
+    E --> H[Query: SELECT * FROM reviews WHERE product_id = N]
+    style F fill:#f96,stroke:#333
+    style G fill:#f96,stroke:#333
+    style H fill:#f96,stroke:#333

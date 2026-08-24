@@ -1,0 +1,40 @@
+graph TB
+    subgraph "Adapters IN"
+        WEB[REST Controller]
+        CLI[CLI Runner]
+        MSG[Message Consumer]
+    end
+
+    subgraph "Ports IN"
+        UC1[CreateOrderUseCase]
+        UC2[GetOrderUseCase]
+    end
+
+    subgraph "Domain Core"
+        DS[OrderService]
+        DM[Order Entity]
+        VS[Value Objects]
+    end
+
+    subgraph "Ports OUT"
+        RP[OrderRepository]
+        PG[PaymentGateway]
+    end
+
+    subgraph "Adapters OUT"
+        JPA[JPA Repository]
+        STRIPE[Stripe Gateway]
+        MOCK[Mock Gateway]
+    end
+
+    WEB --> UC1
+    CLI --> UC2
+    MSG --> UC1
+    UC1 --> DS
+    UC2 --> DS
+    DS --> DM
+    DS --> RP
+    DS --> PG
+    RP -.->|implements| JPA
+    PG -.->|implements| STRIPE
+    PG -.->|implements| MOCK

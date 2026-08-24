@@ -1,0 +1,14 @@
+sequenceDiagram
+    participant User
+    participant ChatClient
+    participant LLM as OpenAI GPT-4o
+    participant Tool as Your Java Method
+
+    User->>ChatClient: "What's the status of payment TXN-9042?"
+    ChatClient->>LLM: User message + tool definitions
+    LLM-->>ChatClient: Tool call: getPaymentStatus("TXN-9042")
+    ChatClient->>Tool: Execute getPaymentStatus("TXN-9042")
+    Tool-->>ChatClient: {status: "COMPLETED", amount: 250.00}
+    ChatClient->>LLM: Tool result + conversation history
+    LLM-->>ChatClient: "Payment TXN-9042 is completed. Amount: $250.00"
+    ChatClient-->>User: Final answer

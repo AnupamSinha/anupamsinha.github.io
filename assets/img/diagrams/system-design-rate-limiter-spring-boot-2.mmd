@@ -1,0 +1,11 @@
+flowchart TD
+    subgraph "Minute 1 (00:00-00:59)"
+        A1[Request 1] --> C1[Counter: 1]
+        A2[Request 2] --> C1
+        A3[Request 3] --> C1
+        C1 -->|Count: 3, Limit: 5| D1[ALLOWED]
+    end
+    subgraph "Minute 2 (01:00-01:59)"
+        B1[Request 1] --> C2[Counter: 1]
+        C2 -->|Count: 1, Limit: 5| D2[ALLOWED]
+    end

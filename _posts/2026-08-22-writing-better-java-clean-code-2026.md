@@ -24,6 +24,9 @@ flowchart LR
     style C fill:#f96,stroke:#333
 ```
 
+![diagram](/assets/img/diagrams/writing-better-java-clean-code-2026-1.png)
+
+
 The red boxes are where you spend most of your time. Clean code optimizes for reading and understanding.
 
 ---
@@ -200,6 +203,9 @@ flowchart TD
     G -->|Stream is clearer| D
     G -->|Loop is clearer| E
 ```
+
+![diagram](/assets/img/diagrams/writing-better-java-clean-code-2026-2.png)
+
 
 ### Use Streams When
 

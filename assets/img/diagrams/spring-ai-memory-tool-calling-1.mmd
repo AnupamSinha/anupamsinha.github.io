@@ -1,0 +1,22 @@
+sequenceDiagram
+    participant User
+    participant ChatClient
+    participant Memory as ChatMemory
+    participant LLM as OpenAI
+    participant Tool as PaymentTools
+
+    User->>ChatClient: "Check payment TXN-9042"
+    ChatClient->>Memory: Load history (empty)
+    ChatClient->>LLM: Message + tools
+    LLM-->>ChatClient: Call getPaymentStatus("TXN-9042")
+    ChatClient->>Tool: Execute
+    Tool-->>ChatClient: {status: COMPLETED, sender: Alice...}
+    ChatClient->>LLM: Tool result
+    LLM-->>ChatClient: "TXN-9042 is completed, $250 from Alice to Bob"
+    ChatClient->>Memory: Save turn (user + assistant + tool messages)
+
+    User->>ChatClient: "Who sent it?"
+    ChatClient->>Memory: Load history (has previous turn)
+    ChatClient->>LLM: Full history + new question
+    LLM-->>ChatClient: "Alice Johnson sent that payment"
+    ChatClient->>Memory: Save turn

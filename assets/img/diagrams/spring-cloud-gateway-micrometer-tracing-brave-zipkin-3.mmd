@@ -1,0 +1,14 @@
+flowchart LR
+    A[Client Request<br/>GET /api/orders/42] --> B[Gateway]
+
+    subgraph Gateway Processing
+        B --> C[Route Matching<br/>Path=/api/orders/**]
+        C --> D[Filter Chain<br/>StripPrefix, CircuitBreaker]
+        D --> E[Inject Trace Headers<br/>traceparent: 00-abc123-span1-01]
+    end
+
+    E --> F[Order Service<br/>http://localhost:8081/orders/42]
+
+    style B fill:#48dbfb,color:#333
+    style E fill:#feca57,color:#333
+    style F fill:#2ed573,color:#fff

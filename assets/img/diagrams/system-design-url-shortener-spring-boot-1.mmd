@@ -1,0 +1,16 @@
+sequenceDiagram
+    participant Client
+    participant API as URL Controller
+    participant Service as URL Service
+    participant Encoder as Base62 Encoder
+    participant DB as PostgreSQL
+
+    Client->>API: POST /api/shorten {url, expiresInDays}
+    API->>Service: shorten(request)
+    Service->>DB: INSERT url_mapping (get auto-generated ID)
+    DB-->>Service: id = 12345
+    Service->>Encoder: encode(12345)
+    Encoder-->>Service: "3d7"
+    Service->>DB: UPDATE short_code = "3d7"
+    Service-->>API: {shortUrl, originalUrl, expiresAt}
+    API-->>Client: 201 Created

@@ -40,6 +40,9 @@ flowchart LR
     style G fill:#2ed573,color:#fff
 ```
 
+![diagram](/assets/img/diagrams/building-rag-application-spring-ai-pgvector-1.png)
+
+
 The key insight: the LLM never sees your entire document corpus. It only sees the 3-5 most relevant chunks for each specific question. This keeps token costs low and answers focused.
 
 ---
@@ -286,6 +289,9 @@ flowchart TD
     style H fill:#48dbfb,color:#333
 ```
 
+![diagram](/assets/img/diagrams/building-rag-application-spring-ai-pgvector-2.png)
+
+
 **Why chunking matters:** If you embed an entire 50-page document as one vector, the embedding becomes a vague average of all topics in the document. By splitting into small, focused chunks, each vector represents a specific piece of information — making retrieval precise.
 
 **Why overlap:** A 350-token overlap ensures that context isn't lost at chunk boundaries. If an important sentence spans two chunks, both chunks capture it.
@@ -354,6 +360,9 @@ sequenceDiagram
     ChatClient-->>User: Answer + sources
 ```
 
+![diagram](/assets/img/diagrams/building-rag-application-spring-ai-pgvector-3.png)
+
+
 Key parameters:
 - **`similarityThreshold(0.7)`** — only include chunks with cosine similarity >= 0.7 (filters out irrelevant matches)
 - **`topK(5)`** — return at most 5 chunks (keeps the context window manageable)
@@ -420,6 +429,9 @@ flowchart TD
     style E fill:#48dbfb,color:#333
     style K fill:#2ed573,color:#fff
 ```
+
+![diagram](/assets/img/diagrams/building-rag-application-spring-ai-pgvector-4.png)
+
 
 **Phase 1** happens once per document. **Phase 2** happens on every user question. The embedding model (text-embedding-3-small) is used in both phases — this is critical. The same model must embed documents and queries for similarity search to work.
 

@@ -1,0 +1,8 @@
+graph LR
+    Dev[Developer] -->|writes| VC[values.yaml<br/>dev/staging/prod]
+    VC --> HC[Helm Chart]
+    HC -->|helm install| OCP[OpenShift Cluster]
+    OCP --> D[Deployment]
+    OCP --> S[Service]
+    OCP --> R[Route]
+    OCP --> CM[ConfigMap]

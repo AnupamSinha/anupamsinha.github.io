@@ -1,0 +1,18 @@
+graph TD
+    subgraph "Order Module"
+        API["Default Interface<br/>OrderService, Order"]
+        EVT["Named Interface: events<br/>OrderPlaced, OrderCancelled"]
+        INT["Internal<br/>OrderRepository, OrderValidator"]
+    end
+
+    subgraph "Analytics Module"
+        AN[AnalyticsService]
+    end
+
+    AN -->|"depends on order::events only"| EVT
+    AN -.->|"CANNOT access"| API
+    AN -.->|"CANNOT access"| INT
+
+    style EVT fill:#feca57,color:#333
+    style API fill:#2ed573,color:#fff
+    style INT fill:#ff4757,color:#fff

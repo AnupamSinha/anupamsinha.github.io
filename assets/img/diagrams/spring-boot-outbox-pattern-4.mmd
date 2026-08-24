@@ -1,0 +1,21 @@
+sequenceDiagram
+    participant Client
+    participant OrderService
+    participant DB
+    participant OutboxRelay
+    participant Kafka
+
+    Client->>OrderService: POST /api/orders
+    activate OrderService
+    OrderService->>DB: BEGIN TRANSACTION
+    OrderService->>DB: INSERT INTO orders (...)
+    OrderService->>DB: INSERT INTO outbox_events (...)
+    OrderService->>DB: COMMIT
+    OrderService-->>Client: 201 Created
+    deactivate OrderService
+
+    Note over OutboxRelay: Every 5 seconds...
+    OutboxRelay->>DB: SELECT * FROM outbox_events WHERE published = false
+    DB-->>OutboxRelay: [event1, event2]
+    OutboxRelay->>Kafka: send(topic, key, payload)
+    OutboxRelay->>DB: UPDATE outbox_events SET published = true

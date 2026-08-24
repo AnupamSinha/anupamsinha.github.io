@@ -39,6 +39,9 @@ flowchart TD
     end
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-kafka-streams-real-time-1.png)
+
+
 A **topology** is a directed acyclic graph (DAG) of stream processors. Data flows from source topics through transformations to sink topics or state stores.
 
 ---
@@ -200,6 +203,9 @@ flowchart LR
     end
     KStream -->|"groupBy + aggregate"| KTable
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-kafka-streams-real-time-2.png)
+
 
 | Concept | KStream | KTable |
 |---------|---------|--------|

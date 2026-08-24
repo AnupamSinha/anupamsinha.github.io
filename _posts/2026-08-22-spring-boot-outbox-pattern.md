@@ -22,6 +22,9 @@ sequenceDiagram
     Note over Service,Kafka: Kafka is down — order exists but event is lost
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-outbox-pattern-1.png)
+
+
 Or worse:
 
 ```mermaid
@@ -34,6 +37,9 @@ sequenceDiagram
     Service->>Database: INSERT order ✗
     Note over Service,Database: DB constraint violation — event published but order doesn't exist
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-outbox-pattern-2.png)
+
 
 This is the **dual-write problem**: writing to two systems (database + message broker) without a single atomic transaction. You can't wrap Kafka and PostgreSQL in the same transaction — they're different systems with different transaction protocols.
 
@@ -66,6 +72,9 @@ graph LR
     style D fill:#fff3e0
     style E fill:#fce4ec
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-outbox-pattern-3.png)
+
 
 **How it works:**
 
@@ -253,6 +262,9 @@ sequenceDiagram
     OutboxRelay->>Kafka: send(topic, key, payload)
     OutboxRelay->>DB: UPDATE outbox_events SET published = true
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-outbox-pattern-4.png)
+
 
 ## Idempotent Consumers
 

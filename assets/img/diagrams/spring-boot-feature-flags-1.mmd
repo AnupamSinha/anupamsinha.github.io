@@ -1,0 +1,6 @@
+graph LR
+    subgraph "Without Feature Flags"
+        A[Code Complete] --> B[Deploy]
+        B --> C[Feature Live for ALL Users]
+        C -->|Bug Found| D[Rollback Everything]
+    end

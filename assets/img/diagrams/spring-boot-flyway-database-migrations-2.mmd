@@ -1,0 +1,10 @@
+gitGraph
+    commit id: "V4 applied"
+    branch feature-a
+    commit id: "V5__Add_phone.sql"
+    checkout main
+    branch feature-b
+    commit id: "V5__Add_address.sql"
+    checkout main
+    merge feature-a
+    merge feature-b id: "CONFLICT"

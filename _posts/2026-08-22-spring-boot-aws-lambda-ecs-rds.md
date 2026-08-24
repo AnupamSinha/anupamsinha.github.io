@@ -43,6 +43,9 @@ graph TB
     end
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-aws-lambda-ecs-rds-1.png)
+
+
 ## Option 1: AWS Lambda + SnapStart
 
 ### Spring Cloud Function
@@ -112,6 +115,9 @@ sequenceDiagram
     Lambda-->>API Gateway: Response
     API Gateway-->>Client: 201 Created (total: ~200ms)
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-aws-lambda-ecs-rds-2.png)
+
 
 ### Cold Start Optimization
 
@@ -237,6 +243,9 @@ graph LR
     E --> F
     F --> G[RDS Read Replica]
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-aws-lambda-ecs-rds-3.png)
+
 
 This is the most familiar model but requires managing:
 - AMIs and patching

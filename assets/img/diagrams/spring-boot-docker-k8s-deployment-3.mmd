@@ -1,0 +1,11 @@
+flowchart LR
+    Client[Client] --> LB[Cloud Load Balancer]
+    LB --> IC[Ingress Controller]
+    IC --> SVC[Service: myapp:80]
+    SVC --> P1[Pod 1:8080]
+    SVC --> P2[Pod 2:8080]
+    SVC --> P3[Pod 3:8080]
+
+    style Client fill:#dfe6e9,color:#333
+    style IC fill:#74b9ff,color:#333
+    style SVC fill:#55efc4,color:#333

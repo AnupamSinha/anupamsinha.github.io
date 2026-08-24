@@ -27,6 +27,9 @@ graph LR
     end
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-feature-flags-1.png)
+
+
 ```mermaid
 graph LR
     subgraph "With Feature Flags"
@@ -38,6 +41,9 @@ graph LR
         H -->|Problem| K[Disable Flag Instantly]
     end
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-feature-flags-2.png)
+
 
 ---
 
@@ -53,6 +59,9 @@ graph TD
     C --> E[Response]
     D --> E
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-feature-flags-3.png)
+
 
 Types of feature flags:
 
@@ -331,6 +340,9 @@ graph LR
     F --> G[Remove Flag from Code]
     G --> H[Delete Flag Definition]
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-feature-flags-4.png)
+
 
 Critical rule: **flags are temporary**. A flag that lives forever becomes technical debt.
 

@@ -1,0 +1,17 @@
+graph TB
+    subgraph "Command Side"
+        A[REST API — POST/PUT/DELETE] --> B[Command Handler]
+        B --> C[Domain Logic / Validation]
+        C --> D[Event Store — MongoDB]
+    end
+
+    subgraph "Query Side"
+        E[REST API — GET] --> F[Query Service]
+        F --> G[Read Model — PostgreSQL]
+    end
+
+    D -->|Events| H[Projection]
+    H -->|Rebuild| G
+
+    style D fill:#f9d77e
+    style G fill:#a8d8ea

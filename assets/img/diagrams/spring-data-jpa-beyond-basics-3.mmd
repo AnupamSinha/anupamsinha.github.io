@@ -1,0 +1,15 @@
+sequenceDiagram
+    participant Client
+    participant Controller
+    participant Service
+    participant EntityManager
+    participant AuditingListener
+
+    Client->>Controller: POST /api/products
+    Controller->>Service: save(product)
+    Service->>EntityManager: persist(product)
+    EntityManager->>AuditingListener: @PrePersist
+    AuditingListener->>AuditingListener: Set createdAt = now()
+    AuditingListener->>AuditingListener: Set updatedAt = now()
+    AuditingListener->>AuditingListener: Set createdBy = currentUser
+    EntityManager->>EntityManager: INSERT INTO products ...

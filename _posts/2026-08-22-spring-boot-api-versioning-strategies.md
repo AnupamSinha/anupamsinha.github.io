@@ -26,6 +26,9 @@ graph LR
     D --> F
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-api-versioning-strategies-1.png)
+
+
 The challenge isn't implementing versions — it's choosing the right strategy and managing the lifecycle.
 
 ---
@@ -331,6 +334,9 @@ graph LR
     C --> D[v1 Returns 410 Gone]
     D --> E[v1 Code Removed]
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-api-versioning-strategies-2.png)
+
 
 Timeline guidance:
 - **Deprecation notice**: 6+ months before removal

@@ -1,0 +1,21 @@
+graph TB
+    subgraph "Option 1: Lambda"
+        A[API Gateway] --> B[Lambda Function]
+        B --> C[RDS Proxy]
+        C --> D[RDS PostgreSQL]
+    end
+
+    subgraph "Option 2: ECS Fargate"
+        E[ALB] --> F[ECS Service]
+        F --> G[Task 1]
+        F --> H[Task 2]
+        G --> I[RDS PostgreSQL]
+        H --> I
+    end
+
+    subgraph "Option 3: EC2"
+        J[ALB] --> K[EC2 Instance 1]
+        J --> L[EC2 Instance 2]
+        K --> M[RDS PostgreSQL]
+        L --> M
+    end

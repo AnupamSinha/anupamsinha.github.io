@@ -1,0 +1,18 @@
+sequenceDiagram
+    participant Client
+    participant API Gateway
+    participant Lambda
+
+    Client->>API Gateway: POST /orders
+    API Gateway->>Lambda: Invoke (cold start)
+    Note over Lambda: JVM init: ~1s
+    Note over Lambda: Spring context: ~4-8s
+    Note over Lambda: Handler execution: ~100ms
+    Lambda-->>API Gateway: Response
+    API Gateway-->>Client: 201 Created (total: 5-9s)
+
+    Client->>API Gateway: POST /orders (warm)
+    API Gateway->>Lambda: Invoke (warm)
+    Note over Lambda: Handler execution: ~100ms
+    Lambda-->>API Gateway: Response
+    API Gateway-->>Client: 201 Created (total: ~200ms)

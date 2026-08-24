@@ -23,6 +23,9 @@ graph LR
     B -->|Conditional creation| G[Factory]
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-design-patterns-in-practice-1.png)
+
+
 ---
 
 ## Strategy Pattern — Multiple Payment Processors
@@ -247,6 +250,9 @@ sequenceDiagram
     Publisher->>Listener3: @TransactionalEventListener
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-design-patterns-in-practice-2.png)
+
+
 ### The Event (Domain Event)
 
 ```java
@@ -350,6 +356,9 @@ graph LR
     C --> B
     B --> F[HTTP Response]
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-design-patterns-in-practice-3.png)
+
 
 ### Custom Interceptors
 

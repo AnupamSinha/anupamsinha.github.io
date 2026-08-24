@@ -1,0 +1,11 @@
+graph TD
+    A[Job] --> B[Step 1]
+    A --> C[Step 2]
+    A --> D[Step N]
+    B --> E[ItemReader]
+    B --> F[ItemProcessor]
+    B --> G[ItemWriter]
+    E --> H[Chunk of N items]
+    H --> F
+    F --> I[Processed Chunk]
+    I --> G

@@ -35,6 +35,9 @@ graph LR
     H --> I[Ready for Promotion]
 ```
 
+![diagram](/assets/img/diagrams/github-actions-cicd-spring-boot-1.png)
+
+
 The complete pipeline:
 1. **Build & Test** — Compile, run unit + integration tests
 2. **Docker Build** — Create optimized container image
@@ -422,6 +425,9 @@ graph TD
 
     E[hotfix/abc] -->|PR| B
 ```
+
+![diagram](/assets/img/diagrams/github-actions-cicd-spring-boot-2.png)
+
 
 | Branch | Trigger | Action |
 |--------|---------|--------|

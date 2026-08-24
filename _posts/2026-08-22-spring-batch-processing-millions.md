@@ -38,6 +38,9 @@ graph TD
     I --> G
 ```
 
+![diagram](/assets/img/diagrams/spring-batch-processing-millions-1.png)
+
+
 Key concepts:
 - **Job** — a complete batch process (e.g., "import transactions")
 - **Step** — a single phase within a job (read → process → write)
@@ -254,6 +257,9 @@ graph TD
     A --> D[Worker 3: rows 500K-750K]
     A --> E[Worker 4: rows 750K-1M]
 ```
+
+![diagram](/assets/img/diagrams/spring-batch-processing-millions-2.png)
+
 
 ```java
 @Bean

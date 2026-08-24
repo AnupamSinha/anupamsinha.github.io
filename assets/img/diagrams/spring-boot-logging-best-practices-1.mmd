@@ -1,0 +1,5 @@
+flowchart LR
+    A[Application] --> B[JSON Logs to stdout]
+    B --> C[Log Shipper: Filebeat/Fluentd]
+    C --> D[Log Aggregator: Elasticsearch/Loki]
+    D --> E[Search + Dashboard: Kibana/Grafana]

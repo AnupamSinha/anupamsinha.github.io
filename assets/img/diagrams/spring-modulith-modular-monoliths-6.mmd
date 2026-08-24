@@ -1,0 +1,7 @@
+graph LR
+    A[OrderService] -->|"calls directly"| B[InventoryService]
+    A -->|"calls directly"| C[NotificationService]
+    A -->|"calls directly"| D[AnalyticsService]
+    A -->|"calls directly"| E[LoyaltyService]
+
+    style A fill:#ff6b6b,color:#fff

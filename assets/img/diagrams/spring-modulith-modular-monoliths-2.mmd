@@ -1,0 +1,17 @@
+graph TD
+    subgraph Network Boundary
+        A[Order Service] -->|HTTP| B[Payment Service]
+        A -->|HTTP| C[Notification Service]
+        A -->|HTTP| D[Inventory Service]
+        B -->|HTTP| E[Audit Service]
+        C -->|HTTP| F[Template Service]
+        D -->|HTTP| G[Warehouse Service]
+    end
+
+    X[Load Balancer] --> A
+    Y[(Database per Service x7)] --- A
+    Y --- B
+    Y --- C
+    Y --- D
+
+    style X fill:#feca57,color:#333

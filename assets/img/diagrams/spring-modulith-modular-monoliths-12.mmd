@@ -1,0 +1,17 @@
+graph LR
+    subgraph "Phase 1: Modular Monolith"
+        direction TB
+        A1[Order] -->|"in-process event"| B1[Notification]
+    end
+
+    subgraph "Phase 2: Extract Service"
+        direction TB
+        A2[Order Service] -->|"Kafka event"| B2[Notification Service]
+    end
+
+    Phase1 -->|"When you have evidence<br/>you need to scale independently"| Phase2
+
+    style A1 fill:#48dbfb,color:#333
+    style B1 fill:#48dbfb,color:#333
+    style A2 fill:#2ed573,color:#fff
+    style B2 fill:#ff9ff3,color:#333

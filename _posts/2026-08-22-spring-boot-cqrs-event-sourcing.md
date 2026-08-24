@@ -44,6 +44,9 @@ graph TB
     style G fill:#a8d8ea
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-cqrs-event-sourcing-1.png)
+
+
 Commands mutate state. Queries never mutate. They don't even share a database.
 
 ---
@@ -60,6 +63,9 @@ graph LR
     D --> E[OrderShipped]
     E --> F["Current State (derived)"]
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-cqrs-event-sourcing-2.png)
+
 
 Benefits:
 - **Complete audit trail** — you know exactly what happened and when
@@ -299,6 +305,9 @@ sequenceDiagram
     QueryAPI->>ReadModel: SELECT
     QueryAPI-->>Client: 200 OK (order data)
 ```
+
+![diagram](/assets/img/diagrams/spring-boot-cqrs-event-sourcing-3.png)
+
 
 Strategies for handling this:
 

@@ -1,0 +1,12 @@
+flowchart LR
+    subgraph "Sorted Set (timestamps)"
+        T1[09:00:01.234]
+        T2[09:00:15.567]
+        T3[09:00:32.890]
+        T4[09:00:45.123]
+    end
+    
+    A[New Request<br>09:01:02.000] --> B{Remove entries<br>before 09:00:02}
+    B --> C[Count remaining: 3]
+    C --> D{3 < limit 5?}
+    D -->|Yes| E[ALLOW + Add timestamp]

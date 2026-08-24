@@ -1,0 +1,11 @@
+graph LR
+    A[Browser] --> B[Load Balancer]
+    B --> C[App Server 1]
+    B --> D[App Server 2]
+    B --> E[App Server N]
+    C --> F[Redis Cache]
+    D --> F
+    E --> F
+    F --> G[PostgreSQL Primary]
+    G --> H[Read Replica 1]
+    G --> I[Read Replica 2]

@@ -25,6 +25,9 @@ flowchart LR
     C --> D[Database]
 ```
 
+![diagram](/assets/img/diagrams/system-design-rate-limiter-spring-boot-1.png)
+
+
 ---
 
 ## Rate Limiting Algorithms
@@ -47,6 +50,9 @@ flowchart TD
     end
 ```
 
+![diagram](/assets/img/diagrams/system-design-rate-limiter-spring-boot-2.png)
+
+
 **Problem:** Burst at window boundary. If limit is 10/minute, a client can send 10 requests at 00:59 and 10 more at 01:00 — effectively 20 requests in 2 seconds.
 
 ### 2. Sliding Window Log
@@ -67,6 +73,9 @@ flowchart LR
     C --> D{3 < limit 5?}
     D -->|Yes| E[ALLOW + Add timestamp]
 ```
+
+![diagram](/assets/img/diagrams/system-design-rate-limiter-spring-boot-3.png)
+
 
 **This is what we implement.** It's precise, no boundary issues, and Redis sorted sets make it efficient.
 
@@ -91,6 +100,9 @@ flowchart TD
     B -->|No| D[REJECT 429]
     E[Refill: 1 token/sec] --> A
 ```
+
+![diagram](/assets/img/diagrams/system-design-rate-limiter-spring-boot-4.png)
+
 
 **Good for:** allowing bursts up to bucket capacity while maintaining a steady rate.
 
@@ -133,6 +145,9 @@ flowchart TD
     L --> M[GlobalExceptionHandler]
     M --> N[HTTP 429 + Headers]
 ```
+
+![diagram](/assets/img/diagrams/system-design-rate-limiter-spring-boot-5.png)
+
 
 ---
 
@@ -374,6 +389,9 @@ flowchart TD
     B2 --> R
     B3 --> R
 ```
+
+![diagram](/assets/img/diagrams/system-design-rate-limiter-spring-boot-6.png)
+
 
 Because Redis is the single source of truth, our implementation is **distributed by default**. Multiple application instances share the same rate limit counters through Redis.
 

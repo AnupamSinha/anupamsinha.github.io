@@ -64,6 +64,9 @@ graph LR
     OCP --> CM[ConfigMap]
 ```
 
+![diagram](/assets/img/diagrams/service-mesh-vs-helm-openshift-deployment-1.png)
+
+
 Helm takes your templates + values and produces the exact Kubernetes resources needed. Different values files produce different configurations — same chart, multiple environments.
 
 | Capability | Description |

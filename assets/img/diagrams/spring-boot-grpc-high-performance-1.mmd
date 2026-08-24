@@ -1,0 +1,7 @@
+sequenceDiagram
+    participant Client as gRPC Client
+    participant Server as gRPC Server
+
+    Client->>Server: HTTP/2 stream — binary protobuf request
+    Server-->>Client: HTTP/2 stream — binary protobuf response
+    Note over Client,Server: Single TCP connection, multiplexed streams

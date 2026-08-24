@@ -38,6 +38,9 @@ sequenceDiagram
     Note over Browser: No full page reload, no JSON parsing
 ```
 
+![diagram](/assets/img/diagrams/spring-boot-htmx-server-rendered-1.png)
+
+
 Key insight: the server owns the rendering. No duplication of templates between frontend and backend.
 
 ---

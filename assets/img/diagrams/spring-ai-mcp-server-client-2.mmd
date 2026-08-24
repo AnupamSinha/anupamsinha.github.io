@@ -1,0 +1,19 @@
+sequenceDiagram
+    participant User
+    participant Client as MCP Client (8080)
+    participant Server as MCP Server (8081)
+    participant LLM as OpenAI
+
+    Note over Client,Server: Startup: tool discovery
+    Client->>Server: GET /mcp (SSE connection)
+    Server-->>Client: Tool list: [getPaymentStatus, getExchangeRate, ...]
+
+    Note over User,LLM: Runtime: user query
+    User->>Client: "Check payment TXN-9042"
+    Client->>LLM: Message + discovered tool schemas
+    LLM-->>Client: Tool call: getPaymentStatus("TXN-9042")
+    Client->>Server: MCP tool call request
+    Server-->>Client: {status: COMPLETED, amount: 250...}
+    Client->>LLM: Tool result
+    LLM-->>Client: "Payment TXN-9042 is completed..."
+    Client-->>User: Final answer

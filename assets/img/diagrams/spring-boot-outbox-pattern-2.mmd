@@ -1,0 +1,8 @@
+sequenceDiagram
+    participant Service
+    participant Database
+    participant Kafka
+
+    Service->>Kafka: publish OrderCreated ✓
+    Service->>Database: INSERT order ✗
+    Note over Service,Database: DB constraint violation — event published but order doesn't exist

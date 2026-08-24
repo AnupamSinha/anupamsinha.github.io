@@ -1,0 +1,6 @@
+graph TD
+    A[feature/xyz] -->|PR| B[main]
+    B -->|auto-deploy| C[Staging]
+    C -->|manual approval| D[Production]
+
+    E[hotfix/abc] -->|PR| B

@@ -1,0 +1,5 @@
+graph LR
+    A[Collection] --> B["$match (filter)"]
+    B --> C["$group (aggregate)"]
+    C --> D["$project (reshape)"]
+    D --> E[Results]

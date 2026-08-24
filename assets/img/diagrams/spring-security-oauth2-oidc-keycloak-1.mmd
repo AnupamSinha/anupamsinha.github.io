@@ -1,0 +1,14 @@
+sequenceDiagram
+    participant User
+    participant Client as Frontend / Postman
+    participant KC as Keycloak (IdP)
+    participant API as Resource Server
+
+    User->>Client: Login
+    Client->>KC: Authorization Code Flow
+    KC-->>Client: Access Token (JWT) + ID Token
+    Client->>API: GET /api/payments (Bearer token)
+    API->>API: Validate JWT signature + claims
+    API-->>Client: 200 OK + data
+
+    Note over API: No session. Stateless. Token carries identity + roles.

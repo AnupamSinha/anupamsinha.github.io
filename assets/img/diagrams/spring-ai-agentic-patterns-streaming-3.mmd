@@ -1,0 +1,23 @@
+sequenceDiagram
+    participant Client
+    participant Advisor as ToolCallingAdvisor
+    participant Model as OpenAI
+
+    Client->>Advisor: stream("Plan trip to Paris")
+    Note over Advisor,Model: Tool loop (blocking)
+    Advisor->>Model: message + tools
+    Model-->>Advisor: call getWeatherForecast
+    Advisor->>Advisor: execute tool
+    Advisor->>Model: result + history
+    Model-->>Advisor: call searchFlights
+    Advisor->>Advisor: execute tool
+    Note over Advisor,Model: ... more tool calls ...
+    Model-->>Advisor: call calculateBudget
+    Advisor->>Advisor: execute tool
+    Advisor->>Model: all results
+    Note over Client,Model: Streaming begins
+    Model-->>Client: token: "#"
+    Model-->>Client: token: " 5-Day"
+    Model-->>Client: token: " Paris"
+    Model-->>Client: token: " Trip"
+    Model-->>Client: ...

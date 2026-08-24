@@ -1,0 +1,10 @@
+flowchart LR
+    A[Client Request] --> B{Dynamic Filters?}
+    B -->|Yes| C[Specifications]
+    B -->|No| D[Simple findAll]
+    C --> E{Need all columns?}
+    D --> E
+    E -->|No| F[Projections]
+    E -->|Yes| G[Full Entity]
+    F --> H[Response]
+    G --> H

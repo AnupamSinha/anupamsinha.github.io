@@ -1,0 +1,7 @@
+graph LR
+    A[Developer] -->|WRONG| B[application.yml<br/>with credentials<br/>committed to Git]
+    A -->|RIGHT| C[Environment Variables]
+    A -->|RIGHT| D[Vault / AWS Secrets Manager]
+    A -->|RIGHT| E[Spring Cloud Config<br/>with encryption]
+    B -->|Exposed via| F[GitHub / GitLab]
+    F -->|Scraped by| G[Bots / Attackers]

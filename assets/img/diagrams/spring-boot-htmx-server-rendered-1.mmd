@@ -1,0 +1,10 @@
+sequenceDiagram
+    participant Browser
+    participant HTMX
+    participant Server
+
+    Browser->>HTMX: User clicks button (hx-get="/products/list")
+    HTMX->>Server: GET /products/list
+    Server-->>HTMX: HTML fragment (<tbody>...</tbody>)
+    HTMX->>Browser: Swap fragment into #product-table-body
+    Note over Browser: No full page reload, no JSON parsing

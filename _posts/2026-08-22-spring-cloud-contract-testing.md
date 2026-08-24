@@ -32,6 +32,9 @@ graph LR
     D -->|"Used in tests"| A
 ```
 
+![diagram](/assets/img/diagrams/spring-cloud-contract-testing-1.png)
+
+
 The contract lives in the producer's repository but represents the consumer's expectations. If the producer breaks the contract, their build fails — before deployment.
 
 ---
@@ -229,6 +232,9 @@ sequenceDiagram
         CI/CD-->>Consumer Team: Producer doesn't support this contract yet
     end
 ```
+
+![diagram](/assets/img/diagrams/spring-cloud-contract-testing-2.png)
+
 
 This workflow ensures:
 - **Breaking changes are caught before deployment**

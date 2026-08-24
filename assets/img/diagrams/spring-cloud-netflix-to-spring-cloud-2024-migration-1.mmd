@@ -1,0 +1,26 @@
+flowchart LR
+    subgraph "Netflix (deprecated)"
+        A[Ribbon]
+        B[Hystrix]
+        C[Zuul 1]
+        D[Eureka Client]
+    end
+
+    subgraph "Modern Replacements"
+        E[Spring Cloud LoadBalancer]
+        F[Resilience4j]
+        G[Spring Cloud Gateway]
+        H[Eureka / K8s Discovery]
+    end
+
+    A --> E
+    B --> F
+    C --> G
+    D --> H
+
+    style A fill:#ff6b6b,color:#fff
+    style B fill:#ff6b6b,color:#fff
+    style C fill:#ff6b6b,color:#fff
+    style E fill:#2ed573,color:#fff
+    style F fill:#2ed573,color:#fff
+    style G fill:#2ed573,color:#fff

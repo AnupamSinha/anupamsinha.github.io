@@ -1,0 +1,8 @@
+graph TD
+    A[API] --> B{Priority?}
+    B -->|HIGH| C[notifications-high]
+    B -->|MEDIUM| D[notifications-medium]
+    B -->|LOW| E[notifications-low]
+    C --> F[Consumer Pool - 8 threads]
+    D --> G[Consumer Pool - 4 threads]
+    E --> H[Consumer Pool - 2 threads]

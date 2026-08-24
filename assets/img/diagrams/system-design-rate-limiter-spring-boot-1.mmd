@@ -1,0 +1,5 @@
+flowchart LR
+    A[Client] --> B[Rate Limiter]
+    B -->|Allowed| C[API Server]
+    B -->|Rejected 429| A
+    C --> D[Database]

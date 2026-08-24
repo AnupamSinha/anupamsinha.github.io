@@ -1,0 +1,9 @@
+sequenceDiagram
+    participant App
+    participant Cache
+    participant DB
+
+    App->>Cache: PUT product:42
+    Cache-->>App: OK (immediate)
+    Note over Cache,DB: Async flush (batched)
+    Cache->>DB: UPDATE products SET ...

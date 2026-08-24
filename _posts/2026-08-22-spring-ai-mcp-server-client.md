@@ -49,6 +49,9 @@ flowchart LR
     style T3 fill:#48dbfb,color:#333
 ```
 
+![diagram](/assets/img/diagrams/spring-ai-mcp-server-client-1.png)
+
+
 Think of it as REST for AI tools — a standard interface so any client can discover and invoke any server's tools without custom integration.
 
 ---
@@ -83,6 +86,9 @@ sequenceDiagram
     LLM-->>Client: "Payment TXN-9042 is completed..."
     Client-->>User: Final answer
 ```
+
+![diagram](/assets/img/diagrams/spring-ai-mcp-server-client-2.png)
+
 
 The client never defines tool schemas locally. It discovers them from the server at startup.
 

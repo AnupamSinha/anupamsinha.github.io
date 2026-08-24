@@ -1,0 +1,13 @@
+sequenceDiagram
+    participant Browser
+    participant API as URL Controller
+    participant Service as URL Service
+    participant DB as PostgreSQL
+
+    Browser->>API: GET /3d7
+    API->>Service: resolve("3d7")
+    Service->>DB: SELECT WHERE short_code = "3d7"
+    DB-->>Service: originalUrl
+    Service->>DB: UPDATE click_count + 1
+    Service-->>API: "https://example.com/long-url"
+    API-->>Browser: 302 Found (Location: original URL)

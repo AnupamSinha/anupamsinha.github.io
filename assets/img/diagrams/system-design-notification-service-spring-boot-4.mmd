@@ -1,0 +1,21 @@
+sequenceDiagram
+    participant Kafka
+    participant Consumer
+    participant Channel
+    participant DLT as Dead Letter Topic
+
+    Kafka->>Consumer: Deliver message
+    Consumer->>Channel: send()
+    Channel-->>Consumer: Exception!
+    Note over Consumer: Attempt 1 failed
+    Consumer->>Kafka: Retry after 1s
+    Kafka->>Consumer: Redeliver
+    Consumer->>Channel: send()
+    Channel-->>Consumer: Exception!
+    Note over Consumer: Attempt 2 failed
+    Consumer->>Kafka: Retry after 2s
+    Kafka->>Consumer: Redeliver
+    Consumer->>Channel: send()
+    Channel-->>Consumer: Exception!
+    Note over Consumer: Attempt 3 failed
+    Consumer->>DLT: Move to DLT

@@ -1,0 +1,11 @@
+sequenceDiagram
+    participant App
+    participant Cache
+    participant DB
+
+    App->>Cache: GET product:42
+    Cache-->>App: MISS
+    App->>DB: SELECT * FROM products WHERE id=42
+    DB-->>App: Product data
+    App->>Cache: SET product:42 (with TTL)
+    App-->>App: Return product

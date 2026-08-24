@@ -1,0 +1,25 @@
+graph LR
+    subgraph "Outer Ring — Adapters"
+        A[REST Controller]
+        B[JPA Repository]
+        C[Stripe Gateway]
+    end
+
+    subgraph "Middle Ring — Ports"
+        D[CreateOrderUseCase]
+        E[OrderRepository]
+        F[PaymentGateway]
+    end
+
+    subgraph "Inner Ring — Domain"
+        G[Order]
+        H[OrderService]
+    end
+
+    A -->|depends on| D
+    B -->|implements| E
+    C -->|implements| F
+    H -->|uses| E
+    H -->|uses| F
+    H -->|creates| G
+    D -->|implemented by| H
