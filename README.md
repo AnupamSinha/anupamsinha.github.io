@@ -6,7 +6,7 @@ Personal tech blog — practical Java/Spring Boot guides, architecture patterns,
 
 ---
 
-## Posts (40)
+## Posts (50)
 
 ### Java & Spring Boot Fundamentals
 | Post | Code |
@@ -71,6 +71,22 @@ Personal tech blog — practical Java/Spring Boot guides, architecture patterns,
 | Migrating from Spring Cloud Netflix to Spring Cloud 2024 | — |
 | Feature Flags with Togglz | [spring-boot-feature-flags](https://github.com/AnupamSinha/spring-boot-feature-flags) |
 | Service Mesh vs Helm in OpenShift | — |
+| Terraform for Java Developers | — |
+| Docker Compose for Spring Developers | — |
+
+### System Design & Interview Prep
+| Post | Code |
+|------|------|
+| Rate Limiter with Redis | [spring-boot-rate-limiter](https://github.com/AnupamSinha/spring-boot-rate-limiter) |
+| URL Shortener | [spring-boot-url-shortener](https://github.com/AnupamSinha/spring-boot-url-shortener) |
+| Notification Service (Email, SMS, Push) | [spring-boot-notification-service](https://github.com/AnupamSinha/spring-boot-notification-service) |
+
+### Java Deep Dives
+| Post | Code |
+|------|------|
+| Java 21 Features Deep Dive | — |
+| Writing Better Java — Clean Code 2026 | — |
+| Quarkus vs Spring Boot Comparison | — |
 
 ### Developer Experience
 | Post | Code |
@@ -78,6 +94,12 @@ Personal tech blog — practical Java/Spring Boot guides, architecture patterns,
 | Spring Boot Developer Productivity | — |
 | Building a CLI with Spring Shell | [spring-shell-cli](https://github.com/AnupamSinha/spring-shell-cli) |
 | Setting Up a Blog with Jekyll Chirpy | — |
+
+### Career & Growth
+| Post | Code |
+|------|------|
+| From Developer to Tech Lead — Lessons | — |
+| Building a Developer Portfolio That Gets Interviews | — |
 
 ---
 
