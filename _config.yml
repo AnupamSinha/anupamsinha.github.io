@@ -64,7 +64,7 @@ pageviews:
   provider: goatcounter
 
 # Pagination
-paginate: 70
+paginate: 10
 
 # ------------ Do not modify below ------------------
 
