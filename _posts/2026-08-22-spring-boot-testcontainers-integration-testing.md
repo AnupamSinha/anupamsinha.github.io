@@ -468,10 +468,10 @@ Testcontainers wins when **correctness matters more than speed**. For a 30-secon
 
 ## Full Working Example
 
-The complete test suite with PostgreSQL, Kafka, and Redis examples is at [github.com/AnupamSinha/spring-boot-testcontainers](https://github.com/AnupamSinha/spring-boot-testcontainers).
+The complete test suite with PostgreSQL, Kafka, and Redis examples is at [github.com/AnupamSinha/spring-boot-examples/tree/main/08-testcontainers](https://github.com/AnupamSinha/spring-boot-examples/tree/main/08-testcontainers).
 
 ```bash
-git clone https://github.com/AnupamSinha/spring-boot-testcontainers.git
+git clone https://github.com/AnupamSinha/spring-boot-examples/tree/main/08-testcontainers
 cd spring-boot-testcontainers
 ./mvnw verify
 ```

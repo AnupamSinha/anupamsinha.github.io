@@ -465,10 +465,10 @@ Monitor this. Set budget alerts.
 
 ## Full Working Example
 
-The complete code is available at [github.com/AnupamSinha/spring-ai-agents](https://github.com/AnupamSinha/spring-ai-agents).
+The complete code is available at [github.com/AnupamSinha/spring-boot-examples/tree/main/07-ai-agents](https://github.com/AnupamSinha/spring-boot-examples/tree/main/07-ai-agents).
 
 ```bash
-git clone https://github.com/AnupamSinha/spring-ai-agents.git
+git clone https://github.com/AnupamSinha/spring-boot-examples/tree/main/07-ai-agents
 cd spring-ai-agents
 export OPENAI_API_KEY=sk-your-key-here
 ./mvnw spring-boot:run

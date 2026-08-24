@@ -429,7 +429,7 @@ Sort sort = Sort.by(
 
 The complete source code is available on GitHub:
 
-> [**github.com/AnupamSinha/spring-data-jpa-advanced**](https://github.com/AnupamSinha/spring-data-jpa-advanced)
+> [**github.com/AnupamSinha/spring-boot-examples/tree/main/13-jpa-advanced**](https://github.com/AnupamSinha/spring-boot-examples/tree/main/13-jpa-advanced)
 
 ### Running Locally
 

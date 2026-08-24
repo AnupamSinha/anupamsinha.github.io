@@ -580,7 +580,7 @@ We built a complete RAG application using Spring AI that:
 - Returns source references for transparency
 - Handles errors gracefully
 
-The code is available at [github.com/AnupamSinha/spring-ai-in-action](https://github.com/AnupamSinha/spring-ai-in-action).
+The code is available at [github.com/AnupamSinha/spring-boot-examples/tree/main/05-ai-function-calling](https://github.com/AnupamSinha/spring-boot-examples/tree/main/05-ai-function-calling).
 
 **Next steps to explore:**
 - Add **conversation memory** using `VectorStoreChatMemoryAdvisor`

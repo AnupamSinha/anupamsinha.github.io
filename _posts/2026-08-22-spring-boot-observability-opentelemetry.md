@@ -465,10 +465,10 @@ public SpanExportingPredicate alwaysExportErrors() {
 
 ## Full Working Example
 
-The complete project with Docker Compose, Grafana dashboards, and instrumented app is at [github.com/AnupamSinha/spring-boot-observability](https://github.com/AnupamSinha/spring-boot-observability).
+The complete project with Docker Compose, Grafana dashboards, and instrumented app is at [github.com/AnupamSinha/spring-boot-examples/tree/main/11-observability](https://github.com/AnupamSinha/spring-boot-examples/tree/main/11-observability).
 
 ```bash
-git clone https://github.com/AnupamSinha/spring-boot-observability.git
+git clone https://github.com/AnupamSinha/spring-boot-examples/tree/main/11-observability
 cd spring-boot-observability
 docker compose up -d   # Starts Prometheus, Loki, Tempo, Grafana
 ./mvnw spring-boot:run

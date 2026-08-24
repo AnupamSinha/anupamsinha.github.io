@@ -390,10 +390,10 @@ Adjust the role-extraction logic in `JwtAuthenticationConverter` (Auth0 uses a d
 
 ## Full Working Example
 
-The complete project with Keycloak docker-compose, resource server, and test suite is at [github.com/AnupamSinha/spring-security-oauth2-demo](https://github.com/AnupamSinha/spring-security-oauth2-demo).
+The complete project with Keycloak docker-compose, resource server, and test suite is at [github.com/AnupamSinha/spring-boot-examples/tree/main/09-security-oauth2](https://github.com/AnupamSinha/spring-boot-examples/tree/main/09-security-oauth2).
 
 ```bash
-git clone https://github.com/AnupamSinha/spring-security-oauth2-demo.git
+git clone https://github.com/AnupamSinha/spring-boot-examples/tree/main/09-security-oauth2
 cd spring-security-oauth2-demo
 docker compose up -d   # Starts Keycloak
 ./mvnw spring-boot:run

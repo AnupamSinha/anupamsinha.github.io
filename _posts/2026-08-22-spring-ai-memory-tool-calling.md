@@ -369,10 +369,10 @@ With order `400` (higher than `ToolCallingAdvisor`'s default of `300`), memory s
 
 ## Full Working Example
 
-This builds on the [spring-ai-function](https://github.com/AnupamSinha/spring-ai-function) project. The `memory` branch adds conversation memory:
+This builds on the [spring-ai-function](https://github.com/AnupamSinha/spring-boot-examples/tree/main/05-ai-function-calling) project. The `memory` branch adds conversation memory:
 
 ```bash
-git clone https://github.com/AnupamSinha/spring-ai-function.git
+git clone https://github.com/AnupamSinha/spring-boot-examples/tree/main/05-ai-function-calling
 cd spring-ai-function
 git checkout memory
 export OPENAI_API_KEY=sk-your-key-here

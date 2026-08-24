@@ -456,10 +456,10 @@ Key Kafka metrics to watch:
 
 ## Full Working Example
 
-The complete multi-module project is at [github.com/AnupamSinha/spring-boot-kafka-microservices](https://github.com/AnupamSinha/spring-boot-kafka-microservices).
+The complete multi-module project is at [github.com/AnupamSinha/spring-boot-examples/tree/main/10-kafka-microservices](https://github.com/AnupamSinha/spring-boot-examples/tree/main/10-kafka-microservices).
 
 ```bash
-git clone https://github.com/AnupamSinha/spring-boot-kafka-microservices.git
+git clone https://github.com/AnupamSinha/spring-boot-examples/tree/main/10-kafka-microservices
 cd spring-boot-kafka-microservices
 docker compose up -d
 ./mvnw spring-boot:run -pl order-service

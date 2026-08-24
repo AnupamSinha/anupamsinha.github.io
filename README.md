@@ -12,64 +12,64 @@ Personal tech blog — practical Java/Spring Boot guides, architecture patterns,
 | Post | Code |
 |------|------|
 | Java 18 to Java 21 Migration Guide | — |
-| Beat the Basics — Spring Boot from Zero to Confident | [spring-boot-basics](https://github.com/AnupamSinha/spring-boot-basics) |
-| Spring Boot with Virtual Threads (Project Loom) | [spring-boot-virtual-threads](https://github.com/AnupamSinha/spring-boot-virtual-threads) |
-| Spring Boot with GraalVM Native Images | [spring-boot-graalvm-native](https://github.com/AnupamSinha/spring-boot-graalvm-native) |
-| Spring Boot Performance Tuning Guide | [spring-boot-performance-tuning](https://github.com/AnupamSinha/spring-boot-performance-tuning) |
+| Beat the Basics — Spring Boot from Zero to Confident | [01-basics](https://github.com/AnupamSinha/spring-boot-examples/tree/main/01-basics) |
+| Spring Boot with Virtual Threads (Project Loom) | [02-virtual-threads](https://github.com/AnupamSinha/spring-boot-examples/tree/main/02-virtual-threads) |
+| Spring Boot with GraalVM Native Images | [03-graalvm-native](https://github.com/AnupamSinha/spring-boot-examples/tree/main/03-graalvm-native) |
+| Spring Boot Performance Tuning Guide | [04-performance-tuning](https://github.com/AnupamSinha/spring-boot-examples/tree/main/04-performance-tuning) |
 
 ### Spring AI
 | Post | Code |
 |------|------|
-| Building a RAG Application with Spring AI + PGVector | [spring-ai-in-action](https://github.com/AnupamSinha/spring-ai-in-action) |
-| Spring AI Function Calling — Making LLMs Do Things | [spring-ai-function](https://github.com/AnupamSinha/spring-ai-function) |
-| Spring AI Tool Calling + Conversation Memory | [spring-ai-function](https://github.com/AnupamSinha/spring-ai-function) (memory branch) |
-| Spring AI + MCP — Exposing Tools as a Server | [spring-ai-mcp](https://github.com/AnupamSinha/spring-ai-mcp) |
-| Spring AI Agentic Patterns + Streaming | [spring-ai-agents](https://github.com/AnupamSinha/spring-ai-agents) |
+| Building a RAG Application with Spring AI + PGVector | [05-ai-function-calling](https://github.com/AnupamSinha/spring-boot-examples/tree/main/05-ai-function-calling) |
+| Spring AI Function Calling — Making LLMs Do Things | [05-ai-function-calling](https://github.com/AnupamSinha/spring-boot-examples/tree/main/05-ai-function-calling) |
+| Spring AI Tool Calling + Conversation Memory | [05-ai-function-calling](https://github.com/AnupamSinha/spring-boot-examples/tree/main/05-ai-function-calling) |
+| Spring AI + MCP — Exposing Tools as a Server | [06-ai-mcp](https://github.com/AnupamSinha/spring-boot-examples/tree/main/06-ai-mcp) |
+| Spring AI Agentic Patterns + Streaming | [07-ai-agents](https://github.com/AnupamSinha/spring-boot-examples/tree/main/07-ai-agents) |
 
 ### Architecture & Design
 | Post | Code |
 |------|------|
 | Spring Modulith — Modular Monoliths | — |
 | Design Patterns in Spring Boot (Strategy, Observer, Template Method) | — |
-| Hexagonal Architecture (Ports & Adapters) | [spring-boot-hexagonal](https://github.com/AnupamSinha/spring-boot-hexagonal) |
-| CQRS + Event Sourcing | [spring-boot-cqrs-eventsourcing](https://github.com/AnupamSinha/spring-boot-cqrs-eventsourcing) |
-| Outbox Pattern with Kafka | [spring-boot-outbox-pattern](https://github.com/AnupamSinha/spring-boot-outbox-pattern) |
-| Spring Boot Multi-Tenancy | [spring-boot-multi-tenancy](https://github.com/AnupamSinha/spring-boot-multi-tenancy) |
+| Hexagonal Architecture (Ports & Adapters) | [22-hexagonal](https://github.com/AnupamSinha/spring-boot-examples/tree/main/22-hexagonal) |
+| CQRS + Event Sourcing | [21-cqrs-eventsourcing](https://github.com/AnupamSinha/spring-boot-examples/tree/main/21-cqrs-eventsourcing) |
+| Outbox Pattern with Kafka | [25-outbox-pattern](https://github.com/AnupamSinha/spring-boot-examples/tree/main/25-outbox-pattern) |
+| Spring Boot Multi-Tenancy | [18-multi-tenancy](https://github.com/AnupamSinha/spring-boot-examples/tree/main/18-multi-tenancy) |
 | API Versioning Strategies | — |
 
 ### Data & Integration
 | Post | Code |
 |------|------|
-| Spring Data JPA — Beyond the Basics | [spring-data-jpa-advanced](https://github.com/AnupamSinha/spring-data-jpa-advanced) |
-| Spring Boot + MongoDB | [spring-boot-mongodb](https://github.com/AnupamSinha/spring-boot-mongodb) |
-| Spring Boot + GraphQL | [spring-boot-graphql](https://github.com/AnupamSinha/spring-boot-graphql) |
-| Spring Boot + gRPC | [spring-boot-grpc](https://github.com/AnupamSinha/spring-boot-grpc) |
-| Event-Driven Microservices with Kafka | [spring-boot-kafka-microservices](https://github.com/AnupamSinha/spring-boot-kafka-microservices) |
-| Caching Strategies (Redis + Caffeine) | [spring-boot-caching](https://github.com/AnupamSinha/spring-boot-caching) |
-| Spring Batch — Processing Millions of Records | [spring-batch-demo](https://github.com/AnupamSinha/spring-batch-demo) |
-| Spring Boot + WebSocket Real-Time | [spring-boot-websocket](https://github.com/AnupamSinha/spring-boot-websocket) |
+| Spring Data JPA — Beyond the Basics | [13-jpa-advanced](https://github.com/AnupamSinha/spring-boot-examples/tree/main/13-jpa-advanced) |
+| Spring Boot + MongoDB | [23-mongodb](https://github.com/AnupamSinha/spring-boot-examples/tree/main/23-mongodb) |
+| Spring Boot + GraphQL | [24-graphql](https://github.com/AnupamSinha/spring-boot-examples/tree/main/24-graphql) |
+| Spring Boot + gRPC | [14-grpc](https://github.com/AnupamSinha/spring-boot-examples/tree/main/14-grpc) |
+| Event-Driven Microservices with Kafka | [10-kafka-microservices](https://github.com/AnupamSinha/spring-boot-examples/tree/main/10-kafka-microservices) |
+| Caching Strategies (Redis + Caffeine) | [15-caching](https://github.com/AnupamSinha/spring-boot-examples/tree/main/15-caching) |
+| Spring Batch — Processing Millions of Records | [16-batch](https://github.com/AnupamSinha/spring-boot-examples/tree/main/16-batch) |
+| Spring Boot + WebSocket Real-Time | [17-websocket](https://github.com/AnupamSinha/spring-boot-examples/tree/main/17-websocket) |
 | Spring Boot + Flyway Database Migrations | — |
 
 ### Security
 | Post | Code |
 |------|------|
-| Spring Security 6 + OAuth2/OIDC with Keycloak | [spring-security-oauth2-demo](https://github.com/AnupamSinha/spring-security-oauth2-demo) |
+| Spring Security 6 + OAuth2/OIDC with Keycloak | [09-security-oauth2](https://github.com/AnupamSinha/spring-boot-examples/tree/main/09-security-oauth2) |
 
 ### Testing
 | Post | Code |
 |------|------|
-| Spring Boot + Testcontainers — Integration Testing | [spring-boot-testcontainers](https://github.com/AnupamSinha/spring-boot-testcontainers) |
+| Spring Boot + Testcontainers — Integration Testing | [08-testcontainers](https://github.com/AnupamSinha/spring-boot-examples/tree/main/08-testcontainers) |
 
 ### DevOps & Cloud
 | Post | Code |
 |------|------|
 | Spring Cloud Gateway + Distributed Tracing | — |
-| Spring Boot Observability (Prometheus, Loki, Tempo, Grafana) | [spring-boot-observability](https://github.com/AnupamSinha/spring-boot-observability) |
-| Spring Boot + Docker/Kubernetes Deployment | [spring-boot-k8s-deploy](https://github.com/AnupamSinha/spring-boot-k8s-deploy) |
+| Spring Boot Observability (Prometheus, Loki, Tempo, Grafana) | [11-observability](https://github.com/AnupamSinha/spring-boot-examples/tree/main/11-observability) |
+| Spring Boot + Docker/Kubernetes Deployment | [12-k8s-deploy](https://github.com/AnupamSinha/spring-boot-examples/tree/main/12-k8s-deploy) |
 | GitHub Actions CI/CD for Spring Boot | — |
 | Spring Boot on AWS (Lambda, ECS, RDS) | — |
 | Migrating from Spring Cloud Netflix to Spring Cloud 2024 | — |
-| Feature Flags with Togglz | [spring-boot-feature-flags](https://github.com/AnupamSinha/spring-boot-feature-flags) |
+| Feature Flags with Togglz | [20-feature-flags](https://github.com/AnupamSinha/spring-boot-examples/tree/main/20-feature-flags) |
 | Service Mesh vs Helm in OpenShift | — |
 | Terraform for Java Developers | — |
 | Docker Compose for Spring Developers | — |
@@ -77,9 +77,9 @@ Personal tech blog — practical Java/Spring Boot guides, architecture patterns,
 ### System Design & Interview Prep
 | Post | Code |
 |------|------|
-| Rate Limiter with Redis | [spring-boot-rate-limiter](https://github.com/AnupamSinha/spring-boot-rate-limiter) |
-| URL Shortener | [spring-boot-url-shortener](https://github.com/AnupamSinha/spring-boot-url-shortener) |
-| Notification Service (Email, SMS, Push) | [spring-boot-notification-service](https://github.com/AnupamSinha/spring-boot-notification-service) |
+| Rate Limiter with Redis | [26-rate-limiter](https://github.com/AnupamSinha/spring-boot-examples/tree/main/26-rate-limiter) |
+| URL Shortener | [27-url-shortener](https://github.com/AnupamSinha/spring-boot-examples/tree/main/27-url-shortener) |
+| Notification Service (Email, SMS, Push) | [28-notification-service](https://github.com/AnupamSinha/spring-boot-examples/tree/main/28-notification-service) |
 
 ### Java Deep Dives
 | Post | Code |
@@ -92,7 +92,7 @@ Personal tech blog — practical Java/Spring Boot guides, architecture patterns,
 | Post | Code |
 |------|------|
 | Spring Boot Developer Productivity | — |
-| Building a CLI with Spring Shell | [spring-shell-cli](https://github.com/AnupamSinha/spring-shell-cli) |
+| Building a CLI with Spring Shell | [19-spring-shell](https://github.com/AnupamSinha/spring-boot-examples/tree/main/19-spring-shell) |
 | Setting Up a Blog with Jekyll Chirpy | — |
 
 ### Career & Growth

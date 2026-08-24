@@ -472,11 +472,11 @@ If the server doesn't respond within the deadline, the client receives `DEADLINE
 
 The complete source code for this project is available on GitHub:
 
-[**github.com/AnupamSinha/spring-boot-grpc**](https://github.com/AnupamSinha/spring-boot-grpc)
+[**github.com/AnupamSinha/spring-boot-examples/tree/main/14-grpc**](https://github.com/AnupamSinha/spring-boot-examples/tree/main/14-grpc)
 
 ```bash
 # Clone and build
-git clone https://github.com/AnupamSinha/spring-boot-grpc.git
+git clone https://github.com/AnupamSinha/spring-boot-examples/tree/main/14-grpc
 cd spring-boot-grpc
 mvn clean install
 

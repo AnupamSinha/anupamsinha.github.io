@@ -647,12 +647,12 @@ public TransferResult transferFunds(
 
 ## Full Working Example
 
-The complete code for this post is available at [github.com/AnupamSinha/spring-ai-function](https://github.com/AnupamSinha/spring-ai-function).
+The complete code for this post is available at [github.com/AnupamSinha/spring-boot-examples/tree/main/05-ai-function-calling](https://github.com/AnupamSinha/spring-boot-examples/tree/main/05-ai-function-calling).
 
 Clone and run:
 
 ```bash
-git clone https://github.com/AnupamSinha/spring-ai-function.git
+git clone https://github.com/AnupamSinha/spring-boot-examples/tree/main/05-ai-function-calling
 cd spring-ai-function
 export OPENAI_API_KEY=sk-your-key-here
 ./mvnw spring-boot:run

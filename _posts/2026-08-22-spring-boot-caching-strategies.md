@@ -504,7 +504,7 @@ With `sync = true`, only one thread executes the method on a cache miss. Others 
 
 The complete source code is available on GitHub:
 
-[**github.com/AnupamSinha/spring-boot-caching**](https://github.com/AnupamSinha/spring-boot-caching)
+[**github.com/AnupamSinha/spring-boot-examples/tree/main/15-caching**](https://github.com/AnupamSinha/spring-boot-examples/tree/main/15-caching)
 
 ### Running Locally
 

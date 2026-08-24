@@ -904,7 +904,7 @@ roleRef:
 The complete project with all manifests, Dockerfile, Jib configuration, and a Makefile for common operations:
 
 ```bash
-git clone https://github.com/AnupamSinha/spring-boot-k8s-deploy.git
+git clone https://github.com/AnupamSinha/spring-boot-examples/tree/main/12-k8s-deploy
 cd spring-boot-k8s-deploy
 ```
 

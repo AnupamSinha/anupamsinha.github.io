@@ -458,10 +458,10 @@ McpToolFilter mcpToolFilter() {
 
 ## Full Working Example
 
-The complete code is available at [github.com/AnupamSinha/spring-ai-mcp](https://github.com/AnupamSinha/spring-ai-mcp).
+The complete code is available at [github.com/AnupamSinha/spring-boot-examples/tree/main/06-ai-mcp](https://github.com/AnupamSinha/spring-boot-examples/tree/main/06-ai-mcp).
 
 ```bash
-git clone https://github.com/AnupamSinha/spring-ai-mcp.git
+git clone https://github.com/AnupamSinha/spring-boot-examples/tree/main/06-ai-mcp
 cd spring-ai-mcp
 
 # Terminal 1 — Start server
