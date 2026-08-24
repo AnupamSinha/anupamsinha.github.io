@@ -1,7 +1,7 @@
 ---
 title: "CQRS + Event Sourcing with Spring Boot"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, Architecture]
 tags: [spring-boot, cqrs, event-sourcing, architecture, java-21, mongodb, postgresql, ddd]
 description: "Implement CQRS and Event Sourcing in Spring Boot. Separate command and query models, store events as the source of truth, build projections for reads, and understand when this complexity is justified."
 mermaid: true

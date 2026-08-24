@@ -1,7 +1,7 @@
 ---
 title: "Spring Batch — Processing Millions of Records Without Breaking a Sweat"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, Data]
 tags: [spring-batch, batch-processing, etl, spring-boot, java-21, csv, jdbc, chunk-processing]
 description: "Build production-grade batch jobs with Spring Batch. Covers chunk-oriented processing, readers/writers, ItemProcessor, skip/retry, partitioning for parallel execution, scheduling, and monitoring."
 mermaid: true

@@ -1,7 +1,7 @@
 ---
 title: "System Design — URL Shortener with Spring Boot"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [System Design, Spring Boot]
 tags: [system-design, url-shortener, spring-boot, java-21, base62, interview-prep, postgresql]
 description: "Design and build a URL shortener from scratch with Spring Boot. Covers Base62 encoding, database schema, redirect handling, click analytics, expiration, and scaling considerations — a classic system design interview question implemented."
 mermaid: true

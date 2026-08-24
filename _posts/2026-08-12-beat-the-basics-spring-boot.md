@@ -1,7 +1,7 @@
 ---
 title: "Beat the Basics — Spring Boot from Zero to Confident"
 date: 2026-08-12
-categories: [Java, Spring]
+categories: [Spring Boot, Fundamentals]
 tags: [spring-boot, java, rest-api, dependency-injection, jpa, spring-security, microservices, backend, tutorial]
 description: "A multi-chapter guide to mastering Spring Boot fundamentals. Covers project setup, dependency injection, REST APIs, data access with JPA, exception handling, configuration, security basics, and testing — all with working code examples."
 ---

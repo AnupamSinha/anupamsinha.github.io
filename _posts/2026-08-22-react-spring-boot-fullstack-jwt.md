@@ -1,7 +1,7 @@
 ---
 title: "React + Spring Boot — Full-Stack App with JWT Authentication"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, Full-Stack]
 tags: [spring-boot, react, jwt, full-stack, java-21, authentication, cors, rest-api]
 description: "Build a complete full-stack application with React frontend and Spring Boot backend. Covers JWT authentication, CORS configuration, Axios interceptors, protected routes, and the development workflow for serving both from one project."
 mermaid: true

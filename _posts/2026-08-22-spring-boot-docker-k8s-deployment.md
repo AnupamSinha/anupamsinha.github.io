@@ -1,7 +1,7 @@
 ---
 title: "Spring Boot + Docker/Kubernetes — From JAR to Production Deployment"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, DevOps]
 tags: [spring-boot, docker, kubernetes, k8s, deployment, helm, jib, java-21, devops, containers]
 description: "A practical guide to containerizing Spring Boot applications and deploying them to Kubernetes. Covers multi-stage Dockerfiles, Jib for zero-Docker builds, Kubernetes manifests, health probes, ConfigMaps, Secrets, resource limits, and production readiness checklist."
 mermaid: true

@@ -1,7 +1,7 @@
 ---
 title: "System Design — Notification Service (Email, SMS, Push) with Spring Boot"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [System Design, Spring Boot]
 tags: [system-design, notifications, spring-boot, kafka, email, java-21, interview-prep, microservices]
 description: "Design a multi-channel notification service with Spring Boot and Kafka. Covers email (JavaMail + Thymeleaf templates), SMS, push notifications, priority queues, retry with dead letter topics, template rendering, and scaling strategies."
 mermaid: true

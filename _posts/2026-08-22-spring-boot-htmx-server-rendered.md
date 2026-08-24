@@ -1,7 +1,7 @@
 ---
 title: "HTMX + Spring Boot — Modern Server-Rendered UIs Without JavaScript Frameworks"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, Full-Stack]
 tags: [spring-boot, htmx, thymeleaf, server-rendered, java-21, frontend, hypermedia]
 description: "Build modern, interactive UIs with Spring Boot and HTMX — no React, no Angular, no build step. Covers hx-get, hx-post, hx-swap, fragment rendering with Thymeleaf, and why this approach is gaining traction for internal tools and CRUD apps."
 mermaid: true

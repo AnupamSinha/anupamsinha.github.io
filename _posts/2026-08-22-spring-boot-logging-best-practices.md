@@ -1,7 +1,7 @@
 ---
 title: "Logging Best Practices in Spring Boot — Structured, Correlated, Production-Ready"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, Fundamentals]
 tags: [spring-boot, logging, slf4j, logback, structured-logging, json, correlation-id, java-21]
 description: "Production logging done right with Spring Boot. Covers structured JSON logging, correlation IDs with Micrometer Tracing, MDC context propagation, log levels strategy, Logback configuration, sensitive data masking, and log aggregation patterns."
 mermaid: true

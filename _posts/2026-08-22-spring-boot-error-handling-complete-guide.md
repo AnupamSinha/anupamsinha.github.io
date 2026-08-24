@@ -1,7 +1,7 @@
 ---
 title: "Spring Boot Error Handling — A Complete Guide (REST, Async, WebSocket)"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, Fundamentals]
 tags: [spring-boot, error-handling, exception-handling, rest-api, java-21, controlleradvice, problemdetails]
 description: "The definitive guide to error handling in Spring Boot. Covers @ControllerAdvice, ProblemDetail (RFC 7807), custom exception hierarchies, validation errors, async error handling, WebSocket errors, and a production-ready error response strategy."
 mermaid: true

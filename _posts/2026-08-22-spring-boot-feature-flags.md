@@ -1,7 +1,7 @@
 ---
 title: "Feature Flags with Spring Boot — Togglz for Safe Deployments"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, Architecture]
 tags: [spring-boot, feature-flags, togglz, deployment, java-21, release-management, trunk-based-development]
 description: "Decouple deployment from release with feature flags in Spring Boot. Covers Togglz setup, activation strategies (gradual rollout, user-based, time-based), runtime toggling, A/B testing, and production safety patterns."
 mermaid: true

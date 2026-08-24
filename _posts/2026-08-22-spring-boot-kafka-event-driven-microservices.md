@@ -1,7 +1,7 @@
 ---
 title: "Event-Driven Microservices with Spring Boot + Kafka"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, Messaging]
 tags: [spring-boot, kafka, event-driven, microservices, spring-kafka, avro, java-21, messaging, async]
 description: "Build event-driven microservices with Spring Boot and Apache Kafka. Covers producer/consumer patterns, event schemas, error handling with dead letter topics, exactly-once semantics, Testcontainers for Kafka testing, and a complete order processing pipeline."
 mermaid: true

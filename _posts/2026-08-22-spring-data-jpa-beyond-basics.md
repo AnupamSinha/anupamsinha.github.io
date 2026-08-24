@@ -1,7 +1,7 @@
 ---
 title: "Spring Data JPA — Beyond the Basics (Projections, Specifications, Auditing)"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, Data]
 tags: [spring-data-jpa, jpa, hibernate, specifications, projections, auditing, java-21, spring-boot, postgresql]
 description: "Go beyond basic CRUD with Spring Data JPA. Master Specifications for dynamic queries, Projections for performance, and Auditing for automatic timestamps — with real PostgreSQL examples and Testcontainers tests."
 mermaid: true

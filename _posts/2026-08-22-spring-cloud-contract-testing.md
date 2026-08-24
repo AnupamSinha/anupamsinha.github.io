@@ -1,7 +1,7 @@
 ---
 title: "Contract Testing with Spring Cloud Contract — Consumer-Driven Contracts"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, Testing]
 tags: [spring-cloud-contract, contract-testing, testing, microservices, spring-boot, java-21, consumer-driven]
 description: "Ensure microservices don't break each other with Spring Cloud Contract. Covers consumer-driven contracts, Groovy DSL, auto-generated tests, stub runner, and the workflow between producer and consumer teams."
 mermaid: true

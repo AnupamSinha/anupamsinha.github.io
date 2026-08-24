@@ -1,7 +1,7 @@
 ---
 title: "Spring Boot + Flyway — Database Migrations That Don't Break Production"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, Fundamentals]
 tags: [spring-boot, flyway, database-migrations, liquibase, postgresql, java-21, devops]
 description: "Master database schema migrations with Spring Boot and Flyway. Covers versioned migrations, repeatable migrations, migration naming, rollback strategies, multi-environment setup, team workflows, and Flyway vs Liquibase comparison."
 mermaid: true

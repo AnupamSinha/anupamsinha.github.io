@@ -1,7 +1,7 @@
 ---
 title: "API Versioning Strategies in Spring Boot — URI, Header, and Content Negotiation"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, Fundamentals]
 tags: [spring-boot, api-versioning, rest-api, java-21, api-design, backward-compatibility]
 description: "Compare API versioning strategies in Spring Boot: URI path versioning, custom header versioning, and content negotiation. Covers implementation patterns, deprecation workflow, backward compatibility, and when to use which approach."
 mermaid: true

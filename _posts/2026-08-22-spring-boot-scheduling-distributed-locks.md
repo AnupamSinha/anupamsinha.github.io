@@ -1,7 +1,7 @@
 ---
 title: "Scheduling in Spring Boot — @Scheduled, Quartz, and Distributed Locks"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, Messaging]
 tags: [spring-boot, scheduling, cron, shedlock, distributed-locks, quartz, java-21]
 description: "Master job scheduling in Spring Boot. Covers @Scheduled (fixedRate, fixedDelay, cron), thread pool configuration, ShedLock for distributed environments, Quartz for complex workflows, and patterns to avoid duplicate execution across instances."
 mermaid: true

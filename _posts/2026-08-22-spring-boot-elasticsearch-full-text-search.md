@@ -1,7 +1,7 @@
 ---
 title: "Spring Boot + Elasticsearch — Full-Text Search Done Right"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, Data]
 tags: [spring-boot, elasticsearch, full-text-search, spring-data-elasticsearch, java-21, search, aggregations]
 description: "Add powerful full-text search to Spring Boot with Elasticsearch. Covers document mapping, Spring Data ElasticsearchRepository, custom queries, fuzzy matching, highlighting, aggregations, and production indexing strategies."
 mermaid: true

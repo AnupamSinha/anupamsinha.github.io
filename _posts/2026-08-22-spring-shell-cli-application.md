@@ -1,7 +1,7 @@
 ---
 title: "Building a CLI with Spring Shell — Interactive Command-Line Apps"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, Tools]
 tags: [spring-shell, cli, command-line, spring-boot, java-21, developer-tools]
 description: "Build interactive command-line applications with Spring Shell. Covers @ShellComponent, @ShellMethod, parameter validation, tab completion, custom prompts, and packaging as a native executable."
 mermaid: true

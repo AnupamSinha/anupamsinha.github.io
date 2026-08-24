@@ -1,7 +1,7 @@
 ---
 title: "Caching Strategies with Spring Boot — Redis, Caffeine, and Multi-Level"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, Data]
 tags: [spring-boot, caching, redis, caffeine, performance, spring-cache, java-21]
 description: "Master caching in Spring Boot with Redis and Caffeine. Covers @Cacheable, @CacheEvict, @CachePut, TTL strategies, multi-level caching (Caffeine L1 + Redis L2), cache-aside pattern, and production pitfalls."
 mermaid: true

@@ -1,7 +1,7 @@
 ---
 title: "Spring Boot + GraphQL — Flexible APIs for Frontend Teams"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, Data]
 tags: [spring-boot, graphql, api, java-21, spring-graphql, schema-first, mutations, queries]
 description: "Build flexible APIs with Spring Boot and GraphQL. Covers schema-first design, @QueryMapping, @MutationMapping, N+1 prevention with DataLoader, error handling, and when GraphQL beats REST."
 mermaid: true

@@ -1,7 +1,7 @@
 ---
 title: "Java 18 to Java 21 Migration Guide — Features, Code Examples, Checklist"
 date: 2026-08-09
-categories: [Java, Migration]
+categories: [Java, Upgrades]
 tags: [java, java21, java-migration, lts, virtual-threads, pattern-matching, spring-boot, record-patterns, sequenced-collections, sealed-classes]
 description: "Complete Java 18 to Java 21 LTS migration guide for developers. Covers virtual threads, pattern matching, record patterns, sequenced collections, sealed classes — with official JEP links, Spring Boot compatibility, code examples, and step-by-step migration checklist."
 pin: true

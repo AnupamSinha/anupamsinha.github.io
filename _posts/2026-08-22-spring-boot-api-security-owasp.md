@@ -1,7 +1,7 @@
 ---
 title: "Spring Boot API Security Checklist — OWASP Top 10 in Practice"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, Security]
 tags: [spring-boot, security, owasp, api-security, java-21, best-practices, vulnerabilities]
 description: "Secure your Spring Boot APIs against the OWASP Top 10. Covers injection prevention, broken auth, CORS, rate limiting, input validation, security headers, sensitive data exposure, and a production security checklist — with code for each vulnerability."
 mermaid: true

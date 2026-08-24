@@ -1,7 +1,7 @@
 ---
 title: "GitHub Actions CI/CD for Spring Boot — Build, Test, Deploy"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, DevOps]
 tags: [github-actions, ci-cd, spring-boot, java-21, devops, docker, kubernetes, automation]
 description: "Build a production CI/CD pipeline for Spring Boot with GitHub Actions. Covers build + test, Docker image publishing, Kubernetes deployment, environment secrets, caching for fast builds, and branch protection strategies."
 mermaid: true

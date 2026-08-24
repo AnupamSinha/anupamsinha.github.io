@@ -1,7 +1,7 @@
 ---
 title: "Spring AI + MCP — Exposing Tools as a Standardized Server"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, AI]
 tags: [spring-ai, mcp, model-context-protocol, tool-calling, openai, java-21, spring-boot, ai, microservices]
 description: "A hands-on guide to the Model Context Protocol (MCP) with Spring AI 2.0. Build an MCP server that exposes payment tools over SSE, then a separate AI client that discovers and invokes them — zero tool definitions on the client side."
 mermaid: true

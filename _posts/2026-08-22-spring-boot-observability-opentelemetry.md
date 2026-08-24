@@ -1,7 +1,7 @@
 ---
 title: "Spring Boot Observability Stack — Metrics, Logs, Traces with OpenTelemetry"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, DevOps]
 tags: [spring-boot, observability, opentelemetry, grafana, prometheus, loki, tempo, micrometer, tracing, metrics, logging]
 description: "Build a complete observability stack for Spring Boot with OpenTelemetry, Grafana, Prometheus, Loki, and Tempo. Covers metrics collection, structured logging, distributed tracing, custom spans, correlation IDs, dashboards, and alerting — with Docker Compose and working code."
 mermaid: true

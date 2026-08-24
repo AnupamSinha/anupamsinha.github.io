@@ -1,7 +1,7 @@
 ---
 title: "Spring Boot + WebSocket — Real-Time Notifications and Chat"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, Messaging]
 tags: [spring-boot, websocket, stomp, real-time, java-21, chat, notifications, sockjs]
 description: "Build real-time features with Spring Boot WebSocket and STOMP. Covers bidirectional communication, message broker, pub/sub topics, server-push notifications, and a working chat application."
 mermaid: true

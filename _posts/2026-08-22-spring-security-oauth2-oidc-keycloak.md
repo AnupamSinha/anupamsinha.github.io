@@ -1,7 +1,7 @@
 ---
 title: "Spring Security 6 + OAuth2/OIDC — From Login to Resource Server"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, Security]
 tags: [spring-security, oauth2, oidc, keycloak, jwt, spring-boot, java-21, authentication, authorization]
 description: "A complete guide to securing Spring Boot applications with OAuth2 and OpenID Connect using Keycloak. Covers the authorization code flow, JWT resource server, role-based access, token introspection, and testing secured endpoints — with working code and Docker setup."
 mermaid: true

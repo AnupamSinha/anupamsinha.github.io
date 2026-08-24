@@ -1,7 +1,7 @@
 ---
 title: "Spring Boot Multi-Tenancy — One App, Multiple Customers"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, Architecture]
 tags: [spring-boot, multi-tenancy, saas, java-21, hibernate, spring-data-jpa, architecture]
 description: "Build a multi-tenant Spring Boot application. Covers schema-per-tenant with AbstractRoutingDataSource, row-level filtering with Hibernate filters, tenant resolution from JWT/headers, and isolation strategies."
 mermaid: true

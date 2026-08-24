@@ -1,7 +1,7 @@
 ---
 title: "Load Testing Spring Boot with Gatling — Find Your Breaking Point"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, Testing]
 tags: [gatling, load-testing, performance, spring-boot, java-21, stress-testing, scalability]
 description: "Find your Spring Boot application's breaking point with Gatling. Covers writing simulations, injection profiles (ramp, constant, stress), assertions, HTML reports, CI integration, and interpreting results to find bottlenecks."
 mermaid: true

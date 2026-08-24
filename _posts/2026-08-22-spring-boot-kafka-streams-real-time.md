@@ -1,7 +1,7 @@
 ---
 title: "Real-Time Data Pipelines with Spring Boot + Kafka Streams"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, Messaging]
 tags: [spring-boot, kafka-streams, stream-processing, real-time, java-21, kafka, ktable, windowing]
 description: "Process data in real-time with Spring Boot and Kafka Streams. Covers stream topologies, KStream/KTable, filtering, transforming, windowed aggregations, state stores, and interactive queries — beyond simple producer/consumer."
 mermaid: true

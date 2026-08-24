@@ -1,7 +1,7 @@
 ---
 title: "Migrating from Spring Cloud Netflix to Spring Cloud 2024"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, Microservices]
 tags: [spring-cloud, netflix, migration, loadbalancer, circuit-breaker, resilience4j, eureka, spring-boot, microservices]
 description: "A practical migration guide from deprecated Spring Cloud Netflix components (Ribbon, Hystrix, Zuul) to their modern replacements (Spring Cloud LoadBalancer, Resilience4j, Spring Cloud Gateway). Covers each component with before/after code, configuration changes, and migration strategy."
 mermaid: true

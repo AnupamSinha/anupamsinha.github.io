@@ -1,7 +1,7 @@
 ---
 title: "Spring Boot on AWS — Lambda, ECS, and RDS"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, DevOps]
 tags: [spring-boot, aws, lambda, ecs, rds, cloud, serverless, java-21, fargate]
 description: "Deploy Spring Boot to AWS three ways: as a serverless function on Lambda (with SnapStart), as containers on ECS Fargate, and with managed database on RDS. Covers cold start optimization, cost comparison, and when to use which approach."
 mermaid: true

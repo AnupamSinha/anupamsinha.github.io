@@ -1,7 +1,7 @@
 ---
 title: "Spring Boot + MongoDB — When Documents Beat Tables"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, Data]
 tags: [spring-boot, mongodb, nosql, spring-data-mongodb, java-21, documents, aggregation]
 description: "Build Spring Boot applications with MongoDB. Covers document modeling, MongoRepository, custom queries with @Query, aggregation pipelines with MongoTemplate, indexing, embedded vs referenced documents, and when to choose MongoDB over relational databases."
 mermaid: true

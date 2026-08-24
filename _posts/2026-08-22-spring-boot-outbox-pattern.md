@@ -1,7 +1,7 @@
 ---
 title: "Outbox Pattern with Spring Boot + Kafka — Guaranteed Event Publishing"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, Architecture]
 tags: [spring-boot, outbox-pattern, kafka, event-driven, java-21, dual-write, reliability, postgresql]
 description: "Solve the dual-write problem with the Transactional Outbox Pattern. Save domain events to an outbox table in the same DB transaction, then relay them to Kafka — guaranteeing at-least-once delivery without distributed transactions."
 mermaid: true

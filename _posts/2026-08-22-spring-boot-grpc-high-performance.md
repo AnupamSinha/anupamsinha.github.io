@@ -1,7 +1,7 @@
 ---
 title: "Spring Boot + gRPC — High-Performance Inter-Service Communication"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, Performance]
 tags: [spring-boot, grpc, protobuf, microservices, java-21, performance, streaming, rpc]
 description: "Build high-performance microservices with Spring Boot and gRPC. Covers Protocol Buffers, unary and server-streaming RPCs, the grpc-spring-boot-starter, error handling, deadlines, and performance comparison with REST."
 mermaid: true

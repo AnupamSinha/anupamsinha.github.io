@@ -1,7 +1,7 @@
 ---
 title: "Design Patterns in Spring Boot — Strategy, Template Method, Observer in Practice"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, Architecture]
 tags: [spring-boot, design-patterns, strategy-pattern, template-method, observer, java-21, architecture]
 description: "See classic design patterns alive in Spring Boot. Covers Strategy (multiple payment processors), Template Method (abstract batch steps), Observer (ApplicationEvent), Decorator (filter chains), and Factory (bean selection) — with real code you can use today."
 mermaid: true

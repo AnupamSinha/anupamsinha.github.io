@@ -1,7 +1,7 @@
 ---
 title: "Hexagonal Architecture (Ports & Adapters) with Spring Boot"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, Architecture]
 tags: [spring-boot, hexagonal-architecture, ports-adapters, clean-architecture, java-21, ddd, architecture]
 description: "Structure Spring Boot applications using Hexagonal Architecture. Covers ports (interfaces), adapters (implementations), domain isolation, dependency inversion, and how to test each layer independently."
 mermaid: true

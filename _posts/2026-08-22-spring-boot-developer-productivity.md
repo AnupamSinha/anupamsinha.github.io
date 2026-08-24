@@ -1,7 +1,7 @@
 ---
 title: "Spring Boot Developer Productivity — DevTools, Docker Compose, and Local Dev Superpowers"
 date: 2026-08-22
-categories: [Java, Spring]
+categories: [Spring Boot, Fundamentals]
 tags: [spring-boot, developer-experience, devtools, docker-compose, testcontainers, java-21, productivity]
 description: "Maximize your local development speed with Spring Boot. Covers DevTools live reload, Docker Compose integration (auto-start containers), Testcontainers at development time, application-local.yml profiles, and IDE shortcuts that save hours."
 mermaid: true

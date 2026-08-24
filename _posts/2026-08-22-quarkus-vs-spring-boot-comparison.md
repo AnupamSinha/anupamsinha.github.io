@@ -1,7 +1,7 @@
 ---
 title: "Quarkus vs Spring Boot — A Practical Comparison for 2026"
 date: 2026-08-22
-categories: [Java, Architecture]
+categories: [Java, Frameworks]
 tags: [quarkus, spring-boot, java-21, comparison, graalvm, microservices, cloud-native]
 description: "An honest side-by-side comparison of Quarkus and Spring Boot in 2026. Covers startup time, memory usage, developer experience, ecosystem, native compilation, and when to choose which — from someone who uses both."
 mermaid: true
