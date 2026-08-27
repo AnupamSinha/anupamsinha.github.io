@@ -1,12 +1,12 @@
 # anupamsinha.github.io
 
-Personal tech blog — practical Java/Spring Boot guides, architecture patterns, AI engineering, and developer references.
+Personal tech blog — practical Java/Spring Boot guides, architecture patterns, AI engineering, SQL & databases, and developer references.
 
 **Live at**: [https://anupamsinha.github.io](https://anupamsinha.github.io)
 
 ---
 
-## Posts (100)
+## Posts (120)
 
 ### Java & Spring Boot Fundamentals
 | Post | Code |
@@ -125,6 +125,30 @@ Personal tech blog — practical Java/Spring Boot guides, architecture patterns,
 | Kotlin vs Java in 2026: An Honest Take | — |
 | Java 21 vs Go vs Rust Benchmark for Microservices | — |
 | Java Interview Preparation Guide 2026 | — |
+
+### SQL & Databases
+| Post | Code |
+|------|------|
+| SQL Joins Explained Visually — INNER, LEFT, RIGHT, FULL, and the Ones You've Never Used | — |
+| Window Functions in SQL — The Feature That Separates Juniors from Seniors | — |
+| CTEs vs Subqueries vs Temp Tables — When to Use Which (With Benchmarks) | — |
+| GROUP BY, HAVING, and Aggregations — The Complete Mental Model | — |
+| NULL in SQL — The Silent Bug in Half Your Queries | — |
+| Why Your SQL Query Is Slow — 12 Common Causes | — |
+| Database Indexing Explained — B-Trees, When to Index, and When It Hurts | — |
+| How to Read a Query Execution Plan (EXPLAIN ANALYZE Deep Dive) | — |
+| I Optimized a Query from 45 Seconds to 200ms — Here's How | — |
+| The N+1 Query Problem — And 4 Ways to Kill It | — |
+| Database Sharding Strategies — Range, Hash, and Directory-Based | — |
+| Read Replicas, Connection Pooling, and Scaling SQL to Millions of Users | — |
+| ACID vs BASE — What Every Backend Developer Gets Wrong | — |
+| Optimistic vs Pessimistic Locking in SQL (With Real Deadlock Examples) | — |
+| Database Transactions and Isolation Levels — Explained with Race Conditions | — |
+| SQL Anti-Patterns — 10 Mistakes That Will Get You Rejected in Code Review | — |
+| PostgreSQL vs MySQL in 2026 — An Honest Comparison | — |
+| JSON in SQL — Using PostgreSQL JSONB Like a Pro | — |
+| The Complete SQL Interview Preparation Guide (2026) | — |
+| How I Design Database Schemas That Scale | — |
 
 ### Developer Experience
 | Post | Code |
